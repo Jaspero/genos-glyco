@@ -1,0 +1,47 @@
+@import "../variables";
+
+/**
+ * Post
+ *
+ * Style for a blog-like post.
+ *
+ *============================================================================*/
+
+
+
+
+
+/* Post
+ *============================================================================*/
+
+.gg-post {
+  display: flex;
+}
+.gg-post-minor {
+  width: 40%;
+  padding-right: 40px;
+  border-right: 1px solid rgba(0,0,0,.12);
+}
+.gg-post-major {
+  width: 60%;
+  padding-left: 40px;
+  border-left: 1px solid rgba(0,0,0,.12);
+}
+
+@media (max-width: $screen-s) {
+  .gg-post {
+    flex-direction: column;
+  }
+  .gg-post-minor {
+    width: 100%;
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+  }
+  .gg-post-major {
+    width: 100%;
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid rgba(0,0,0,.12);
+  }
+}

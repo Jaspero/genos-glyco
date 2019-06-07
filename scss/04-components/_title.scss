@@ -1,0 +1,41 @@
+@import "../variables";
+
+/**
+ * Title
+ *
+ * Style for titles.
+ *
+ *============================================================================*/
+
+
+
+
+
+/* Title
+ *============================================================================*/
+
+.gg-title {
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background: $gradient;
+  }
+  & > .gg-icon {
+    position: absolute;
+    left: -68px;
+    top: -8px;
+    @media (max-width: $screen-m + 118px) {
+      display: none;
+    }
+  }
+  &.c-l-primary:after {
+    background: $accent;
+  }
+}

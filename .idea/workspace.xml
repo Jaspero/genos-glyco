@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1055f31d-bcdd-4088-b195-e7986f567fae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appveyor.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/fixtures/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/integration/spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/plugins/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/support/commands.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/support/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firebase.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firestore.rules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rollup.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/01-tools/_fluid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/02-generic/_generic.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/02-generic/_resets.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/03-layout/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/04-components/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/04-components/_card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/04-components/_icon.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/04-components/_post.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/04-components/_read-format.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/04-components/_table.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/04-components/_tabs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/04-components/_title.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/05-utilities/_utilities.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Nav.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/_error.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/_layout.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/about.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/blog/[slug].json.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/blog/[slug].svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/blog/_posts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/blog/index.json.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/blog/index.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/index.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service-worker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/template.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-128x128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-144x144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-152x152.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-384x384.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-72x72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/icons/icon-96x96.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/icon-close.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/icon-nav-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/icon-nav-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/icon-news.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/icon-project.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/icon-publication.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/icon-search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/icon-service.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/icon-team.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/logo-dark.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/logo-light.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/section-intro.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/section-news.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/section-projects.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/section-publications.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/section-services.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/texture.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/images/twitter.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/global.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/great-success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/logo-192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/logo-512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/sapperfirebase.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles.scss" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Nav.svelte">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/routes/blog/_posts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/routes/blog/index.json.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/routes/blog/[slug].json.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/routes/blog/index.svelte">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/routes/blog/[slug].svelte">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="23" selection-start-column="17" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>$bg-d-primary</find>
+      <find>$acc</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.gitlab-ci.yml" />
+        <option value="$PROJECT_DIR$/firestore.rules" />
+        <option value="$PROJECT_DIR$/firebase.json" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/components/Nav.svelte" />
+        <option value="$PROJECT_DIR$/styles.scss" />
+        <option value="$PROJECT_DIR$/src/routes/services.svelte" />
+        <option value="$PROJECT_DIR$/src/routes/_layout.svelte" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/website.iml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="950" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/routes" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Jaspero\AppData\Roaming\npm\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jaspero\Desktop\gitlab\clients\genos\website\src\routes" />
+      <recent name="C:\Users\Jaspero\Desktop\gitlab\clients\genos\website\static" />
+      <recent name="C:\Users\Jaspero\Desktop\gitlab\clients\genos\website" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.watch:scss">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="watch:scss" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="watch:scss" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.watch:scss" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1055f31d-bcdd-4088-b195-e7986f567fae" name="Default Changelist" comment="" />
+      <created>1559941325148</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559941325148</updated>
+      <workItem from="1559941327652" duration="1203000" />
+      <workItem from="1559942567224" duration="1668000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2871000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4957806" visible="true" weight="0.24966443" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" sideWeight="0.5042194" side_tool="true" weight="0.24966443" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Mongo Explorer" order="3" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4978903" visible="true" weight="0.24966443" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" sideWeight="0.5021097" side_tool="true" weight="0.24966443" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Mongo Explorer" order="3" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firebase.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firestore.rules">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rollup.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitlab-ci.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-39524" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/publications.svelte">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/_layout.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="23" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/news.svelte">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/projects.svelte">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/_error.svelte">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/services.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Nav.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/blog/index.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/blog/_posts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/blog/index.json.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/blog/[slug].json.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/blog/[slug].svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" selection-start-column="17" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,61 @@
+@import "../variables";
+
+/**
+ * Table
+ *
+ * Style for publications table.
+ *
+ *============================================================================*/
+
+
+
+
+
+/* Table
+ *============================================================================*/
+
+.gg-publications-table {
+  font-size: 14px;
+  width: 100%;
+  color: $fg-d-tertiary;
+  tr {
+    border-bottom: 1px solid rgba(0,0,0,.12);
+  }
+  td, th {
+    padding: 20px 10px;
+    text-align: left;
+    vertical-align: top;
+    font-weight: normal;
+  }
+  td[data-label="Title"] {
+    width: 40%;
+    color: $fg-d-primary;
+  }
+  @media (max-width: $screen-s) {
+    tr {
+      display: block;
+      margin: 10px 0;
+      border: 1px solid rgba(0,0,0,.12);
+      border-radius: 8px;
+      background: white;
+      padding: 20px 10px;
+    }
+    td[data-label="Title"] {
+      width: unset;
+    }
+    td {
+      display: flex;
+      padding: 10px;
+    }
+    td:before {
+      content: attr(data-label);
+      width: 80px;
+      min-width: 80px;
+    }
+    thead {
+      opacity: 0;
+      position: absolute;
+      z-index: -1;
+    }
+  }
+}

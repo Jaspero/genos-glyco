@@ -1,0 +1,52 @@
+@import "../variables";
+
+/**
+ * Buttons
+ *
+ * Style for various buttons.
+ *
+ *============================================================================*/
+
+
+
+
+
+/* Button
+ *============================================================================*/
+
+.gg-button {
+  background: $bg-l-primary;
+  padding: 12px 24px;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 8px;
+  transition: .2s;
+  &:hover {
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,.28);
+  }
+}
+
+
+
+
+
+/* Icon button
+ *============================================================================*/
+
+.gg-icon-button {
+  cursor: pointer;
+  min-width: 48px;
+  width: 48px;
+  min-height: 48px;
+  height: 48px;
+  display: inline-flex;
+  justify-content: center;
+  background: white;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 8px;
+  padding: 8px;
+  margin: 10px 5px 0;
+  transition: .2s;
+  &:hover {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.28);
+  }
+}

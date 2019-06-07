@@ -1,0 +1,154 @@
+/**
+ * Resets
+ *
+ * Style resets in order to synchronize different browser default styles.
+ *
+ *============================================================================*/
+
+
+
+
+
+/* Basic page behaviour resets
+ *============================================================================*/
+/**
+ * 1. Best practice box-sizing. Source:
+ *    css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ * 2. Force long words to break into new lines if they don't fit a container.
+ */
+
+*, *:before, *:after {
+  box-sizing: inherit; /* [1] */
+}
+
+html {
+  box-sizing: border-box; /* [1] */
+  word-wrap: break-word; /* [2] */
+  overflow-wrap: break-word; /* [2] */
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+
+
+
+
+/* Margin resets
+ *============================================================================*/
+
+body,
+h1, h2, h3, h4, h5, h6,
+p, ol, ul,
+figure,
+hr,
+fieldset, legend {
+  margin:  0;
+}
+
+// Remove trailing margins from nested lists
+li > ol, ul {
+    margin-bottom: 0;
+}
+
+
+
+
+
+/* Tables
+ *============================================================================*/
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+
+
+/* Semantic markup
+ *============================================================================*/
+
+small {
+  font-size: .75em;
+}
+
+b, strong {
+  font-weight: 600;
+}
+
+i, em {
+  font-style: italic;
+}
+
+u {
+  text-decoration: underline;
+}
+
+
+
+
+
+/* Hyperlink
+ *============================================================================*/
+
+a {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+
+
+
+
+/* Hyperlink
+ *============================================================================*/
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+
+
+
+
+/* Images
+ *============================================================================*/
+/**
+ * 1. Images will retain their aspect ratio on screen resizing. They
+      will never scale up to be larger than their original size.
+ * 2. Remove whitespace under images.
+ */
+
+img {
+  max-width: 100%; /* [1] */
+  height: auto; /* [1] */
+  vertical-align: middle; /* [2] */
+}
+
+
+
+
+
+
+/* mat-dialog
+ *============================================================================*/
+/**
+ * 1. Increases max-width so that it looks good on mobile.
+ * 2. Fixes issue of mat-dialog not being scrollable vertically.
+ */
+
+.cdk-overlay-pane {
+  max-width: 90vw !important; /* [1] */
+  max-height: 100vh; /* [2] */
+}

@@ -1,0 +1,95 @@
+@import "../variables";
+
+/**
+ * Tabs
+ *
+ * Style for tabs.
+ *
+ *============================================================================*/
+
+
+
+
+
+/* Tabs
+ *============================================================================*/
+
+.gg-tabs {
+  display: flex;
+}
+.gg-tabs-selection {
+  position: relative;
+  width: 40%;
+  padding-right: 40px;
+  border-right: 1px solid rgba(0,0,0,.12);
+}
+.gg-tabs-buttons {
+  position: sticky;
+  top: 10px;
+  margin-right: -42px;
+}
+.gg-tabs-button {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  white-space: nowrap;
+  text-align: left;
+  border-right: 2px solid transparent;
+  transition: .2s;
+  &:hover {
+    background: transparentize($bg-l-secondary, .5);
+    border-right: 2px solid transparentize($primary, .5);
+  }
+  &.active {
+    background: $bg-l-secondary;
+    border-right: 2px solid $primary;
+  }
+}
+.gg-tabs-content {
+  width: 60%;
+  padding-left: 40px;
+  padding-top: 10px;
+  border-left: 1px solid rgba(0,0,0,.12);
+}
+
+@media (max-width: $screen-s) {
+  .gg-tabs {
+    flex-direction: column;
+  }
+  .gg-tabs-buttons {
+    margin-right: 0;
+    display: flex;
+    margin-bottom: -2px;
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+  .gg-tabs-button {
+    padding: 20px 15px;
+    text-align: center;
+    border-right: none;
+    border-bottom: 2px solid transparent;
+    &:hover {
+      background: transparentize($bg-l-secondary, .5);
+      border-right: none;
+      border-bottom: 2px solid transparentize($primary, .5);
+    }
+    &.active {
+      background: $bg-l-secondary;
+      border-right: none;
+      border-bottom: 2px solid $primary;
+    }
+  }
+  .gg-tabs-selection {
+    width: 100%;
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+  }
+  .gg-tabs-content {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 40px;
+    border-left: none;
+    border-top: 1px solid rgba(0,0,0,.12);
+  }
+}

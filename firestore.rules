@@ -1,0 +1,12 @@
+service cloud.firestore {
+  function admin() {
+    return request.auth.token.admin == true
+  }
+
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read: if true;
+      allow write, delete: if admin();
+    }
+  }
+}
