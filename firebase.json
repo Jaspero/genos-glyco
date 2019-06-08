@@ -1,8 +1,6 @@
 {
-  "firestore": {
-    "rules": "firestore.rules"
-  },
-  "hosting": {
+  "hosting": [{
+    "target": "website",
     "public": "static",
     "ignore": [
       "firebase.json",
@@ -13,5 +11,5 @@
       "source": "**",
       "function": "ssr"
     }]
-  }
+  }]
 }
