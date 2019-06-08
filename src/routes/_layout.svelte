@@ -53,7 +53,7 @@
   <div class="grid">
     <div class="col-12">
       <nav class="flex fw-wrap jc-between ai-center">
-        <a class="m-y-s">
+        <a class="m-y-s" href="/">
           <img src="assets/images/logo-light.svg" alt="Genos Glyco" width="160">
         </a>
         <div class="p-y-s">
