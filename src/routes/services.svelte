@@ -1,9 +1,5 @@
 <script>
     export let tab = 0;
-
-    function changeTab(newTab) {
-      tab = newTab
-    }
 </script>
 
 <style>
