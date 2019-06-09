@@ -6,7 +6,7 @@
     "target-setup": "firebase target:apply hosting website genos-glyco",
     "dev": "sapper dev",
     "watch:scss": "node-sass styles.scss static/global.css -w",
-    "build": "sapper build --legacy && cp -r ./__sapper__/build ./functions/__sapper__",
+    "build": "sapper build --legacy && cp -r ./__sapper__/ ./functions/__sapper__",
     "prebuild": "rm -rf functions/__sapper__/build && node-sass styles.scss static/global.css --output-style=compressed",
     "export": "sapper export --legacy",
     "start": "npm run build && firebase serve",
