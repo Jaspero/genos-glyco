@@ -1,0 +1,57 @@
+<script context="module">
+	export async function preload({ params, query }) {
+		const res = await this.fetch(`projects/${params.slug}.json`);
+		const data = await res.json();
+		if (res.status === 200) {
+			return { project: data };
+		} else {
+			this.error(res.status, data.message);
+		}
+	}
+</script>
+
+<script>
+	export let project;
+</script>
+
+<style>
+.gg-projects-intro {
+  padding: 200px 0 60px;
+  background-image: url("/assets/images/section-projects.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+</style>
+
+<!--Projects intro-->
+<section class="gg-projects-intro">
+  <div class="grid">
+    <div class="col-12">
+      <h4 class="gg-title c-l-primary">Projects<span class="gg-icon"><img src="assets/images/icon-project.svg" aria-hidden="true"></span></h4>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!--Project content-->
+<section class="p-y-l">
+  <div class="grid">
+    <div class="col-12">
+      <h4 class="gg-title">{project.title}<a rel="prefetch" href="projects" class="gg-icon"><img src="assets/images/icon-nav-left.svg" aria-label="Go back"></a></h4>
+    </div>
+    <div class="col-12">
+      <div class="gg-post">
+        <div class="gg-post-minor">
+          <img class="m-b-s" img="{project.image}">
+        </div>
+        <div class="gg-post-major p-t-s gg-read-format">
+	        {@html project.content}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,3 +1,17 @@
+<script context="module">
+	export function preload({ params, query }) {
+		return this.fetch('index.json')
+		    .then(r => r.json());
+	}
+</script>
+
+<script>
+    export let members;
+    export let news;
+    export let projects;
+    export let publications;
+</script>
+
 <style>
 .gg-section-intro {
   padding: 200px 0 120px;
@@ -188,24 +202,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td data-label="Year">2018</td>
-          <td data-label="Title"><a class="link">Glycosylation of human plasma lipoproteins reveals a high level of diversity, which directly impacts their functional properties</a></td>
-          <td data-label="Journals">Frontiers</td>
-          <td data-label="Authors">Sukhorukov V., Gudelj I., Pučić-Baković M., Zakiev E., Orekho A., Kontush A., Lauc G.</td>
-        </tr>
-        <tr>
-          <td data-label="Year">2018</td>
-          <td data-label="Title"><a class="link">Glycosylation of human plasma lipoproteins reveals a high level of diversity, which directly impacts their functional properties</a></td>
-          <td data-label="Journals">Frontiers</td>
-          <td data-label="Authors">Sukhorukov V., Gudelj I., Pučić-Baković M., Zakiev E., Orekho A., Kontush A., Lauc G.</td>
-        </tr>
-        <tr>
-          <td data-label="Year">2018</td>
-          <td data-label="Title"><a class="link">Glycosylation of human plasma lipoproteins reveals a high level of diversity, which directly impacts their functional properties</a></td>
-          <td data-label="Journals">Frontiers</td>
-          <td data-label="Authors">Sukhorukov V., Gudelj I., Pučić-Baković M., Zakiev E., Orekho A., Kontush A., Lauc G.</td>
-        </tr>
+        {#each publications as publication}
+          <tr>
+            <td data-label="Year">{publication.year}</td>
+            <td data-label="Title">{publication.title}</td>
+            <td data-label="Journal">{publication.journal}</td>
+            <td data-label="Authors">{publication.authors}</td>
+          </tr>
+        {/each}
         </tbody>
       </table>
     </div>
@@ -256,32 +260,13 @@
       <h4 class="gg-title">Recent projects<span class="gg-icon"><img src="assets/images/icon-project.svg" aria-hidden="true"></span></h4>
     </div>
     <div class="col-6 col-s-12">
+    {#each projects as project}
       <div class="gg-card">
-        <p class="fs-small m-b-xs m-t-s">Nov 5, 2018</p>
-        <p class="m-b-s fw-bold">High Glycan</p>
-        <p class="m-b-s">Methods for highthroughput analysis of protein glycosylation</p>
+        <p class="fs-small m-b-xs m-t-s">{project.date}</p>
+        <p class="m-b-s fw-bold">{project.title}</p>
+        <p class="m-b-s">{project.subTitle}</p>
       </div>
-    </div>
-    <div class="col-6 col-s-12">
-      <div class="gg-card">
-        <p class="fs-small m-b-xs m-t-s">Nov 5, 2018</p>
-        <p class="m-b-s fw-bold">High Glycan</p>
-        <p class="m-b-s">Methods for highthroughput analysis of protein glycosylation</p>
-      </div>
-    </div>
-    <div class="col-6 col-s-12">
-      <div class="gg-card">
-        <p class="fs-small m-b-xs m-t-s">Nov 5, 2018</p>
-        <p class="m-b-s fw-bold">High Glycan</p>
-        <p class="m-b-s">Methods for highthroughput analysis of protein glycosylation</p>
-      </div>
-    </div>
-    <div class="col-6 col-s-12">
-      <div class="gg-card">
-        <p class="fs-small m-b-xs m-t-s">Nov 5, 2018</p>
-        <p class="m-b-s fw-bold">High Glycan</p>
-        <p class="m-b-s">Methods for highthroughput analysis of protein glycosylation</p>
-      </div>
+    {/each}
     </div>
     <div class="col-12">
       <div class="p-y-s ta-center">
@@ -336,32 +321,13 @@
       <h4 class="gg-title">Recent news<span class="gg-icon"><img src="assets/images/icon-news.svg" aria-hidden="true"></span></h4>
     </div>
     <div class="col-6 col-s-12">
+      {#each news as item}
       <div class="gg-card">
-        <p class="fs-small m-b-xs m-t-s">Nov 5, 2018</p>
-        <p class="m-b-s fw-bold">GlyCoCan – watch the video on biomarker potential of glycosylation in colorectal cancer prepared by GlyCoCan Early Stage Researchers</p>
-        <p class="m-b-s">Colorectal cancer is a life-threatening disease affecting the large bowel. Improved diagnostic methods could notably increase the chance of a disease-free life due to a timely diagnosis followed by effective,…</p>
+        <p class="fs-small m-b-xs m-t-s">{item.date}</p>
+        <p class="m-b-s fw-bold">{item.title}</p>
+        <p class="m-b-s">{item.subTitle}</p>
       </div>
-    </div>
-    <div class="col-6 col-s-12">
-      <div class="gg-card">
-        <p class="fs-small m-b-xs m-t-s">Nov 5, 2018</p>
-        <p class="m-b-s fw-bold">GlyCoCan – watch the video on biomarker potential of glycosylation in colorectal cancer prepared by GlyCoCan Early Stage Researchers</p>
-        <p class="m-b-s">Colorectal cancer is a life-threatening disease affecting the large bowel. Improved diagnostic methods could notably increase the chance of a disease-free life due to a timely diagnosis followed by effective,…</p>
-      </div>
-    </div>
-    <div class="col-6 col-s-12">
-      <div class="gg-card">
-        <p class="fs-small m-b-xs m-t-s">Nov 5, 2018</p>
-        <p class="m-b-s fw-bold">GlyCoCan – watch the video on biomarker potential of glycosylation in colorectal cancer prepared by GlyCoCan Early Stage Researchers</p>
-        <p class="m-b-s">Colorectal cancer is a life-threatening disease affecting the large bowel. Improved diagnostic methods could notably increase the chance of a disease-free life due to a timely diagnosis followed by effective,…</p>
-      </div>
-    </div>
-    <div class="col-6 col-s-12">
-      <div class="gg-card">
-        <p class="fs-small m-b-xs m-t-s">Nov 5, 2018</p>
-        <p class="m-b-s fw-bold">GlyCoCan – watch the video on biomarker potential of glycosylation in colorectal cancer prepared by GlyCoCan Early Stage Researchers</p>
-        <p class="m-b-s">Colorectal cancer is a life-threatening disease affecting the large bowel. Improved diagnostic methods could notably increase the chance of a disease-free life due to a timely diagnosis followed by effective,…</p>
-      </div>
+      {/each}
     </div>
     <div class="col-12">
       <div class="p-y-s ta-center">

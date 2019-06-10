@@ -4,7 +4,7 @@ export function get(req, res) {
   const {page = 0, pageSize = 10} = req.query;
 
   let lookUpSize = pageSize + 1;
-  let db = admin.firestore().collection('publications')
+  let db = admin.firestore().collection('projects')
     .limit(lookUpSize);
 
   if (page) {
@@ -20,7 +20,7 @@ export function get(req, res) {
 
       res.end(JSON.stringify({
         hasMore: snaps.docs.length < lookUpSize,
-        publications: snaps.docs.reduce((acc, cur, ind) => {
+        projects: snaps.docs.reduce((acc, cur, ind) => {
           if (ind < pageSize) {
             acc.push(cur.data());
           }

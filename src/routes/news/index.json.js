@@ -22,10 +22,7 @@ export function get(req, res) {
         hasMore: snaps.docs.length < lookUpSize,
         news: snaps.docs.reduce((acc, cur, ind) => {
           if (ind < pageSize) {
-            acc.push({
-              id: cur.id,
-              ...cur.data()
-            });
+            acc.push(cur.data());
           }
           return acc;
         }, [])
