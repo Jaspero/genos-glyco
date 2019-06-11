@@ -10,6 +10,69 @@
     export let news;
     export let projects;
     export let publications;
+
+    let page = 0;
+    let memb = [
+        {
+            name: 'filip',
+            page: 0
+        },
+        {
+            name: 'bobo',
+            page: 0
+        },
+        {
+            name: 'bobo',
+            page: 0
+        },
+        {
+            name: 'bobo',
+            page: 0
+        },
+        {
+            name: 'filip',
+            page: 1
+        },
+        {
+            name: 'bobo',
+            page: 1
+        },
+        {
+            name: 'bobo',
+            page: 1
+        },
+        {
+            name: 'bobo',
+            page: 1
+        },
+        {
+            name: 'filip',
+            page: 2
+        },
+        {
+            name: 'bobo',
+            page: 2
+        },
+        {
+            name: 'bobo',
+            page: 2
+        },
+        {
+            name: 'bobo',
+            page: 2
+        },
+    ];
+
+    function nextSlide() {
+      page += 1;
+    }
+
+    function prevSlide() {
+      page -= 1;
+    }
+
+
+
 </script>
 
 <style>
@@ -78,6 +141,29 @@
   border: 1px solid rgba(0,0,0,.12);
   border-radius: 50%;
   padding: 5px;
+}
+/*Slider styles*/
+.hide {
+display: none;
+}
+
+.item {
+display: none;
+}
+
+.item.active {
+    display: block;
+}
+
+.img {
+height: 200px;
+}
+.team {
+height: 500px;
+}
+.arrow {
+cursor: pointer;
+height: 30px;
 }
 </style>
 
@@ -281,31 +367,36 @@
 
 
 <!--Our team-->
-<section class="bg-l-secondary p-y-l">
+<section class="bg-l-secondary team p-y-l">
   <div class="grid p-b-m">
-    <div class="col-12">
+    <div class="col-12 flex jc-between ai-center">
       <h4 class="gg-title">Our team<span class="gg-icon"><img src="assets/images/icon-team.svg" aria-hidden="true"></span></h4>
+      <div class="arrows flex">
+      <button class="arrow flex ai-center bg-l-primary m-r-s" id="previous" on:click="{prevSlide}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#00407F">
+            <g data-name="Layer 2">
+              <path d="M13.36 17a1 1 0 0 1-.72-.31l-3.86-4a1 1 0 0 1 0-1.4l4-4a1 1 0 1 1 1.42 1.42L10.9 12l3.18 3.3a1 1 0 0 1 0 1.41 1 1 0 0 1-.72.29z" data-name="chevron-left"/>
+            </g>
+          </svg>
+       </button>
+      <button class="arrow flex ai-center bg-l-primary" id="next" on:click="{nextSlide}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#00407F">
+              <g data-name="Layer 2">
+                <path d="M10.5 17a1 1 0 0 1-.71-.29 1 1 0 0 1 0-1.42L13.1 12 9.92 8.69a1 1 0 0 1 0-1.41 1 1 0 0 1 1.42 0l3.86 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 0 1-.7.32z" data-name="chevron-right"/>
+              </g>
+            </svg>
+      </button>
+      </div>
     </div>
-    <div class="col-12 of-hidden">
-      <!--<jp-slider [options]="sliderOptions">
-        <jp-slides>
-          <jp-slide *ngFor="let member of members">
-            <div (click)="openUser(member)" style="padding-right: 20px;">
-              <div class="gg-member-card">
-                <div class="gg-member-avatar">
-                  <img draggable="false" *ngIf="member.profileImage" [src]="member.profileImage" width="150">
-                </div>
-                <p class="fw-bold m-t-s m-b-xs">{{member.fullName}}</p>
-                <p class="m-b-s">Title</p>
-              </div>
-            </div>
-          </jp-slide>
-        </jp-slides>
-        <nav class="ta-center">
-          <button class="gg-icon-button" jpSlideArrow="left"><img src="assets/images/icon-nav-left.svg" alt="Previous"></button>
-          <button class="gg-icon-button" jpSlideArrow="right"><img src="assets/images/icon-nav-right.svg" alt="Next"></button>
-        </nav>
-      </jp-slider>-->
+    <div class="col-12 of-hidden relative flex">
+        {#each memb as single, index}
+        <div class="col-3 p-a-s ta-center item" class:active="{page == single.page}">
+         <div class="img bg-primary">
+         {index}
+            {single.name}
+        </div>
+        </div>
+        {/each}
     </div>
   </div>
 </section>
