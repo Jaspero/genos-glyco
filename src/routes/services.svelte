@@ -40,25 +40,23 @@
       <div class="gg-tabs">
         <div class="gg-tabs-selection">
           <div class="gg-tabs-buttons">
-            <button class="gg-tabs-button" class:active="{tab === 0}" on:click={() => tab = 0}>Immunoglobulin G (IgG) N-glycome analysis</button>
-            <button class="gg-tabs-button" class:active="{tab === 1}" on:click={() => tab = 1}>Plasma N-glycome analysis</button>
+            <button class="gg-tabs-button" class:active="{tab === 0}" on:click={() => tab = 0}>High-throughput analyses </button>
+            <button class="gg-tabs-button" class:active="{tab === 1}" on:click={() => tab = 1}>In depth glycoprofiling</button>
             <button class="gg-tabs-button" class:active="{tab === 2}" on:click={() => tab = 2}>Study design</button>
             <button class="gg-tabs-button" class:active="{tab === 3}" on:click={() => tab = 3}>Data analysis</button>
             <button class="gg-tabs-button" class:active="{tab === 4}" on:click={() => tab = 4}>Joint project development</button>
-            <button class="gg-tabs-button" class:active="{tab === 5}" on:click={() => tab = 5}>Biological age analysis</button>
           </div>
         </div>
         <div class="gg-tabs-content">
             <div class="grid">
                 <div class="col-12 gg-read-format">
                     {#if tab === 0}
-                        <h6>Ultra Performance Liquid Chromatography</h6>
-                        <p>Glycans released from IgG are labelled with fluorescent dye, 2-aminobenzamide, and analysed by Hydrophilic Interaction Chromatography (HILIC) which is a reliable quantitative method proven to provide quality data for the studies of large cohorts <a href="publications" rel="prefetch">(publications)</a>.</p>
-                        <h6>Liquid chromatography-mass spectrometry</h6>
-                        <p>Analyses of glycans still attached to a peptide backbone. Information about the position of the glycosylation site in this type of study is preserved (for example Fc vs Fab IgG glycosylation). Additionally, IgG subclasses are chromatographically separated which enables the analysis of class-specific glycopeptides.</p>
+                        <p>Immunoglobulin G (IgG) N-glycosylation analysis (analysis of total released N-glycans by UPLC-FLR and subclass-specific Fc N-glycopeptide analysis by LC-MS)</p>
+                        <p>Plasma N-glycosylation analysis (analysis of total released N-glycans by UPLC-FLR)</p>
                     {:else if tab === 1}
-                        <h6>Ultra Performance Liquid Chromatography</h6>
-                        <p>Glycans released from total plasma proteins are labelled with fluorescent dye (2-aminobenzamide) and analysed by Hydrophilic Interaction Chromatography (HILIC) which is a reliable quantitative method proven to provide quality data for the studies of large cohorts <a href="publications" rel="prefetch">(publications)</a>.</p>
+                        <p>Analysis of released N-glycans</p>
+                        <p>Site-specific N-glycosylation analysis</p>
+                        <p>N-glycosylation site occupancy analysis</p>
                     {:else if tab === 2}
                         <p>Genos offers consultancies in study design, under the full or partial control of the experiment, for different fields of biomedicine. The mixture of expertise from Genos employees (biologists, pharmacist, chemists, statisticians and mathematicians) ensures the quality of the study design.</p>
                     {:else if tab === 3}
@@ -67,8 +65,6 @@
                         <h6>Cooperation and joint project development</h6>
                         <p>Genos is also an active research organization. On the basis of the recommendation of the National Science Council, the Ministry of Science, Education and Sports of the Republic of Croatia issued a permit that allowed Genos to formally register as a research organization in 2007. Genos currently participates in six FP7 projects (GlycoBioM, HighGlycan, IBD-BIOM, MIMOmics, Pain-OMICS and HTP-GlycoMet).</p>
                         <p>We are constantly in search of potential collaborative projects where we can contribute with our expertise in high-throughput glycomics and extensive experience of participation in large FP7 and H2020 consortia.</p>
-                    {:else if tab === 5}
-                        <p>Coming soon</p>
                     {/if}
                 </div>
             </div>
