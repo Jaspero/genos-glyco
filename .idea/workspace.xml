@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a693b87e-a049-4df6-a67b-97d7c5b8c65b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/services.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/services.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/index.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.svelte" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,20 +17,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.svelte" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.svelte" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/routes/index.svelte">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="194" column="58" selection-start-line="194" selection-start-column="58" selection-end-line="194" selection-end-column="58" />
+            <state relative-caret-position="255">
+              <caret line="68" column="9" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+              <folding>
+                <element signature="n#section#1;n#!!top" />
+                <element signature="n#section#2;n#!!top" />
+                <element signature="n#section#3;n#!!top" />
+                <element signature="n#section#4;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="services.svelte" pinned="false" current-in-tab="true">
+      <file leaf-file-name="services.svelte" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/routes/services.svelte">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="66" column="242" selection-start-line="66" selection-start-column="242" selection-end-line="66" selection-end-column="242" />
+            <state relative-caret-position="503">
+              <caret line="75" selection-start-line="75" selection-end-line="75" />
             </state>
           </provider>
         </entry>
@@ -56,6 +62,16 @@
       </map>
     </option>
   </component>
+  <component name="GitlabProjectsProjectSettings">
+    <option name="lastMergedBranch" value="master" />
+    <option name="deleteMergedBranch" value="false" />
+    <option name="mergeAsWorkInProgress" value="false" />
+    <option name="projectIdMap">
+      <map>
+        <entry key="491805610" value="12752250" />
+      </map>
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -64,8 +80,8 @@
         <option value="$PROJECT_DIR$/src/routes/news/index.svelte" />
         <option value="$PROJECT_DIR$/src/routes/_layout.svelte" />
         <option value="$PROJECT_DIR$/styles.scss" />
-        <option value="$PROJECT_DIR$/src/routes/index.svelte" />
         <option value="$PROJECT_DIR$/src/routes/services.svelte" />
+        <option value="$PROJECT_DIR$/src/routes/index.svelte" />
       </list>
     </option>
   </component>
@@ -145,7 +161,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../studio-studio" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -205,7 +221,7 @@
       <updated>1560232766656</updated>
       <workItem from="1560232767930" duration="3564000" />
       <workItem from="1560238158145" duration="18537000" />
-      <workItem from="1560317423197" duration="1210000" />
+      <workItem from="1560317423197" duration="16777000" />
     </task>
     <task id="LOCAL-00001" summary="chore(index) added slider">
       <created>1560257710495</created>
@@ -214,14 +230,21 @@
       <option name="project" value="LOCAL" />
       <updated>1560257710495</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="chore(services) text adjustments">
+      <created>1560319124716</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1560319124716</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23311000" />
+    <option name="totallyTimeSpent" value="38878000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49512988" visible="true" weight="0.24973656" />
@@ -252,13 +275,20 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chore(index) added slider" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore(index) added slider" />
+    <MESSAGE value="chore(services) text adjustments" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore(services) text adjustments" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/routes/index.svelte">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2992">
           <caret line="176" column="7" selection-start-line="176" selection-start-column="7" selection-end-line="176" selection-end-column="7" />
+          <folding>
+            <element signature="n#section#1;n#!!top" />
+            <element signature="n#section#2;n#!!top" />
+            <element signature="n#section#3;n#!!top" />
+            <element signature="n#section#4;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -294,6 +324,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="n#section#1;n#!!top" />
+            <element signature="n#section#2;n#!!top" />
+            <element signature="n#section#3;n#!!top" />
+            <element signature="n#section#4;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -394,17 +430,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/index.svelte">
+    <entry file="file://$PROJECT_DIR$/src/routes/services.svelte">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="194" column="58" selection-start-line="194" selection-start-column="58" selection-end-line="194" selection-end-column="58" />
+        <state relative-caret-position="503">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/services.svelte">
+    <entry file="file://$PROJECT_DIR$/src/routes/index.svelte">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="66" column="242" selection-start-line="66" selection-start-column="242" selection-end-line="66" selection-end-column="242" />
+        <state relative-caret-position="255">
+          <caret line="68" column="9" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+          <folding>
+            <element signature="n#section#1;n#!!top" />
+            <element signature="n#section#2;n#!!top" />
+            <element signature="n#section#3;n#!!top" />
+            <element signature="n#section#4;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

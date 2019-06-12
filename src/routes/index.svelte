@@ -64,11 +64,15 @@
     ];
 
     function nextSlide() {
-      page += 1;
+        if (page < 2){
+            page ++;
+        }
     }
 
     function prevSlide() {
-      page -= 1;
+       if (page > 0){
+           page --;
+       }
     }
 
 
