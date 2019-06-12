@@ -63,15 +63,22 @@
         },
     ];
 
+
+    const totalLength = (memb.length / 4) - 1;
+
     function nextSlide() {
-        if (page < 2){
+        if (page < totalLength){
             page ++;
+        } else if (page === totalLength) {
+            page = 0
         }
     }
 
     function prevSlide() {
        if (page > 0){
            page --;
+       } else if (page === 0) {
+           page = totalLength
        }
     }
 
