@@ -12,59 +12,8 @@
     export let publications;
 
     let page = 0;
-    let memb = [
-        {
-            name: 'filip',
-            page: 0
-        },
-        {
-            name: 'bobo',
-            page: 0
-        },
-        {
-            name: 'bobo',
-            page: 0
-        },
-        {
-            name: 'bobo',
-            page: 0
-        },
-        {
-            name: 'filip',
-            page: 1
-        },
-        {
-            name: 'bobo',
-            page: 1
-        },
-        {
-            name: 'bobo',
-            page: 1
-        },
-        {
-            name: 'bobo',
-            page: 1
-        },
-        {
-            name: 'filip',
-            page: 2
-        },
-        {
-            name: 'bobo',
-            page: 2
-        },
-        {
-            name: 'bobo',
-            page: 2
-        },
-        {
-            name: 'bobo',
-            page: 2
-        },
-    ];
 
-
-    const totalLength = (memb.length / 4) - 1;
+    const totalLength = (members.length / 4) - 1;
 
     function nextSlide() {
         if (page < totalLength){
@@ -356,15 +305,15 @@ height: 30px;
     <div class="col-12">
       <h4 class="gg-title">Recent projects<span class="gg-icon"><img src="assets/images/icon-project.svg" aria-hidden="true"></span></h4>
     </div>
-    <div class="col-6 col-s-12">
     {#each projects as project}
+    <div class="col-6 col-s-12">
       <div class="gg-card">
         <p class="fs-small m-b-xs m-t-s">{project.date}</p>
         <p class="m-b-s fw-bold">{project.title}</p>
         <p class="m-b-s">{project.subTitle}</p>
       </div>
-    {/each}
     </div>
+    {/each}
     <div class="col-12">
       <div class="p-y-s ta-center">
         <a class="link c-primary" rel="prefetch" href="projects">View all projects</a>
@@ -400,14 +349,13 @@ height: 30px;
       </div>
     </div>
     <div class="col-12 of-hidden relative flex">
-        {#each memb as single, index}
-        <div class="col-3 p-a-s ta-center item" class:active="{page == single.page}">
+     {#each members as single, index}
+     <div class="col-3 p-a-s ta-center item" class:active="{page == single.page}">
          <div class="img bg-primary">
-         {index}
             {single.name}
-        </div>
-        </div>
-        {/each}
+         </div>
+     </div>
+     {/each}
     </div>
   </div>
 </section>
@@ -422,15 +370,15 @@ height: 30px;
     <div class="col-12">
       <h4 class="gg-title">Recent news<span class="gg-icon"><img src="assets/images/icon-news.svg" aria-hidden="true"></span></h4>
     </div>
+  {#each news as item}
     <div class="col-6 col-s-12">
-      {#each news as item}
       <div class="gg-card">
         <p class="fs-small m-b-xs m-t-s">{item.date}</p>
         <p class="m-b-s fw-bold">{item.title}</p>
         <p class="m-b-s">{item.subTitle}</p>
       </div>
-      {/each}
     </div>
+    {/each}
     <div class="col-12">
       <div class="p-y-s ta-center">
         <a class="link c-primary" rel="prefetch" href="news">Learn more about glycans</a>
