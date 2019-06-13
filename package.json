@@ -10,7 +10,7 @@
     "prebuild": "rm -rf functions/__sapper__/build && node-sass styles.scss static/global.css --output-style=compressed",
     "export": "sapper export --legacy",
     "start": "npm run build && firebase serve",
-    "deploy": "firebase deploy --only hosting --only functions:ssr",
+    "deploy": "firebase deploy --only hosting,functions:ssr",
     "predeploy": "npm run build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
