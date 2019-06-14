@@ -14,20 +14,26 @@
     let page = 0;
 
     const totalLength = (members.length / 4) - 1;
+    const totalLengthRound = Math.round(totalLength);
+    let index = 4;
 
     function nextSlide() {
-        if (page < totalLength){
+        if (page < totalLengthRound){
+
             page ++;
-        } else if (page === totalLength) {
-            page = 0
+        } else if (page >= totalLengthRound) {
+            page = 0;
+
         }
     }
 
     function prevSlide() {
        if (page > 0){
            page --;
-       } else if (page === 0) {
-           page = totalLength
+
+       } else if (page <= 0) {
+           page = totalLengthRound;
+
        }
     }
 
@@ -349,10 +355,11 @@ height: 30px;
       </div>
     </div>
     <div class="col-12 of-hidden relative flex">
-     {#each members as single, index}
-     <div class="col-3 p-a-s ta-center item" class:active="{page == single.page}">
-         <div class="img bg-primary">
-            {single.name}
+     {#each members as { fullName, order }, i}
+     <div class="col-3 p-a-s ta-center item" class:active="{i < 4}">
+         <div class="img bg-primary active">
+            {fullName},
+            {i + 1}
          </div>
      </div>
      {/each}
