@@ -1,4 +1,4 @@
-<script context="module">
+<!--<script context="module">
 	export async function preload({ params, query }) {
 		const res = await this.fetch(`news/${params.slug}.json`);
 		const data = await res.json();
@@ -8,8 +8,48 @@
 			this.error(res.status, data.message);
 		}
 	}
-</script>
+</script>-->
 
 <script>
 	export let item;
 </script>
+
+<style>
+.gg-news-intro {
+  padding: 200px 0 60px;
+  background-image: url("/assets/images/section-news.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+</style>
+
+<!--Single news intro-->
+<section class="gg-news-intro">
+  <div class="grid">
+    <div class="col-12">
+      <h4 class="gg-title c-l-primary">News<span class="gg-icon"><img src="assets/images/icon-news.svg" aria-hidden="true"></span></h4>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!--Single news content-->
+<section class="p-y-l">
+  <div class="grid">
+    <div class="col-12">
+      <div class="gg-post">
+        <div class="gg-post-minor">
+            <p class="fw-bold p-t-s m-b-s">Title</p>
+            <p class="fs-small c-d-secondary">date</p>
+        </div>
+        <div class="gg-post-major p-t-s gg-read-format">
+	        Content
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
