@@ -3,14 +3,22 @@ import admin from 'firebase-admin';
 export function get(req, res) {
   const { slug } = req.params;
 
-  admin.firestore().collection('projects').doc(slug)
+  admin.firestore().collection('projects')
+    .where('url', '==', slug)
     .get()
-    .then(item => {
+    .then(items => {
+      if (!items.docs[0]) {
+        throw new Error('Not found');
+      }
+
       res.writeHead(200, {
         'Content-Type': 'application/json'
       });
 
-      res.end(JSON.stringify(item.data()));
+      const data = items.docs[0].data();
+      data.subTitle = data.subTitle || '';
+
+      res.end(JSON.stringify(data));
     })
     .catch(error => {
       res.writeHead(404, {

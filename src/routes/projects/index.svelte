@@ -52,7 +52,7 @@
   <div class="grid">
      {#each projects as project}
     <div class="col-6 col-s-12">
-      <a class="gg-card h-full" rel="prefetch" href="{project.url}">
+      <a class="gg-card h-full" rel="prefetch" href="projects/{project.url}">
         <p class="m-b-s fw-bold">{project.title}</p>
         <p class="m-b-s">{project.subTitle}</p>
       </a>

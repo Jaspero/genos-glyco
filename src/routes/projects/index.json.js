@@ -24,7 +24,8 @@ export function get(req, res) {
           if (ind < pageSize) {
             const data = cur.data();
             data.subTitle = data.subTitle || '';
-            acc.push(cur.data());
+            data.id = cur.id;
+            acc.push(data);
           }
           return acc;
         }, [])
