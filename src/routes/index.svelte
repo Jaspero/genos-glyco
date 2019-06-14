@@ -1,7 +1,13 @@
 <script context="module">
 	export function preload({ params, query }) {
 		return this.fetch('index.json')
-		    .then(r => r.json());
+		    .then(r => r.json())
+                    .then(data => ({
+                      ...data,
+                      members: data.members.map((memb, index) => ({
+                      ...memb, page: index + 1
+                      }))
+                    }))
 	}
 </script>
 
@@ -11,32 +17,41 @@
     export let projects;
     export let publications;
 
-    let page = 0;
+    let slidePage = 1;
 
-    const totalLength = (members.length / 4) - 1;
+    console.log(members, 'members');
+
+    const totalLength = (members.length / 5) - 1;
     const totalLengthRound = Math.round(totalLength);
     let index = 4;
+    let counter = 0;
+
+    function pageNum() {
+      members.map(value => {
+        return  console.log(value, 123);
+      })
+    }
+
 
     function nextSlide() {
-        if (page < totalLengthRound){
+        if (slidePage < totalLengthRound){
+            slidePage ++;
 
-            page ++;
-        } else if (page >= totalLengthRound) {
-            page = 0;
+        } else if (slidePage >= totalLengthRound) {
+            slidePage = 1;
 
         }
     }
 
     function prevSlide() {
-       if (page > 0){
-           page --;
+       if (slidePage > 1){
+           slidePage --;
 
-       } else if (page <= 0) {
-           page = totalLengthRound;
+       } else if (slidePage <= 0) {
+           slidePage = totalLengthRound;
 
        }
     }
-
 
 
 </script>
@@ -354,8 +369,8 @@ height: 30px;
       </div>
     </div>
     <div class="col-12 of-hidden relative flex">
-     {#each members as { fullName, order }, i}
-     <div class="col-3 p-a-s ta-center item" class:active="{i < 4}">
+     {#each members as { fullName, page }, i}
+     <div class="col-3 p-a-s ta-center item" class:active="{slidePage === page}">
          <div class="img bg-primary active">
             {fullName},
             {i + 1}
