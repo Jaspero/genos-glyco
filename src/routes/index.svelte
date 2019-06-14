@@ -2,12 +2,13 @@
 	export function preload({ params, query }) {
 		return this.fetch('index.json')
 		    .then(r => r.json())
-                    .then(data => ({
-                      ...data,
-                      members: data.members.map((memb, index) => ({
-                      ...memb, page: index + 1
-                      }))
-                    }))
+            .then(data => ({
+              ...data,
+              members: data.members.map((memb, index) => ({
+                ...memb,
+                page: Math.floor(index / 4)
+              }))
+            }))
 	}
 </script>
 
@@ -17,39 +18,24 @@
     export let projects;
     export let publications;
 
-    let slidePage = 1;
+    let slidePage = 0;
 
-    console.log(members, 'members');
-
-    const totalLength = (members.length / 5) - 1;
-    const totalLengthRound = Math.round(totalLength);
-    let index = 4;
-    let counter = 0;
-
-    function pageNum() {
-      members.map(value => {
-        return  console.log(value, 123);
-      })
-    }
-
+    const totalLengthRound = Math.ceil(members.length / 4);
 
     function nextSlide() {
-        if (slidePage < totalLengthRound){
-            slidePage ++;
+        if (slidePage < totalLengthRound - 1){
+            slidePage++;
 
-        } else if (slidePage >= totalLengthRound) {
-            slidePage = 1;
-
+        } else {
+            slidePage = 0;
         }
     }
 
     function prevSlide() {
-       if (slidePage > 1){
-           slidePage --;
-
-       } else if (slidePage <= 0) {
-           slidePage = totalLengthRound;
-
+       if (slidePage > 0){
+           slidePage--;
+       } else {
+           slidePage = totalLengthRound - 1;
        }
     }
 
@@ -369,11 +355,14 @@ height: 30px;
       </div>
     </div>
     <div class="col-12 of-hidden relative flex">
-     {#each members as { fullName, page }, i}
-     <div class="col-3 p-a-s ta-center item" class:active="{slidePage === page}">
-         <div class="img bg-primary active">
-            {fullName},
-            {i + 1}
+     {#each members as member, i}
+     <div class="col-3 p-a-s ta-center item" class:active="{slidePage === member.page}">
+         <div class="gg-member-card">
+           <div class="gg-member-avatar">
+             <img draggable="false" src="{member.profileImage}" width="150">
+           </div>
+           <p class="fw-bold m-t-s m-b-xs">{member.fullName}</p>
+           <p class="m-b-s"></p>
          </div>
      </div>
      {/each}
