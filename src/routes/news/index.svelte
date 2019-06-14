@@ -92,7 +92,7 @@
               {#each news as single}
               <div class="col-12">
                 <a class="gg-card h-full" rel="prefetch" href="/news/{single.url}">
-                  <p class="fs-small m-b-xs m-t-s">{single.date}</p>
+                  <p class="fs-small m-b-xs m-t-s">{single.publicationDate}</p>
                   <p class="m-b-s fw-bold">{single.title}</p>
                   <p class="m-b-s">{single.subTitle}</p>
                 </a>

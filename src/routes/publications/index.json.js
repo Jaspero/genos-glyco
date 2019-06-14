@@ -5,6 +5,7 @@ export function get(req, res) {
 
   let lookUpSize = pageSize + 1;
   let db = admin.firestore().collection('publications')
+    .orderBy('year', 'desc')
     .limit(lookUpSize);
 
   if (page) {
