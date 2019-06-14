@@ -35,7 +35,11 @@
     transition: .2s;
 }
 
-.gg-header-link.active:hover {
+.gg-header-link:hover::after {
+  width: 100%;
+}
+
+.gg-header-link.active::after {
   width: 100%;
 }
 

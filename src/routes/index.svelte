@@ -363,6 +363,29 @@ height: 30px;
 
 
 
+<!--Single member dialog-->
+<section class="gg-single-member-dialog">
+    <article class="gg-single-member">
+      <div class="bg-l-secondary p-x-m p-t-l">
+        <div class="gg-single-member-avatar m-b-s">
+          <img width="150">
+        </div>
+      </div>
+      <div class="p-y-l p-x-m">
+        <h6>Pero Perić</h6>
+        <p class="fs-small c-d-secondary m-t-xs m-b-s">Doktor svemira</p>
+        <div class="gg-read-format c-d-secondary">
+            <p>apsdlpasdp fdjasdjh fsadjsadif jloisadjoifj e.</p>
+        </div>
+      </div>
+      <button class="gg-single-member-close gg-icon-button" mat-dialog-close><img src="assets/images/icon-close.svg" alt="Close dialog"></button>
+    </article>
+</section>
+
+
+
+
+
 <!--Recent news-->
 <section class="bg-l-gradient p-y-l">
   <div class="grid">
