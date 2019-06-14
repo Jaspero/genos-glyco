@@ -5,6 +5,7 @@ export function get(req, res) {
 
   let lookUpSize = pageSize + 1;
   let db = admin.firestore().collection('news')
+    .orderBy('publicationDate', 'desc')
     .limit(lookUpSize);
 
   if (page) {
@@ -22,7 +23,12 @@ export function get(req, res) {
         hasMore: snaps.docs.length < lookUpSize,
         news: snaps.docs.reduce((acc, cur, ind) => {
           if (ind < pageSize) {
-            acc.push(cur.data());
+
+            const data = cur.data();
+            data.publicationDate = new Date(data.publicationDate).toLocaleDateString('en-GB');
+            data.subTitle = data.subTitle || '';
+
+            acc.push(data);
           }
           return acc;
         }, [])

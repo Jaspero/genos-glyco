@@ -314,7 +314,6 @@ height: 30px;
     {#each projects as project}
     <div class="col-6 col-s-12">
       <div class="gg-card">
-        <p class="fs-small m-b-xs m-t-s">{project.date}</p>
         <p class="m-b-s fw-bold">{project.title}</p>
         <p class="m-b-s">{project.subTitle}</p>
       </div>
@@ -380,7 +379,7 @@ height: 30px;
   {#each news as item}
     <div class="col-6 col-s-12">
       <div class="gg-card">
-        <p class="fs-small m-b-xs m-t-s">{item.date}</p>
+        <p class="fs-small m-b-xs m-t-s">{item.publicationDate}</p>
         <p class="m-b-s fw-bold">{item.title}</p>
         <p class="m-b-s">{item.subTitle}</p>
       </div>

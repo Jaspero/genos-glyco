@@ -50,15 +50,14 @@
 <!--Projects-->
 <section class="p-y-l">
   <div class="grid">
-    <div class="col-6 col-s-12">
      {#each projects as project}
-      <a class="gg-card h-full" rel="prefetch" href="{single.url}">
-        <p class="fs-small m-b-xs m-t-s">{single.date}</p>
-        <p class="m-b-s fw-bold">{single.title}</p>
-        <p class="m-b-s">{single.subTitle}</p>
+    <div class="col-6 col-s-12">
+      <a class="gg-card h-full" rel="prefetch" href="projects/{project.url}">
+        <p class="m-b-s fw-bold">{project.title}</p>
+        <p class="m-b-s">{project.subTitle}</p>
       </a>
-     {/each}
     </div>
+     {/each}
     <div class="col-12 ta-center">
       <button class="gg-button m-y-xs" disabled={hasMore} on:click={loadMore}>Load more</button>
     </div>
