@@ -1,18 +1,19 @@
-<!--<script context="module">
+<script context="module">
 	export async function preload({ params, query }) {
 		const res = await this.fetch(`news/${params.slug}.json`);
 		const data = await res.json();
 		if (res.status === 200) {
-			return { item: data };
+			return { news: data };
 		} else {
 			this.error(res.status, data.message);
 		}
 	}
-</script>-->
+</script>
 
 <script>
-	export let item;
+	export let news;
 </script>
+
 
 <style>
 .gg-news-intro {
@@ -34,20 +35,17 @@
 </section>
 
 
-
-
-
 <!--Single news content-->
 <section class="p-y-l">
   <div class="grid">
     <div class="col-12">
       <div class="gg-post">
         <div class="gg-post-minor">
-            <p class="fw-bold p-t-s m-b-s">Title</p>
-            <p class="fs-small c-d-secondary">date</p>
+            <p class="fw-bold p-t-s m-b-s">{news.title}</p>
+            <p class="fs-small c-d-secondary">{news.publicationDate}</p>
         </div>
         <div class="gg-post-major p-t-s gg-read-format">
-	        Content
+	        {@html news.content}
         </div>
       </div>
     </div>

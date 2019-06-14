@@ -417,9 +417,11 @@ height: 30px;
   {#each news as item}
     <div class="col-6 col-s-12">
       <div class="gg-card">
+        <a href="/news/{item.url}">
         <p class="fs-small m-b-xs m-t-s">{item.publicationDate}</p>
         <p class="m-b-s fw-bold">{item.title}</p>
         <p class="m-b-s">{item.subTitle}</p>
+        </a>
       </div>
     </div>
     {/each}
