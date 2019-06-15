@@ -18,7 +18,7 @@
 
       page++;
 
-      this.fetch(`news.json?page=${page}`)
+      fetch(`news.json?page=${page}`)
         .then(r => r.json())
         .then(data => {
           news = [...news, ...data.news];

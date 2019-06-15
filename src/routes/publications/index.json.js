@@ -20,7 +20,7 @@ export function get(req, res) {
       });
 
       res.end(JSON.stringify({
-        hasMore: snaps.docs.length < lookUpSize,
+        hasMore: snaps.docs.length >= lookUpSize,
         publications: snaps.docs.reduce((acc, cur, ind) => {
           if (ind < pageSize) {
             acc.push(cur.data());

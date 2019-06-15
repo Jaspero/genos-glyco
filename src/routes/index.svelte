@@ -13,12 +13,15 @@
 </script>
 
 <script>
+    import { fade, fly } from 'svelte/transition';
+
     export let members;
     export let news;
     export let projects;
     export let publications;
 
     let slidePage = 0;
+    let dialogOpen = null;
 
     const totalLengthRound = Math.ceil(members.length / 4);
 
@@ -109,13 +112,63 @@
   border-radius: 50%;
   padding: 5px;
 }
-/*Slider styles*/
+
+.gg-single-member-dialog {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.gg-single-member {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  max-width: 80vw;
+  max-height: 80vh;
+  margin: auto;
+  display: flex;
+  border-radius: 8px; }
+  @media (max-width: 1200px) {
+    .gg-single-member {
+      flex-direction: column;
+      max-width: 96vw;
+      max-height: 96vh; } }
+
+.gg-single-member-avatar {
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 5px;
+  margin-top: 70px; }
+  @media (max-width: 1200px) {
+    .gg-single-member-avatar {
+      margin-top: 0; } }
+
+.gg-single-member-avatar > img {
+  width: 150px;
+  height: 150px;
+  min-width: 150px;
+  min-height: 150px; }
+
+.gg-single-member-close {
+  position: absolute;
+  top: 20px;
+  right: 20px; }
+
+
 .hide {
-display: none;
+    display: none;
 }
 
 .item {
-display: none;
+    display: none;
 }
 
 .item.active {
@@ -123,14 +176,14 @@ display: none;
 }
 
 .img {
-height: 200px;
+    height: 200px;
 }
 .team {
-height: 500px;
+    height: 600px;
 }
 .arrow {
-cursor: pointer;
-height: 30px;
+    cursor: pointer;
+    height: 30px;
 }
 </style>
 
@@ -338,31 +391,31 @@ height: 30px;
     <div class="col-12 flex jc-between ai-center">
       <h4 class="gg-title">Our team<span class="gg-icon"><img src="assets/images/icon-team.svg" aria-hidden="true"></span></h4>
       <div class="arrows flex">
-      <button class="arrow flex ai-center bg-l-primary m-r-s" id="previous" on:click="{prevSlide}">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#00407F">
-            <g data-name="Layer 2">
-              <path d="M13.36 17a1 1 0 0 1-.72-.31l-3.86-4a1 1 0 0 1 0-1.4l4-4a1 1 0 1 1 1.42 1.42L10.9 12l3.18 3.3a1 1 0 0 1 0 1.41 1 1 0 0 1-.72.29z" data-name="chevron-left"/>
-            </g>
-          </svg>
+      <button class="arrow flex ai-center bg-l-primary m-r-s" on:click="{prevSlide}">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#00407F">
+          <g data-name="Layer 2">
+            <path d="M13.36 17a1 1 0 0 1-.72-.31l-3.86-4a1 1 0 0 1 0-1.4l4-4a1 1 0 1 1 1.42 1.42L10.9 12l3.18 3.3a1 1 0 0 1 0 1.41 1 1 0 0 1-.72.29z" data-name="chevron-left"/>
+          </g>
+        </svg>
        </button>
-      <button class="arrow flex ai-center bg-l-primary" id="next" on:click="{nextSlide}">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#00407F">
-              <g data-name="Layer 2">
-                <path d="M10.5 17a1 1 0 0 1-.71-.29 1 1 0 0 1 0-1.42L13.1 12 9.92 8.69a1 1 0 0 1 0-1.41 1 1 0 0 1 1.42 0l3.86 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 0 1-.7.32z" data-name="chevron-right"/>
-              </g>
-            </svg>
+      <button class="arrow flex ai-center bg-l-primary" on:click="{nextSlide}">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#00407F">
+          <g data-name="Layer 2">
+            <path d="M10.5 17a1 1 0 0 1-.71-.29 1 1 0 0 1 0-1.42L13.1 12 9.92 8.69a1 1 0 0 1 0-1.41 1 1 0 0 1 1.42 0l3.86 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 0 1-.7.32z" data-name="chevron-right"/>
+          </g>
+        </svg>
       </button>
       </div>
     </div>
     <div class="col-12 of-hidden relative flex">
      {#each members as member, i}
-     <div class="col-3 p-a-s ta-center item" class:active="{slidePage === member.page}">
+     <div class="col-3 p-a-s ta-center item" class:active="{slidePage === member.page}" on:click={() => dialogOpen = member}>
          <div class="gg-member-card">
            <div class="gg-member-avatar">
              <img draggable="false" src="{member.profileImage}" width="150">
            </div>
            <p class="fw-bold m-t-s m-b-xs">{member.fullName}</p>
-           <p class="m-b-s"></p>
+           <p class="m-b-s">{member.title}</p>
          </div>
      </div>
      {/each}
@@ -375,23 +428,27 @@ height: 30px;
 
 
 <!--Single member dialog-->
-<section class="gg-single-member-dialog">
-    <article class="gg-single-member">
+{#if dialogOpen}
+<section class="gg-single-member-dialog" in:fade="{{duration: 200}}" out:fade="{{duration: 200}}">
+    <article class="gg-single-member"  in:fly="{{y: 200, duration: 600}}">
       <div class="bg-l-secondary p-x-m p-t-l">
         <div class="gg-single-member-avatar m-b-s">
-          <img width="150">
+          <img width="150" src={dialogOpen.profileImage}>
         </div>
       </div>
       <div class="p-y-l p-x-m">
-        <h6>Pero Perić</h6>
-        <p class="fs-small c-d-secondary m-t-xs m-b-s">Doktor svemira</p>
+        <h6>{dialogOpen.fullName}</h6>
+        <p class="fs-small c-d-secondary m-t-xs m-b-s">{dialogOpen.title}</p>
         <div class="gg-read-format c-d-secondary">
-            <p>apsdlpasdp fdjasdjh fsadjsadif jloisadjoifj e.</p>
+            <p>{@html dialogOpen.longBio}</p>
         </div>
       </div>
-      <button class="gg-single-member-close gg-icon-button" mat-dialog-close><img src="assets/images/icon-close.svg" alt="Close dialog"></button>
+      <button class="gg-single-member-close gg-icon-button" on:click={() => dialogOpen = null}>
+        <img src="assets/images/icon-close.svg" alt="Close dialog">
+    </button>
     </article>
 </section>
+{/if}
 
 
 

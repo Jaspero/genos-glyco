@@ -13,8 +13,8 @@ export function get(req, res) {
       .limit(4)
       .get(),
     admin.firestore().collection('publications')
-      .where('featured', '==', true)
       .orderBy('year', 'desc')
+      .limit(5)
       .get()
   ])
     .then(([members, news, projects, publications]) => {
