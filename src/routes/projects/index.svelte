@@ -9,13 +9,9 @@
     export let hasMore;
 	export let projects;
 
-    let page = 0;
-
     export function loadMore() {
 
-      page++;
-
-      this.fetch(`projects.json?page=${page}`)
+      fetch(`projects.json?cursor=${hasMore}`)
         .then(r => r.json())
         .then(data => {
           projects = [...projects, ...data.projects];
@@ -59,7 +55,7 @@
     </div>
      {/each}
     <div class="col-12 ta-center">
-      <button class="gg-button m-y-xs" disabled={hasMore} on:click={loadMore}>Load more</button>
+      <button class="gg-button m-y-xs" disabled={hasMore} on:click={!loadMore}>Load more</button>
     </div>
   </div>
 </section>

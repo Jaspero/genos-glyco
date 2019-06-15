@@ -1,18 +1,15 @@
 import admin from 'firebase-admin';
 
-export function get(req, res) {
-  let {page = 0, pageSize = 10} = req.query;
-
-  if (typeof page !== 'number') {
-    page = parseInt(page, 10);
-  }
+export async function get(req, res) {
+  const {cursor, pageSize = 10} = req.query;
 
   let lookUpSize = pageSize + 1;
   let db = admin.firestore().collection('news')
     .orderBy('publicationDate', 'desc');
 
-  if (page) {
-    db = db.startAfter(page * pageSize)
+  if (cursor) {
+    const cur = await admin.firestore().collection('news').doc(cursor).get();
+    db = db.startAt(cur)
   }
 
   db = db
@@ -21,13 +18,14 @@ export function get(req, res) {
   db
     .get()
     .then(snaps => {
-      console.log('snaps', snaps.docs.length);
       res.writeHead(200, {
         'Content-Type': 'application/json'
       });
 
+      console.log(snaps.docs.length);
+
       res.end(JSON.stringify({
-        hasMore: snaps.docs.length >= lookUpSize,
+        hasMore: snaps.docs.length === lookUpSize ? snaps.docs[snaps.docs.length - 1].id : null,
         news: snaps.docs.reduce((acc, cur, ind) => {
           if (ind < pageSize) {
 

@@ -10,15 +10,11 @@
 	export let news;
     export let active = 0;
 
-    let page = 0;
     let twitter;
     let twitterLoaded = false;
 
     export function loadMore() {
-
-      page++;
-
-      fetch(`news.json?page=${page}`)
+      fetch(`news.json?cursor=${hasMore}`)
         .then(r => r.json())
         .then(data => {
           news = [...news, ...data.news];
@@ -99,7 +95,7 @@
               </div>
               {/each}
               <div class="col-12 ta-center">
-                <button class="gg-button m-y-xs" disabled={hasMore} on:click={loadMore}>Load more</button>
+                <button class="gg-button m-y-xs" disabled={!hasMore} on:click={loadMore}>Load more</button>
               </div>
             </div>
             <!--Twitter-feed-->
