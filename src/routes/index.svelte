@@ -108,48 +108,7 @@
   background-position: center;
 }
 
-.gg-member-card {
-  position: relative;
-  text-align: center;
-  padding: 20px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  cursor: pointer;
-  user-select: none;
-  transition: .2s;
-}
-
-.gg-member-card:after {
-   content: url("/assets/images/icon-search.svg");
-   width: 20px;
-   height: 20px;
-   position: absolute;
-   top: 10px;
-   right: 10px;
-   opacity: 0;
-   transition: .2s;
-}
-
-.gg-member-card:hover {
-    box-shadow: 0 4px 10px 0 rgba(0,0,0,.28);
-    background: white;
-    border: 1px solid rgba(0,0,0,.12);
-}
-
-.gg-member-card:hover .gg-member-card:after {
-    opacity: 1;
-}
-
-.gg-member-avatar {
-  display: inline-block;
-  border: 1px solid rgba(0,0,0,.12);
-  border-radius: 50%;
-  padding: 5px;
-}
 /*Slider styles*/
-.hide {
-display: none;
-}
 
 .item {
 display: none;
@@ -240,28 +199,28 @@ height: 30px;
     </div>
     <div class="col-6 col-s-12">
       <div class="flex ai-start m-b-m">
-        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-team.svg"></span>
+        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-team.svg" alt=""></span>
         <div class="p-l-s">
           <h6 class="m-b-xs">Global leaders in Glyco science</h6>
           <p>With over 10 years of experience and more than 30 scientists completely devoted to answering opened questions about glycans and their functional role, we are a global leader in the field of glycoscience.</p>
         </div>
       </div>
       <div class="flex ai-start m-b-m">
-        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-publication.svg"></span>
+        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-publication.svg" alt=""></span>
         <div class="p-l-s">
           <h6 class="m-b-xs">Scientific publications</h6>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
       </div>
       <div class="flex ai-start m-b-m">
-        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-service.svg"></span>
+        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-service.svg" alt=""></span>
         <div class="p-l-s">
           <h6 class="m-b-xs">Commercial services</h6>
           <p>Our knowledge and expertise is available to any interested parties in academia or industry through high-throughput glycan analysis and other commercial services that we offer, ranging from analytical chemistry to study design and statistical data analysis.</p>
         </div>
       </div>
       <div class="flex ai-start m-b-m">
-        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-project.svg"></span>
+        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-project.svg" alt=""></span>
         <div class="p-l-s">
           <h6 class="m-b-xs">Research projects</h6>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -279,7 +238,7 @@ height: 30px;
 <section class="bg-l-secondary p-y-l">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title">Featured publications<span class="gg-icon"><img src="assets/images/icon-publication.svg" aria-hidden="true"></span></h4>
+      <h4 class="gg-title">Featured publications<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-publication.svg" alt=""></span></h4>
     </div>
     <div class="col-12">
       <table class="gg-publications-table">
@@ -319,7 +278,7 @@ height: 30px;
 <section class="gg-section-services bg-d-primary c-l-secondary p-y-l">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title c-l-primary">Services<span class="gg-icon"><img src="assets/images/icon-service.svg" aria-hidden="true"></span></h4>
+      <h4 class="gg-title c-l-primary">Services<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-service.svg" alt=""></span></h4>
     </div>
     <div class="col-12">
       <ul>
@@ -347,7 +306,7 @@ height: 30px;
 <section class="bg-l-gradient p-y-l">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title">Recent projects<span class="gg-icon"><img src="assets/images/icon-project.svg" aria-hidden="true"></span></h4>
+      <h4 class="gg-title">Recent projects<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-project.svg" alt=""></span></h4>
     </div>
     <div class="col-6 col-s-12">
     {#each projects as project}
@@ -374,7 +333,7 @@ height: 30px;
 <section class="bg-l-secondary team p-y-l">
   <div class="grid p-b-m">
     <div class="col-12 flex jc-between ai-center">
-      <h4 class="gg-title">Our team<span class="gg-icon"><img src="assets/images/icon-team.svg" aria-hidden="true"></span></h4>
+      <h4 class="gg-title">Our team<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-team.svg" alt=""></span></h4>
       <div class="arrows flex">
       <button class="arrow flex ai-center bg-l-primary m-r-s" id="previous" on:click="{prevSlide}">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#00407F">
@@ -413,7 +372,7 @@ height: 30px;
 <section class="bg-l-gradient p-y-l">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title">Recent news<span class="gg-icon"><img src="assets/images/icon-news.svg" aria-hidden="true"></span></h4>
+      <h4 class="gg-title">Recent news<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-news.svg" alt=""></span></h4>
     </div>
     <div class="col-6 col-s-12">
       {#each news as item}
@@ -431,4 +390,3 @@ height: 30px;
     </div>
   </div>
 </section>
-
