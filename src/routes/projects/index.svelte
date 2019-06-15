@@ -10,7 +10,6 @@
 	export let projects;
 
     export function loadMore() {
-
       fetch(`projects.json?cursor=${hasMore}`)
         .then(r => r.json())
         .then(data => {
@@ -55,7 +54,7 @@
     </div>
      {/each}
     <div class="col-12 ta-center">
-      <button class="gg-button m-y-xs" disabled={hasMore} on:click={!loadMore}>Load more</button>
+      <button class="gg-button m-y-xs" disabled={!hasMore} on:click={loadMore}>Load more</button>
     </div>
   </div>
 </section>

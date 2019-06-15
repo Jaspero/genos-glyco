@@ -13,7 +13,6 @@
       fetch(`publications.json?cursor=${hasMore}`)
         .then(r => r.json())
         .then(data => {
-            console.log('data', data);
           publications = [...publications, ...data.publications];
           hasMore = data.hasMore;
         });

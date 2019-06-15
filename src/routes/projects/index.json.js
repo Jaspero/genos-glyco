@@ -20,7 +20,7 @@ export async function get(req, res) {
       });
 
       res.end(JSON.stringify({
-        hasMore: snaps.docs.length === lookUpSize,
+        hasMore: snaps.docs.length === lookUpSize ? snaps.docs[snaps.docs.length - 1].id : null,
         projects: snaps.docs.reduce((acc, cur, ind) => {
           if (ind < pageSize) {
             const data = cur.data();
