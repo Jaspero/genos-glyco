@@ -56,7 +56,7 @@
         <tr>
           <th>Year</th>
           <th>Title</th>
-          <th>Journal</th>
+          <th>Description</th>
           <th>Authors</th>
         </tr>
         </thead>
@@ -65,7 +65,7 @@
           <tr>
             <td data-label="Year">{publication.year}</td>
             <td data-label="Title">{publication.title}</td>
-            <td data-label="Journal">{publication.journal}</td>
+            <td data-label="Description">{publication.description}</td>
             <td data-label="Authors">{publication.authors}</td>
           </tr>
         {/each}

@@ -46,10 +46,10 @@
     <div class="col-12">
       <div class="gg-post">
         <div class="gg-post-minor">
-          <img class="m-b-s" img="{project.image}">
+          <img class="m-b-s" src="{project.image}" alt="Project Image">
         </div>
         <div class="gg-post-major p-t-s gg-read-format">
-	        {@html project.content}
+	        {@html project.fullDescription}
         </div>
       </div>
     </div>

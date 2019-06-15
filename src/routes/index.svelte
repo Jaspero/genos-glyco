@@ -258,15 +258,19 @@
       <div class="flex ai-start m-b-m">
         <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-team.svg"></span>
         <div class="p-l-s">
-          <h6 class="m-b-xs">Global leaders in Glyco science</h6>
-          <p>With over 10 years of experience and more than 30 scientists completely devoted to answering opened questions about glycans and their functional role, we are a global leader in the field of glycoscience.</p>
+          <h6 class="m-b-xs">Global leader in glycomics</h6>
+          <p>
+            The field of high-throughput glycomics was opened with our 2008 study of total plasma glycome on over 1,000 individuals from the Croatian island Vis. Today we have over 10 years of experience in glycomics, over 100 research publications and more than 30 scientists completely devoted to answering opened questions about glycans and their functional roles in biology.
+          </p>
         </div>
       </div>
       <div class="flex ai-start m-b-m">
         <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-publication.svg"></span>
         <div class="p-l-s">
-          <h6 class="m-b-xs">Scientific publications</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h6 class="m-b-xs">Research</h6>
+          <p>
+            The knowledge about glycans is lagging significantly behind the knowledge about DNA and proteins and through multiple bilateral and multilateral research projects, including the Human Glycome Project, we are trying to narrow this gap. We are proud to be able to collaborate with leading scientists and contribute glycan data to some of the best clinical and epidemiological cohorts in the World (including TwinsUK, 10001 Dalmatians, ORCADES, EPIC, KORA, Finrisk, SABRE, etc)
+          </p>
         </div>
       </div>
       <div class="flex ai-start m-b-m">
@@ -274,13 +278,6 @@
         <div class="p-l-s">
           <h6 class="m-b-xs">Commercial services</h6>
           <p>Our knowledge and expertise is available to any interested parties in academia or industry through high-throughput glycan analysis and other commercial services that we offer, ranging from analytical chemistry to study design and statistical data analysis.</p>
-        </div>
-      </div>
-      <div class="flex ai-start m-b-m">
-        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-project.svg"></span>
-        <div class="p-l-s">
-          <h6 class="m-b-xs">Research projects</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
       </div>
     </div>
@@ -303,7 +300,6 @@
         <tr>
           <th>Year</th>
           <th>Title</th>
-          <th>Journal</th>
           <th>Authors</th>
         </tr>
         </thead>
@@ -312,7 +308,6 @@
           <tr>
             <td data-label="Year">{publication.year}</td>
             <td data-label="Title">{publication.title}</td>
-            <td data-label="Journal">{publication.journal}</td>
             <td data-label="Authors">{publication.authors}</td>
           </tr>
         {/each}
@@ -367,10 +362,10 @@
     </div>
     {#each projects as project}
     <div class="col-6 col-s-12">
-      <div class="gg-card">
+      <a class="gg-card" rel="prefetch" href="/projects/{project.url}">
         <p class="m-b-s fw-bold">{project.title}</p>
-        <p class="m-b-s">{project.subTitle}</p>
-      </div>
+        <p class="m-b-s">{project.shortDescription}</p>
+      </a>
     </div>
     {/each}
     <div class="col-12">
@@ -415,7 +410,9 @@
              <img draggable="false" src="{member.profileImage}" width="150">
            </div>
            <p class="fw-bold m-t-s m-b-xs">{member.fullName}</p>
+           {#if member.title}
            <p class="m-b-s">{member.title}</p>
+           {/if}
          </div>
      </div>
      {/each}
@@ -437,8 +434,10 @@
         </div>
       </div>
       <div class="p-y-l p-x-m">
-        <h6>{dialogOpen.fullName}</h6>
+        <h6 class:m-b-s={!dialogOpen.title}>{dialogOpen.fullName}</h6>
+        {#if dialogOpen.title}
         <p class="fs-small c-d-secondary m-t-xs m-b-s">{dialogOpen.title}</p>
+        {/if}
         <div class="gg-read-format c-d-secondary">
             <p>{@html dialogOpen.longBio}</p>
         </div>
@@ -462,13 +461,11 @@
     </div>
   {#each news as item}
     <div class="col-6 col-s-12">
-      <div class="gg-card">
-        <a href="/news/{item.url}">
+      <a class="gg-card" rel="prefetch" href="/news/{item.url}">
         <p class="fs-small m-b-xs m-t-s">{item.publicationDate}</p>
         <p class="m-b-s fw-bold">{item.title}</p>
         <p class="m-b-s">{item.subTitle}</p>
-        </a>
-      </div>
+      </a>
     </div>
     {/each}
     <div class="col-12">

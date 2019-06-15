@@ -4,6 +4,7 @@ export function get(req, res) {
 
   Promise.all([
     admin.firestore().collection('members')
+      .orderBy('order', 'asc')
       .get(),
     admin.firestore().collection('news')
       .limit(4)

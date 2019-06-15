@@ -24,8 +24,6 @@ export async function get(req, res) {
         projects: snaps.docs.reduce((acc, cur, ind) => {
           if (ind < pageSize) {
             const data = cur.data();
-            data.subTitle = data.subTitle || '';
-            data.id = cur.id;
             acc.push(data);
           }
           return acc;
