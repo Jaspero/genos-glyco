@@ -46,8 +46,7 @@
   background-position: center;
 }
 .hidden {
-  visibility: hidden;
-  opacity: 0;
+  display: none;
 }
 </style>
 
@@ -82,7 +81,7 @@
             <button class="gg-tabs-button" class:active="{active === 1}" on:click="{() => changeTab(1)}">Twitter feed</button>
           </div>
         </div>
-        <div class="gg-tabs-content">
+        <div class="gg-tabs-content" class:twitter-hidden="{active !== 1}">
             <!--Our posts-->
             <div class="grid" class:hidden="{active === 1}">
               {#each news as single}

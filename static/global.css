@@ -2342,3 +2342,6 @@ ul {
   @media (min-width: 900px) {
     .m-l-xxl {
       margin-left: 320px; } }
+
+.twitter-hidden iframe {
+  display: none !important; }
