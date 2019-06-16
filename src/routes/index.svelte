@@ -314,7 +314,7 @@
                 <a class="link" href="{publication.link}" rel="noopener" target="_blank">{publication.description}</a>
                 {:else}
                 {publication.description}
-                {/if>
+                {/if}
             </td>
             <td data-label="Authors">{publication.authors}</td>
           </tr>
