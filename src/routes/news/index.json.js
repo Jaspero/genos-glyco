@@ -22,8 +22,6 @@ export async function get(req, res) {
         'Content-Type': 'application/json'
       });
 
-      console.log(snaps.docs.length);
-
       res.end(JSON.stringify({
         hasMore: snaps.docs.length === lookUpSize ? snaps.docs[snaps.docs.length - 1].id : null,
         news: snaps.docs.reduce((acc, cur, ind) => {
