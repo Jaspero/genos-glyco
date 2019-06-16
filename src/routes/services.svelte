@@ -40,7 +40,7 @@
       <div class="gg-tabs">
         <div class="gg-tabs-selection">
           <div class="gg-tabs-buttons">
-            <button class="gg-tabs-button" class:active="{tab === 0}" on:click={() => tab = 0}>High-throughput analyses </button>
+            <button class="gg-tabs-button" class:active="{tab === 0}" on:click={() => tab = 0}>High-throughput analyses</button>
             <button class="gg-tabs-button" class:active="{tab === 1}" on:click={() => tab = 1}>In depth glycoprofiling</button>
             <button class="gg-tabs-button" class:active="{tab === 2}" on:click={() => tab = 2}>Study design</button>
             <button class="gg-tabs-button" class:active="{tab === 3}" on:click={() => tab = 3}>Data analysis</button>

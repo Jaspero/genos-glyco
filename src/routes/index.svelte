@@ -277,7 +277,7 @@
         <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-service.svg"></span>
         <div class="p-l-s">
           <h6 class="m-b-xs">Commercial services</h6>
-          <p>Our knowledge and expertise is available to any interested parties in academia or industry through high-throughput glycan analysis and other commercial services that we offer, ranging from analytical chemistry to study design and statistical data analysis.</p>
+          <p>Our knowledge and expertise is available to any interested party in academia or industry through high-throughput glycan analysis and other commercial services that we offer, ranging from analytical chemistry to study design and statistical data analysis.</p>
         </div>
       </div>
     </div>
@@ -300,6 +300,7 @@
         <tr>
           <th>Year</th>
           <th>Title</th>
+          <th>Reference</th>
           <th>Authors</th>
         </tr>
         </thead>
@@ -308,6 +309,13 @@
           <tr>
             <td data-label="Year">{publication.year}</td>
             <td data-label="Title">{publication.title}</td>
+            <td data-label="Reference">
+                {#if publication.link}
+                <a class="link" href="{publication.link}" rel="noopener" target="_blank">{publication.description}</a>
+                {:else}
+                {publication.description}
+                {/if>
+            </td>
             <td data-label="Authors">{publication.authors}</td>
           </tr>
         {/each}
@@ -334,12 +342,11 @@
     </div>
     <div class="col-12">
       <ul>
-        <li>Immunoglobulin G (IgG) N-glycome analysis</li>
-        <li>Plasma N-glycome analysis</li>
+        <li>High-throughput analyses</li>
+        <li>In depth glycoprofiling</li>
         <li>Study design</li>
         <li>Data analysis</li>
         <li>Joint project development</li>
-        <li>Biological age analysis</li>
       </ul>
     </div>
     <div class="col-12">

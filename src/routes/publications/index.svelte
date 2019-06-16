@@ -56,7 +56,7 @@
         <tr>
           <th>Year</th>
           <th>Title</th>
-          <th>Description</th>
+          <th>Reference</th>
           <th>Authors</th>
         </tr>
         </thead>
@@ -65,7 +65,12 @@
           <tr>
             <td data-label="Year">{publication.year}</td>
             <td data-label="Title">{publication.title}</td>
-            <td data-label="Description">{publication.description}</td>
+            <td data-label="Reference">
+                {#if publication.link}
+                <a class="link" href="{publication.link}" rel="noopener" target="_blank">{publication.description}</a>
+                {:else}
+                {publication.description}
+                {/if>
             <td data-label="Authors">{publication.authors}</td>
           </tr>
         {/each}
