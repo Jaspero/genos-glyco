@@ -6,35 +6,48 @@
 </script>
 
 <style>
-	h1, p {
-		margin: 0 auto;
-	}
-
-	h1 {
-		font-size: 2.8em;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
+.gg-404-intro {
+  padding: 200px 0 60px;
+  background-image: url("../../../assets/images/section-intro.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 </style>
 
 <svelte:head>
 	<title>{status}</title>
 </svelte:head>
 
-<h1>{status}</h1>
+<!--404 intro-->
+<section class="gg-404-intro">
+  <div class="grid">
+    <div class="col-12">
+      <h4 class="gg-title c-l-primary">Error<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-close.svg" alt=""></span></h4>
+    </div>
+  </div>
+</section>
 
-<p>{error.message}</p>
 
-{#if dev && error.stack}
-	<pre>{error.stack}</pre>
-{/if}
+
+
+
+<!--404-->
+<section class="p-t-l p-b-xl">
+  <div class="grid">
+    <div class="col-12">
+      <h4 class="gg-title">This page does not exist</h4>
+    </div>
+    <div class="col-12 gg-read-format">
+      <p>This page doesn't exist or some other error has occured.</p>
+      <p>Please refer to the following navigation:</p>
+      <ul>
+        <li><a routerLink="">Home</a></li>
+        <li><a routerLink="/projects">Projects</a></li>
+        <li><a routerLink="/publications">Publications</a></li>
+        <li><a routerLink="/services">Services</a></li>
+        <li><a routerLink="/news">News</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
