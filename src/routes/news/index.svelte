@@ -10,15 +10,11 @@
 	export let news;
     export let active = 0;
 
-    let page = 0;
     let twitter;
     let twitterLoaded = false;
 
     export function loadMore() {
-
-      page++;
-
-      this.fetch(`news.json?page=${page}`)
+      fetch(`news.json?cursor=${hasMore}`)
         .then(r => r.json())
         .then(data => {
           news = [...news, ...data.news];
@@ -50,8 +46,7 @@
   background-position: center;
 }
 .hidden {
-  visibility: hidden;
-  opacity: 0;
+  display: none;
 }
 </style>
 
@@ -86,20 +81,20 @@
             <button class="gg-tabs-button" class:active="{active === 1}" on:click="{() => changeTab(1)}">Twitter feed</button>
           </div>
         </div>
-        <div class="gg-tabs-content">
+        <div class="gg-tabs-content" class:twitter-hidden="{active !== 1}">
             <!--Our posts-->
             <div class="grid" class:hidden="{active === 1}">
               {#each news as single}
               <div class="col-12">
                 <a class="gg-card h-full" rel="prefetch" href="/news/{single.url}">
-                  <p class="fs-small m-b-xs m-t-s">{single.date}</p>
+                  <p class="fs-small m-b-xs m-t-s">{single.publicationDate}</p>
                   <p class="m-b-s fw-bold">{single.title}</p>
                   <p class="m-b-s">{single.subTitle}</p>
                 </a>
               </div>
               {/each}
               <div class="col-12 ta-center">
-                <button class="gg-button m-y-xs" disabled={hasMore} on:click={loadMore}>Load more</button>
+                <button class="gg-button m-y-xs" disabled={!hasMore} on:click={loadMore}>Load more</button>
               </div>
             </div>
             <!--Twitter-feed-->

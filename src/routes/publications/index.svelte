@@ -9,13 +9,8 @@
     export let hasMore;
 	export let publications;
 
-	let page = 0;
-
     export function loadMore() {
-
-      page++;
-
-      this.fetch(`publications.json?page=${page}`)
+      fetch(`publications.json?cursor=${hasMore}`)
         .then(r => r.json())
         .then(data => {
           publications = [...publications, ...data.publications];
@@ -61,7 +56,7 @@
         <tr>
           <th>Year</th>
           <th>Title</th>
-          <th>Journal</th>
+          <th>Reference</th>
           <th>Authors</th>
         </tr>
         </thead>
@@ -70,7 +65,12 @@
           <tr>
             <td data-label="Year">{publication.year}</td>
             <td data-label="Title">{publication.title}</td>
-            <td data-label="Journal">{publication.journal}</td>
+            <td data-label="Reference">
+                {#if publication.link}
+                <a class="link" href="{publication.link}" rel="noopener" target="_blank">{publication.description}</a>
+                {:else}
+                {publication.description}
+                {/if}
             <td data-label="Authors">{publication.authors}</td>
           </tr>
         {/each}
@@ -78,7 +78,7 @@
       </table>
     </div>
     <div class="col-12 ta-center">
-      <button class="gg-button m-y-xs" disabled={hasMore} on:click={loadMore}>Load more</button>
+      <button class="gg-button m-y-xs" disabled={!hasMore} on:click={loadMore}>Load more</button>
     </div>
   </div>
 </section>

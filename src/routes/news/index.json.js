@@ -1,15 +1,19 @@
 import admin from 'firebase-admin';
 
-export function get(req, res) {
-  const {page = 0, pageSize = 10} = req.query;
+export async function get(req, res) {
+  const {cursor, pageSize = 10} = req.query;
 
   let lookUpSize = pageSize + 1;
   let db = admin.firestore().collection('news')
-    .limit(lookUpSize);
+    .orderBy('publicationDate', 'desc');
 
-  if (page) {
-    db = db.startAt(page * pageSize)
+  if (cursor) {
+    const cur = await admin.firestore().collection('news').doc(cursor).get();
+    db = db.startAt(cur)
   }
+
+  db = db
+    .limit(lookUpSize);
 
   db
     .get()
@@ -19,10 +23,15 @@ export function get(req, res) {
       });
 
       res.end(JSON.stringify({
-        hasMore: snaps.docs.length < lookUpSize,
+        hasMore: snaps.docs.length === lookUpSize ? snaps.docs[snaps.docs.length - 1].id : null,
         news: snaps.docs.reduce((acc, cur, ind) => {
           if (ind < pageSize) {
-            acc.push(cur.data());
+
+            const data = cur.data();
+            data.publicationDate = new Date(data.publicationDate).toLocaleDateString('en-GB');
+            data.subTitle = data.subTitle || '';
+
+            acc.push(data);
           }
           return acc;
         }, [])

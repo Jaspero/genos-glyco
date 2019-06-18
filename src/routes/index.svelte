@@ -1,80 +1,46 @@
 <script context="module">
 	export function preload({ params, query }) {
 		return this.fetch('index.json')
-		    .then(r => r.json());
+		    .then(r => r.json())
+            .then(data => ({
+              ...data,
+              members: data.members.map((memb, index) => ({
+                ...memb,
+                page: Math.floor(index / 4)
+              }))
+            }))
 	}
 </script>
 
 <script>
+    import { fade, fly } from 'svelte/transition';
+
     export let members;
     export let news;
     export let projects;
     export let publications;
 
-    let page = 0;
-    let memb = [
-        {
-            name: 'filip',
-            page: 0
-        },
-        {
-            name: 'bobo',
-            page: 0
-        },
-        {
-            name: 'bobo',
-            page: 0
-        },
-        {
-            name: 'bobo',
-            page: 0
-        },
-        {
-            name: 'filip',
-            page: 1
-        },
-        {
-            name: 'bobo',
-            page: 1
-        },
-        {
-            name: 'bobo',
-            page: 1
-        },
-        {
-            name: 'bobo',
-            page: 1
-        },
-        {
-            name: 'filip',
-            page: 2
-        },
-        {
-            name: 'bobo',
-            page: 2
-        },
-        {
-            name: 'bobo',
-            page: 2
-        },
-        {
-            name: 'bobo',
-            page: 2
-        },
-    ];
+    let slidePage = 0;
+    let dialogOpen = null;
+
+    const totalLengthRound = Math.ceil(members.length / 4);
 
     function nextSlide() {
-        if (page < 2){
-            page ++;
+        if (slidePage < totalLengthRound - 1){
+            slidePage++;
+
+        } else {
+            slidePage = 0;
         }
     }
 
     function prevSlide() {
-       if (page > 0){
-           page --;
+       if (slidePage > 0){
+           slidePage--;
+       } else {
+           slidePage = totalLengthRound - 1;
        }
     }
-
 
 
 </script>
@@ -108,10 +74,101 @@
   background-position: center;
 }
 
-/*Slider styles*/
+.gg-member-card {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: .2s;
+}
+
+.gg-member-card:after {
+   content: url("/assets/images/icon-search.svg");
+   width: 20px;
+   height: 20px;
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   opacity: 0;
+   transition: .2s;
+}
+
+.gg-member-card:hover {
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,.28);
+    background: white;
+    border: 1px solid rgba(0,0,0,.12);
+}
+
+.gg-member-card:hover .gg-member-card:after {
+    opacity: 1;
+}
+
+.gg-member-avatar {
+  display: inline-block;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.gg-single-member-dialog {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.gg-single-member {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  max-width: 80vw;
+  max-height: 80vh;
+  margin: auto;
+  display: flex;
+  border-radius: 8px; }
+  @media (max-width: 1200px) {
+    .gg-single-member {
+      flex-direction: column;
+      max-width: 96vw;
+      max-height: 96vh; } }
+
+.gg-single-member-avatar {
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 5px;
+  margin-top: 70px; }
+  @media (max-width: 1200px) {
+    .gg-single-member-avatar {
+      margin-top: 0; } }
+
+.gg-single-member-avatar > img {
+  width: 150px;
+  height: 150px;
+  min-width: 150px;
+  min-height: 150px; }
+
+.gg-single-member-close {
+  position: absolute;
+  top: 20px;
+  right: 20px; }
+
+
+.hide {
+    display: none;
+}
 
 .item {
-display: none;
+    display: none;
 }
 
 .item.active {
@@ -119,14 +176,14 @@ display: none;
 }
 
 .img {
-height: 200px;
+    height: 200px;
 }
 .team {
-height: 500px;
+    height: 600px;
 }
 .arrow {
-cursor: pointer;
-height: 30px;
+    cursor: pointer;
+    height: 30px;
 }
 </style>
 
@@ -199,31 +256,28 @@ height: 30px;
     </div>
     <div class="col-6 col-s-12">
       <div class="flex ai-start m-b-m">
-        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-team.svg" alt=""></span>
+        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-team.svg"></span>
         <div class="p-l-s">
-          <h6 class="m-b-xs">Global leaders in Glyco science</h6>
-          <p>With over 10 years of experience and more than 30 scientists completely devoted to answering opened questions about glycans and their functional role, we are a global leader in the field of glycoscience.</p>
+          <h6 class="m-b-xs">Global leader in glycomics</h6>
+          <p>
+            The field of high-throughput glycomics was opened with our 2008 study of total plasma glycome on over 1,000 individuals from the Croatian island Vis. Today we have over 10 years of experience in glycomics, over 100 research publications and more than 30 scientists completely devoted to answering opened questions about glycans and their functional roles in biology.
+          </p>
         </div>
       </div>
       <div class="flex ai-start m-b-m">
-        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-publication.svg" alt=""></span>
+        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-publication.svg"></span>
         <div class="p-l-s">
-          <h6 class="m-b-xs">Scientific publications</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h6 class="m-b-xs">Research</h6>
+          <p>
+            The knowledge about glycans is lagging significantly behind the knowledge about DNA and proteins and through multiple bilateral and multilateral research projects, including the Human Glycome Project, we are trying to narrow this gap. We are proud to be able to collaborate with leading scientists and contribute glycan data to some of the best clinical and epidemiological cohorts in the World (including TwinsUK, 10001 Dalmatians, ORCADES, EPIC, KORA, Finrisk, SABRE, etc)
+          </p>
         </div>
       </div>
       <div class="flex ai-start m-b-m">
-        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-service.svg" alt=""></span>
+        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-service.svg"></span>
         <div class="p-l-s">
           <h6 class="m-b-xs">Commercial services</h6>
-          <p>Our knowledge and expertise is available to any interested parties in academia or industry through high-throughput glycan analysis and other commercial services that we offer, ranging from analytical chemistry to study design and statistical data analysis.</p>
-        </div>
-      </div>
-      <div class="flex ai-start m-b-m">
-        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-project.svg" alt=""></span>
-        <div class="p-l-s">
-          <h6 class="m-b-xs">Research projects</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Our knowledge and expertise is available to any interested party in academia or industry through high-throughput glycan analysis and other commercial services that we offer, ranging from analytical chemistry to study design and statistical data analysis.</p>
         </div>
       </div>
     </div>
@@ -238,7 +292,7 @@ height: 30px;
 <section class="bg-l-secondary p-y-l">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title">Featured publications<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-publication.svg" alt=""></span></h4>
+      <h4 class="gg-title">Featured publications<span class="gg-icon"><img src="assets/images/icon-publication.svg" aria-hidden="true"></span></h4>
     </div>
     <div class="col-12">
       <table class="gg-publications-table">
@@ -246,7 +300,7 @@ height: 30px;
         <tr>
           <th>Year</th>
           <th>Title</th>
-          <th>Journal</th>
+          <th>Reference</th>
           <th>Authors</th>
         </tr>
         </thead>
@@ -255,7 +309,13 @@ height: 30px;
           <tr>
             <td data-label="Year">{publication.year}</td>
             <td data-label="Title">{publication.title}</td>
-            <td data-label="Journal">{publication.journal}</td>
+            <td data-label="Reference">
+                {#if publication.link}
+                <a class="link" href="{publication.link}" rel="noopener" target="_blank">{publication.description}</a>
+                {:else}
+                {publication.description}
+                {/if}
+            </td>
             <td data-label="Authors">{publication.authors}</td>
           </tr>
         {/each}
@@ -278,16 +338,15 @@ height: 30px;
 <section class="gg-section-services bg-d-primary c-l-secondary p-y-l">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title c-l-primary">Services<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-service.svg" alt=""></span></h4>
+      <h4 class="gg-title c-l-primary">Services<span class="gg-icon"><img src="assets/images/icon-service.svg" aria-hidden="true"></span></h4>
     </div>
     <div class="col-12">
       <ul>
-        <li>Immunoglobulin G (IgG) N-glycome analysis</li>
-        <li>Plasma N-glycome analysis</li>
+        <li>High-throughput analyses</li>
+        <li>In depth glycoprofiling</li>
         <li>Study design</li>
         <li>Data analysis</li>
         <li>Joint project development</li>
-        <li>Biological age analysis</li>
       </ul>
     </div>
     <div class="col-12">
@@ -306,17 +365,16 @@ height: 30px;
 <section class="bg-l-gradient p-y-l">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title">Recent projects<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-project.svg" alt=""></span></h4>
+      <h4 class="gg-title">Recent projects<span class="gg-icon"><img src="assets/images/icon-project.svg" aria-hidden="true"></span></h4>
     </div>
-    <div class="col-6 col-s-12">
     {#each projects as project}
-      <div class="gg-card">
-        <p class="fs-small m-b-xs m-t-s">{project.date}</p>
+    <div class="col-6 col-s-12">
+      <a class="gg-card" rel="prefetch" href="/projects/{project.url}">
         <p class="m-b-s fw-bold">{project.title}</p>
-        <p class="m-b-s">{project.subTitle}</p>
-      </div>
-    {/each}
+        <p class="m-b-s">{project.shortDescription}</p>
+      </a>
     </div>
+    {/each}
     <div class="col-12">
       <div class="p-y-s ta-center">
         <a class="link c-primary" rel="prefetch" href="projects">View all projects</a>
@@ -333,36 +391,70 @@ height: 30px;
 <section class="bg-l-secondary team p-y-l">
   <div class="grid p-b-m">
     <div class="col-12 flex jc-between ai-center">
-      <h4 class="gg-title">Our team<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-team.svg" alt=""></span></h4>
+      <h4 class="gg-title">Our team<span class="gg-icon"><img src="assets/images/icon-team.svg" aria-hidden="true"></span></h4>
       <div class="arrows flex">
-      <button class="arrow flex ai-center bg-l-primary m-r-s" id="previous" on:click="{prevSlide}">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#00407F">
-            <g data-name="Layer 2">
-              <path d="M13.36 17a1 1 0 0 1-.72-.31l-3.86-4a1 1 0 0 1 0-1.4l4-4a1 1 0 1 1 1.42 1.42L10.9 12l3.18 3.3a1 1 0 0 1 0 1.41 1 1 0 0 1-.72.29z" data-name="chevron-left"/>
-            </g>
-          </svg>
+      <button class="arrow flex ai-center bg-l-primary m-r-s" on:click="{prevSlide}">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#00407F">
+          <g data-name="Layer 2">
+            <path d="M13.36 17a1 1 0 0 1-.72-.31l-3.86-4a1 1 0 0 1 0-1.4l4-4a1 1 0 1 1 1.42 1.42L10.9 12l3.18 3.3a1 1 0 0 1 0 1.41 1 1 0 0 1-.72.29z" data-name="chevron-left"/>
+          </g>
+        </svg>
        </button>
-      <button class="arrow flex ai-center bg-l-primary" id="next" on:click="{nextSlide}">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#00407F">
-              <g data-name="Layer 2">
-                <path d="M10.5 17a1 1 0 0 1-.71-.29 1 1 0 0 1 0-1.42L13.1 12 9.92 8.69a1 1 0 0 1 0-1.41 1 1 0 0 1 1.42 0l3.86 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 0 1-.7.32z" data-name="chevron-right"/>
-              </g>
-            </svg>
+      <button class="arrow flex ai-center bg-l-primary" on:click="{nextSlide}">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#00407F">
+          <g data-name="Layer 2">
+            <path d="M10.5 17a1 1 0 0 1-.71-.29 1 1 0 0 1 0-1.42L13.1 12 9.92 8.69a1 1 0 0 1 0-1.41 1 1 0 0 1 1.42 0l3.86 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 0 1-.7.32z" data-name="chevron-right"/>
+          </g>
+        </svg>
       </button>
       </div>
     </div>
     <div class="col-12 of-hidden relative flex">
-        {#each memb as single, index}
-        <div class="col-3 p-a-s ta-center item" class:active="{page == single.page}">
-         <div class="img bg-primary">
-         {index}
-            {single.name}
-        </div>
-        </div>
-        {/each}
+     {#each members as member, i}
+     <div class="col-3 p-a-s ta-center item" class:active="{slidePage === member.page}" on:click={() => dialogOpen = member}>
+         <div class="gg-member-card">
+           <div class="gg-member-avatar">
+             <img draggable="false" src="{member.profileImage}" width="150">
+           </div>
+           <p class="fw-bold m-t-s m-b-xs">{member.fullName}</p>
+           {#if member.title}
+           <p class="m-b-s">{member.title}</p>
+           {/if}
+         </div>
+     </div>
+     {/each}
     </div>
   </div>
 </section>
+
+
+
+
+
+<!--Single member dialog-->
+{#if dialogOpen}
+<section class="gg-single-member-dialog" in:fade="{{duration: 200}}" out:fade="{{duration: 200}}">
+    <article class="gg-single-member"  in:fly="{{y: 200, duration: 600}}">
+      <div class="bg-l-secondary p-x-m p-t-l">
+        <div class="gg-single-member-avatar m-b-s">
+          <img width="150" src={dialogOpen.profileImage}>
+        </div>
+      </div>
+      <div class="p-y-l p-x-m">
+        <h6 class:m-b-s={!dialogOpen.title}>{dialogOpen.fullName}</h6>
+        {#if dialogOpen.title}
+        <p class="fs-small c-d-secondary m-t-xs m-b-s">{dialogOpen.title}</p>
+        {/if}
+        <div class="gg-read-format c-d-secondary">
+            <p>{@html dialogOpen.longBio}</p>
+        </div>
+      </div>
+      <button class="gg-single-member-close gg-icon-button" on:click={() => dialogOpen = null}>
+        <img src="assets/images/icon-close.svg" alt="Close dialog">
+    </button>
+    </article>
+</section>
+{/if}
 
 
 
@@ -372,17 +464,17 @@ height: 30px;
 <section class="bg-l-gradient p-y-l">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title">Recent news<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-news.svg" alt=""></span></h4>
+      <h4 class="gg-title">Recent news<span class="gg-icon"><img src="assets/images/icon-news.svg" aria-hidden="true"></span></h4>
     </div>
+  {#each news as item}
     <div class="col-6 col-s-12">
-      {#each news as item}
-      <div class="gg-card">
-        <p class="fs-small m-b-xs m-t-s">{item.date}</p>
+      <a class="gg-card" rel="prefetch" href="/news/{item.url}">
+        <p class="fs-small m-b-xs m-t-s">{item.publicationDate}</p>
         <p class="m-b-s fw-bold">{item.title}</p>
         <p class="m-b-s">{item.subTitle}</p>
-      </div>
-      {/each}
+      </a>
     </div>
+    {/each}
     <div class="col-12">
       <div class="p-y-s ta-center">
         <a class="link c-primary" rel="prefetch" href="news">Learn more about glycans</a>
@@ -390,3 +482,4 @@ height: 30px;
     </div>
   </div>
 </section>
+

@@ -20,3 +20,7 @@
 
 /*Utilities*/
 @import "scss/05-utilities/utilities";
+
+.twitter-hidden iframe {
+  display: none !important;
+}
