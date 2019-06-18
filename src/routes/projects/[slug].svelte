@@ -28,7 +28,7 @@
 <section class="gg-projects-intro">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title c-l-primary">Projects<span class="gg-icon"><img src="assets/images/icon-project.svg" aria-hidden="true"></span></h4>
+      <h4 class="gg-title c-l-primary">Projects<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-project.svg" alt=""></span></h4>
     </div>
   </div>
 </section>
@@ -41,7 +41,7 @@
 <section class="p-y-l">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title">{project.title}<a rel="prefetch" href="projects" class="gg-icon"><img src="assets/images/icon-nav-left.svg" aria-label="Go back"></a></h4>
+      <h4 class="gg-title">{project.title}<a rel="prefetch" href="projects" class="gg-icon"><img src="assets/images/icon-nav-left.svg" alt="Go back" aria-label="Go back"></a></h4>
     </div>
     <div class="col-12">
       <div class="gg-post">

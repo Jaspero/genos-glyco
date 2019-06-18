@@ -102,7 +102,7 @@
     border: 1px solid rgba(0,0,0,.12);
 }
 
-.gg-member-card:hover .gg-member-card:after {
+.gg-member-card:hover::after {
     opacity: 1;
 }
 
@@ -160,12 +160,9 @@
 .gg-single-member-close {
   position: absolute;
   top: 20px;
-  right: 20px; }
-
-
-.hide {
-    display: none;
+  right: 20px;
 }
+
 
 .item {
     display: none;
@@ -173,10 +170,6 @@
 
 .item.active {
     display: block;
-}
-
-.img {
-    height: 200px;
 }
 .team {
     height: 600px;
@@ -256,7 +249,7 @@
     </div>
     <div class="col-6 col-s-12">
       <div class="flex ai-start m-b-m">
-        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-team.svg"></span>
+        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-team.svg" alt=""></span>
         <div class="p-l-s">
           <h6 class="m-b-xs">Global leader in glycomics</h6>
           <p>
@@ -265,7 +258,7 @@
         </div>
       </div>
       <div class="flex ai-start m-b-m">
-        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-publication.svg"></span>
+        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-publication.svg" alt=""></span>
         <div class="p-l-s">
           <h6 class="m-b-xs">Research</h6>
           <p>
@@ -274,7 +267,7 @@
         </div>
       </div>
       <div class="flex ai-start m-b-m">
-        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-service.svg"></span>
+        <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-service.svg" alt=""></span>
         <div class="p-l-s">
           <h6 class="m-b-xs">Commercial services</h6>
           <p>Our knowledge and expertise is available to any interested party in academia or industry through high-throughput glycan analysis and other commercial services that we offer, ranging from analytical chemistry to study design and statistical data analysis.</p>
@@ -292,7 +285,7 @@
 <section class="bg-l-secondary p-y-l">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title">Featured publications<span class="gg-icon"><img src="assets/images/icon-publication.svg" aria-hidden="true"></span></h4>
+      <h4 class="gg-title">Featured publications<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-publication.svg" alt=""></span></h4>
     </div>
     <div class="col-12">
       <table class="gg-publications-table">
@@ -338,7 +331,7 @@
 <section class="gg-section-services bg-d-primary c-l-secondary p-y-l">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title c-l-primary">Services<span class="gg-icon"><img src="assets/images/icon-service.svg" aria-hidden="true"></span></h4>
+      <h4 class="gg-title c-l-primary">Services<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-service.svg" alt=""></span></h4>
     </div>
     <div class="col-12">
       <ul>
@@ -365,7 +358,7 @@
 <section class="bg-l-gradient p-y-l">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title">Recent projects<span class="gg-icon"><img src="assets/images/icon-project.svg" aria-hidden="true"></span></h4>
+      <h4 class="gg-title">Recent projects<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-project.svg" alt=""></span></h4>
     </div>
     {#each projects as project}
     <div class="col-6 col-s-12">
@@ -391,7 +384,7 @@
 <section class="bg-l-secondary team p-y-l">
   <div class="grid p-b-m">
     <div class="col-12 flex jc-between ai-center">
-      <h4 class="gg-title">Our team<span class="gg-icon"><img src="assets/images/icon-team.svg" aria-hidden="true"></span></h4>
+      <h4 class="gg-title">Our team<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-team.svg" alt=""></span></h4>
       <div class="arrows flex">
       <button class="arrow flex ai-center bg-l-primary m-r-s" on:click="{prevSlide}">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#00407F">
@@ -414,7 +407,7 @@
      <div class="col-3 p-a-s ta-center item" class:active="{slidePage === member.page}" on:click={() => dialogOpen = member}>
          <div class="gg-member-card">
            <div class="gg-member-avatar">
-             <img draggable="false" src="{member.profileImage}" width="150">
+             <img draggable="false" src="{member.profileImage}" width="150" alt="">
            </div>
            <p class="fw-bold m-t-s m-b-xs">{member.fullName}</p>
            {#if member.title}
@@ -437,7 +430,7 @@
     <article class="gg-single-member"  in:fly="{{y: 200, duration: 600}}">
       <div class="bg-l-secondary p-x-m p-t-l">
         <div class="gg-single-member-avatar m-b-s">
-          <img width="150" src={dialogOpen.profileImage}>
+          <img width="150" src={dialogOpen.profileImage} alt="">
         </div>
       </div>
       <div class="p-y-l p-x-m">
@@ -464,7 +457,7 @@
 <section class="bg-l-gradient p-y-l">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title">Recent news<span class="gg-icon"><img src="assets/images/icon-news.svg" aria-hidden="true"></span></h4>
+      <h4 class="gg-title">Recent news<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-news.svg" alt=""></span></h4>
     </div>
   {#each news as item}
     <div class="col-6 col-s-12">
