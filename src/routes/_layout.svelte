@@ -53,6 +53,7 @@
 
 .gg-mobile-menu {
     position: absolute;
+    z-index: 1;
     background: white;
     right: 0;
     top: 100%;
@@ -78,6 +79,8 @@
           <a href="services" class="gg-header-link m-x-s {segment === 'services' ? 'active' : ''}">Services</a>
           <a href="projects" rel="prefetch" class="gg-header-link m-x-s {segment === 'projects' ? 'active' : ''}">Projects</a>
           <a href="news" rel="prefetch" class="gg-header-link m-x-s {segment === 'news' ? 'active' : ''}">News</a>
+          <a href="our-team" rel="prefetch" class="gg-header-link m-x-s {segment === 'our-team' ? 'active' : ''}">Our team</a>
+          <a href="contact-us" rel="prefetch" class="gg-header-link m-x-s {segment === 'contact-us' ? 'active' : ''}">Contact us</a>
         </div>
         <div class="show-s relative">
             <span class="c-l-primary" style="cursor: pointer;">Menu</span>
@@ -86,6 +89,8 @@
               <a href="services">Services</a>
               <a href="projects" rel="prefetch">Projects</a>
               <a href="news" rel="prefetch">News</a>
+              <a href="our-team" rel="prefetch">Our team</a>
+              <a href="contact-us" rel="prefetch">Contact us</a>
             </div>
         </div>
       </nav>

@@ -42,11 +42,11 @@
       <p>This page doesn't exist or some other error has occured.</p>
       <p>Please refer to the following navigation:</p>
       <ul>
-        <li><a routerLink="">Home</a></li>
-        <li><a routerLink="/projects">Projects</a></li>
-        <li><a routerLink="/publications">Publications</a></li>
-        <li><a routerLink="/services">Services</a></li>
-        <li><a routerLink="/news">News</a></li>
+        <li><a href="">Home</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/news">News</a></li>
       </ul>
     </div>
   </div>
