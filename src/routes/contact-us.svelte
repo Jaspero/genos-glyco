@@ -1,4 +1,34 @@
-<script></script>
+<script>
+
+    function sendForm(event) {
+
+    const formEl = document.querySelector('#form');
+    const contactForm = document.querySelector('input, textarea');
+
+            const data = {};
+            event.preventDefault();
+
+            if (formEl.checkValidity()) {
+              for (let i = 0; i < contactForm.length; i++) {
+                  data[contactForm[i].getAttribute('name')] = contactForm[i].value
+              }
+
+               fetch(`https://api.jaspero.club/api/v1/p/genos/contact/create`, {
+                 method: 'POST',
+                 headers: {
+                   'Content-Type': 'application/json; charset=utf-8'
+                 },
+                 body: JSON.stringify(data)
+               })
+               .then(() => {
+                   formEl.reset()
+               })
+            }
+
+
+    }
+
+</script>
 
 <style>
 .gg-services-intro {
@@ -51,20 +81,20 @@ font-family: inherit;
     <div class="col-12">
       <h4 class="gg-title">Send us a message</h4>
     </div>
-    <form class="col-12">
+    <form id="form" class="col-12">
       <label>
         <p>Your name</p>
-        <input type="text">
+        <input name="name" type="text">
       </label>
       <label>
           <p>Your email</p>
-          <input type="email">
+          <input name="email" type="email">
             </label>
             <label>
                 <p>Your message</p>
-                <textarea name="" id=""></textarea>
+                <textarea name="message" id=""></textarea>
               </label>
-            <button class="gg-button">Send</button>
+            <button class="gg-button" on:click={sendForm}>Send</button>
     </form>
   </div>
 </section>

@@ -1,6 +1,13 @@
 <script>
 	export let segment;
+
+	   function toggleMenu() {
+          const menu = document.querySelector('.gg-mobile-menu');
+          menu.classList.toggle('active')
+        }
 </script>
+
+
 
 <style>
 .gg-header {
@@ -58,6 +65,13 @@
     right: 0;
     top: 100%;
     padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+}
+.gg-mobile-menu.active {
+    visibility: visible;
+    opacity: 1;
 }
 
 .gg-mobile-menu a {
@@ -83,7 +97,7 @@
           <a href="contact-us" rel="prefetch" class="gg-header-link m-x-s {segment === 'contact-us' ? 'active' : ''}">Contact us</a>
         </div>
         <div class="show-s relative">
-            <span class="c-l-primary" style="cursor: pointer;">Menu</span>
+            <span class="c-l-primary" style="cursor: pointer;" on:click={toggleMenu}>Menu</span>
             <div class="gg-mobile-menu">
               <a href="publications" rel="prefetch">Publications</a>
               <a href="services">Services</a>
