@@ -67,6 +67,18 @@
   margin-left: 10px;
 }
 
+@media (max-width: 600px) {
+    .gg-intro-content {
+      flex-direction: column;
+    }
+    .gg-intro-title {
+      border-left: none;
+      margin-left: 62px;
+      border-top: 2px solid white;
+
+    }
+}
+
 .gg-section-services {
   background-image: url("/assets/images/section-services.jpg");
   background-repeat: no-repeat;
@@ -113,6 +125,10 @@
   padding: 5px;
 }
 
+.gg-member-avatar img {
+border-radius: 50%;
+}
+
 .gg-single-member-dialog {
   position: fixed;
   z-index: 2;
@@ -132,6 +148,7 @@
   background: white;
   max-width: 80vw;
   max-height: 80vh;
+  overflow: auto;
   margin: auto;
   display: flex;
   border-radius: 8px; }
@@ -152,6 +169,7 @@
       margin-top: 0; } }
 
 .gg-single-member-avatar > img {
+border-radius: 50%;
   width: 150px;
   height: 150px;
   min-width: 150px;
@@ -404,7 +422,7 @@
     </div>
     <div class="col-12 of-hidden relative flex">
      {#each members as member, i}
-     <div class="col-3 p-a-s ta-center item" class:active="{slidePage === member.page}" on:click={() => dialogOpen = member}>
+     <div class="col-3 col-m-4 col-s-6 col-xs-12 p-a-s ta-center item" class:active="{slidePage === member.page}" on:click={() => dialogOpen = member}>
          <div class="gg-member-card">
            <div class="gg-member-avatar">
              <img draggable="false" src="{member.profileImage}" width="150" alt="">

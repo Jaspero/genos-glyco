@@ -51,6 +51,19 @@
   box-shadow: 0 1000px 0 1000px #1a2b33;
 }
 
+.gg-mobile-menu {
+    position: absolute;
+    background: white;
+    right: 0;
+    top: 100%;
+    padding: 10px 0;
+}
+
+.gg-mobile-menu a {
+    padding: 10px;
+    display: block;
+}
+
 </style>
 
 <header class="gg-header p-y-xs">
@@ -60,11 +73,20 @@
         <a class="m-y-s" href="/">
           <img src="assets/images/logo-light.svg" alt="Genos Glyco" width="160">
         </a>
-        <div class="p-y-s">
+        <div class="p-y-s hide-xs">
           <a href="publications" rel="prefetch" class="gg-header-link m-x-s {segment === 'publications' ? 'active' : ''}">Publications</a>
           <a href="services" class="gg-header-link m-x-s {segment === 'services' ? 'active' : ''}">Services</a>
           <a href="projects" rel="prefetch" class="gg-header-link m-x-s {segment === 'projects' ? 'active' : ''}">Projects</a>
           <a href="news" rel="prefetch" class="gg-header-link m-x-s {segment === 'news' ? 'active' : ''}">News</a>
+        </div>
+        <div class="show-xs relative">
+            <span class="c-l-primary" style="cursor: pointer;">Menu</span>
+            <div class="gg-mobile-menu">
+              <a href="publications" rel="prefetch">Publications</a>
+              <a href="services">Services</a>
+              <a href="projects" rel="prefetch">Projects</a>
+              <a href="news" rel="prefetch">News</a>
+            </div>
         </div>
       </nav>
     </div>
