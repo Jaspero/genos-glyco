@@ -14,20 +14,17 @@
     export let publications;
 
     if (process.browser === true) {
-
        for (let i = 0; i < members.length; i++) {
-                              if (window.innerWidth >= 1800) {
-                                          members[i].page =  4
-                                       } else if (window.innerWidth >= 1200 && window.innerWidth <= 1800) {
-
-                                          members[i].page =  3
-                                      } else if (window.innerWidth >= 900 && window.innerWidth <= 1200) {
-                                          members[i].page = 2
-                                      } else {
-                                          members[i].page = 1
-                                      }
-
-           }
+          if (window.innerWidth >= 1400) {
+              members[i].page = Math.floor(i / 4)
+          } else if (window.innerWidth >= 1200 && window.innerWidth <= 1400) {
+              members[i].page = Math.floor(i / 3)
+          } else if (window.innerWidth >= 600 && window.innerWidth <= 1200) {
+              members[i].page = Math.floor(i / 2)
+          } else {
+              members[i].page = i
+          }
+       }
     }
 
 
@@ -217,43 +214,9 @@ border-radius: 50%;
 
 <svelte:head>
   <title>Home</title>
-  <meta
-    name="description"
-    content="Sapper hosted on Firebase via Functions - example (link to article
-    included)." />
-  <meta name="author" content="Eckhardt Dreyer" />
-  <meta
-    name="tags"
-    content="Firebase and Sapper, Host sapper on Firebase, Sapper firebase
-    functions, Firebase, Sapper, SSR, Sapper SSR Firebase" />
-  <!-- Twitter Card data -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@eckhardtdreyer" />
-  <meta name="twitter:title" content="Sapper x Firebase" />
-  <meta
-    name="twitter:description"
-    content="Sapper hosted on Firebase via Functions - example (link to article
-    included)." />
-  <meta name="twitter:creator" content="@eckhardtdreyer" />
-  <meta
-    name="twitter:image"
-    content="https://sapper-firebase.firebaseapp.com/sapperfirebase.jpg" />
-
-  <!-- Open Graph data -->
-  <meta property="og:title" content="Sapper x Firebase" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://www.example.com/" />
-  <meta
-    property="og:image"
-    content="https://sapper-firebase.firebaseapp.com/sapperfirebase.jpg" />
-  <meta
-    property="og:image:secure_url"
-    content="https://sapper-firebase.firebaseapp.com/sapperfirebase.jpg" />
-  <meta
-    property="og:description"
-    content="Sapper hosted on Firebase via Functions - example (link to article
-    included)." />
-  <meta property="og:site_name" content="Sapper x Firebase" />
+  <meta name="description" content="Genos" />
+  <meta name="author" content="Jaspero Ltd." />
+  <meta name="tags" content="Genos" />
 </svelte:head>
 
 <!--Intro-->
