@@ -2,13 +2,6 @@
 	export function preload({ params, query }) {
 		return this.fetch('index.json')
 		    .then(r => r.json())
-            .then(data => ({
-              ...data,
-              members: data.members.map((memb, index) => ({
-                ...memb,
-                page: Math.floor(index / 4)
-              }))
-            }))
 	}
 </script>
 
@@ -19,6 +12,26 @@
     export let news;
     export let projects;
     export let publications;
+
+    if (process.browser === true) {
+
+       for (let i = 0; i < members.length; i++) {
+                              if (window.innerWidth >= 1800) {
+                                          members[i].page =  4
+                                       } else if (window.innerWidth >= 1200 && window.innerWidth <= 1800) {
+
+                                          members[i].page =  3
+                                      } else if (window.innerWidth >= 900 && window.innerWidth <= 1200) {
+                                          members[i].page = 2
+                                      } else {
+                                          members[i].page = 1
+                                      }
+
+           }
+    }
+
+
+
 
     let slidePage = 0;
     let dialogOpen = null;
@@ -127,6 +140,10 @@
 
 .gg-member-avatar img {
 border-radius: 50%;
+width: 150px;
+min-width: 150px;
+height: 150px;
+min-height: 150px;
 }
 
 .gg-single-member-dialog {

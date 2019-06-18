@@ -71,6 +71,10 @@
 
 .gg-member-avatar img {
 border-radius: 50%;
+width: 150px;
+min-width: 150px;
+height: 150px;
+min-height: 150px;
 }
 
 .gg-single-member-dialog {
