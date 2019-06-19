@@ -3,6 +3,7 @@ import polka from 'polka';
 import compression from 'compression';
 import admin from 'firebase-admin';
 import * as sapper from '@sapper/server';
+import {json} from 'body-parser';
 
 admin.initializeApp({
 	apiKey: 'AIzaSyBEWKn6Dw8cvgUBwbmDkM9VKHKEf0Q5svc',
@@ -20,6 +21,7 @@ const dev = NODE_ENV === 'development';
 if (dev) {
 	polka() // You can also use Express
 		.use(
+			json(),
 			compression({ threshold: 0 }),
 			sirv('static', { dev }),
 			sapper.middleware()

@@ -1,29 +1,26 @@
 <script>
 
+    let name = '';
+    let email = '';
+    let message = '';
+
     function sendForm(event) {
+        const formEl = document.querySelector('#form');
+        event.preventDefault();
 
-    const formEl = document.querySelector('#form');
-    const contactForm = document.querySelector('input, textarea');
+        if (formEl.checkValidity()) {
 
-            const data = {};
-            event.preventDefault();
-
-            if (formEl.checkValidity()) {
-              for (let i = 0; i < contactForm.length; i++) {
-                  data[contactForm[i].getAttribute('name')] = contactForm[i].value
-              }
-
-               fetch(`https://api.jaspero.club/api/v1/p/genos/contact/create`, {
-                 method: 'POST',
-                 headers: {
-                   'Content-Type': 'application/json; charset=utf-8'
-                 },
-                 body: JSON.stringify(data)
-               })
-               .then(() => {
-                   formEl.reset()
-               })
-            }
+           fetch(`/contact-us`, {
+             method: 'POST',
+             headers: {
+               'Content-Type': 'application/json; charset=utf-8'
+             },
+             body: JSON.stringify({name, email, message})
+           })
+           .then(() => {
+               formEl.reset()
+           })
+        }
 
 
     }
@@ -93,17 +90,17 @@ font-family: inherit;
     <form id="form" class="col-6 col-s-12">
       <label>
         <p>Your name</p>
-        <input name="name" type="text">
+        <input name="name" bind:value={name}>
       </label>
       <label>
           <p>Your email</p>
-          <input name="email" type="email">
-            </label>
-            <label>
-                <p>Your message</p>
-                <textarea name="message" id=""></textarea>
-              </label>
-            <button class="gg-button" on:click={sendForm}>Send</button>
+          <input name="email" type="email" bind:value={email}>
+      </label>
+      <label>
+        <p>Your message</p>
+        <textarea name="message" bind:value={message}></textarea>
+      </label>
+      <button class="gg-button" type="button" on:click={sendForm}>Send</button>
     </form>
   </div>
 </section>

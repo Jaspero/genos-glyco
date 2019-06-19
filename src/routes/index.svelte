@@ -13,27 +13,28 @@
     export let projects;
     export let publications;
 
-    if (process.browser === true) {
+    let totalLengthRound;
+
+    if (process.browser) {
        for (let i = 0; i < members.length; i++) {
           if (window.innerWidth >= 1400) {
-              members[i].page = Math.floor(i / 4)
-          } else if (window.innerWidth >= 1200 && window.innerWidth <= 1400) {
+              members[i].page = Math.floor(i / 4);
+              totalLengthRound = Math.ceil(members.length / 4);
+          } else if (window.innerWidth >= 900 && window.innerWidth <= 1400) {
               members[i].page = Math.floor(i / 3)
-          } else if (window.innerWidth >= 600 && window.innerWidth <= 1200) {
+              totalLengthRound = Math.ceil(members.length / 3);
+          } else if (window.innerWidth >= 600 && window.innerWidth <= 900) {
               members[i].page = Math.floor(i / 2)
+              totalLengthRound = Math.ceil(members.length / 2);
           } else {
               members[i].page = i
+              totalLengthRound = members.length;
           }
        }
     }
 
-
-
-
     let slidePage = 0;
     let dialogOpen = null;
-
-    const totalLengthRound = Math.ceil(members.length / 4);
 
     function nextSlide() {
         if (slidePage < totalLengthRound - 1){
