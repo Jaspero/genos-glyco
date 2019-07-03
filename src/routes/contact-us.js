@@ -13,7 +13,7 @@ export function post(req, res) {
     },
     mail: {
       from: `"Genos Website" <info@jaspero.co>`,
-      to: 'filip.lauc93@gmail.com',
+      to: 'glauc@genos.hr',
       replyTo: req.body.email,
       subject: 'New Contact From Website',
       text: 'This is for clients that can read html',
@@ -41,12 +41,12 @@ export function post(req, res) {
       res.writeHead(500, {
         'Content-Type': 'application/json'
       });
-      res.end({error: err.toString()})
+      res.end(JSON.stringify({error: err.toString()}))
     } else {
       res.writeHead(200, {
         'Content-Type': 'application/json'
       });
-      res.end({success: true})
-    }O
+      res.end(JSON.stringify({success: true}))
+    }
   });
 }

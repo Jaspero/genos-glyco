@@ -43,10 +43,9 @@ export function get(req, res) {
       }));
     })
     .catch(error => {
-      console.log('error', error);
       res.writeHead(500, {
         'Content-Type': 'application/json'
       });
-      res.end({error: error.toString()})
+      res.end(JSON.stringify({error: error.toString()}))
     })
 }

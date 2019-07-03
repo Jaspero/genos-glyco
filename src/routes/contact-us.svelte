@@ -20,7 +20,8 @@
                notifications('success', 'Your message has been successfully sent. Thank you for reaching us');
                formEl.reset()
            })
-           .catch(() => {
+           .catch(error => {
+               console.error(error);
                notifications('error', 'There is something wrong, please try again.');
            })
         }

@@ -29,17 +29,18 @@
 /* Notification
  *============================================================================*/
 
-.notification{
+.notification {
   &-container {
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     content: '';
     top: 0;
     left: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+
     &::before {
       content: '';
       position: absolute;
@@ -49,27 +50,33 @@
       opacity: .3;
     }
   }
+
   &-text {
-    margin-top: 50px;
     color: black;
   }
+
   &-inner {
     text-align: center;
     padding: 20px;
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 400px;
     height: 200px;
     z-index: 2;
   }
+
   &-success {
     margin-top: 10px;
     padding: 10px;
     border:1px solid rgba(0, 0, 0, 0.12);
   }
+
   &-error {
     margin-top: 10px;
-   background: crimson;
+    background: crimson;
     color: white;
     padding: 10px;
   }
