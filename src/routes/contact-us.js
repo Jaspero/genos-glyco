@@ -47,6 +47,6 @@ export function post(req, res) {
         'Content-Type': 'application/json'
       });
       res.end({success: true})
-    }
+    }O
   });
 }

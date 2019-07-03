@@ -30,7 +30,9 @@
 </style>
 
 <svelte:head>
-	<title>Publications</title>
+  <title>Publications</title>
+  <meta name="description" content="Researchers in Genos participated in numerous clinical and epidemiological studies and published over 100 papers in leading journals" />
+  <meta name="author" content="Jaspero Ltd." />
 </svelte:head>
 
 <!--Publications intro-->

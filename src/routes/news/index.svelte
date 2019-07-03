@@ -40,7 +40,7 @@
 <style>
 .gg-news-intro {
   padding: 200px 0 60px;
-  background-image: url("/assets/images/section-news.jpg");
+  background-image: url("/assets/images/section-projects.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -51,7 +51,9 @@
 </style>
 
 <svelte:head>
-	<title>News</title>
+  <title>News</title>
+  <meta name="description" content="Latest news about our research projects and media coverage" />
+  <meta name="author" content="Jaspero Ltd." />
 </svelte:head>
 
 <!--News intro-->

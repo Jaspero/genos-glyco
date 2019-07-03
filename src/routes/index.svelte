@@ -215,9 +215,8 @@ border-radius: 50%;
 
 <svelte:head>
   <title>Home</title>
-  <meta name="description" content="Genos" />
+  <meta name="description" content="Genos is a leading provider of high-throughput glycomics and core facility of the Human Glycome project" />
   <meta name="author" content="Jaspero Ltd." />
-  <meta name="tags" content="Genos" />
 </svelte:head>
 
 <!--Intro-->
@@ -438,7 +437,9 @@ border-radius: 50%;
         <p class="fs-small c-d-secondary m-t-xs m-b-s">{dialogOpen.title}</p>
         {/if}
         <div class="gg-read-format c-d-secondary">
-            <p>{@html dialogOpen.longBio}</p>
+            {#if dialogOpen.longBio}
+                <p>{@html dialogOpen.longBio}</p>
+            {/if}
         </div>
       </div>
       <button class="gg-single-member-close gg-icon-button" on:click={() => dialogOpen = null}>

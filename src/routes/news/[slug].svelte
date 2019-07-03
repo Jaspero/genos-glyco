@@ -14,11 +14,17 @@
 	export let news;
 </script>
 
+<svelte:head>
+  <title>{news.title}</title>
+  <meta name="description" content="{news.content}" />
+  <meta name="author" content="Jaspero Ltd." />
+</svelte:head>
+
 
 <style>
 .gg-news-intro {
   padding: 200px 0 60px;
-  background-image: url("/assets/images/section-news.jpg");
+  background-image: url("/assets/images/section-projects.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

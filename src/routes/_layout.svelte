@@ -1,4 +1,5 @@
 <script>
+	import * as sapper from '@sapper/app';
 	export let segment;
 
 	   function toggleMenu() {
