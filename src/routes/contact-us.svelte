@@ -33,10 +33,16 @@
 
     function notifications(type, text) {
         const notificationEl = document.createElement('div');
+        const innernEl = document.createElement('div');
         const notifMessage = document.createElement('p');
 
         const button = document.createElement('button');
         const textButton = document.createTextNode('Dismiss');
+
+        notificationEl.classList.add('notification-container');
+        notifMessage.classList.add('notification-text');
+        innernEl.classList.add('notification-inner');
+        button.classList.add(`notification-${type}`);
 
 
         notifMessage.innerHTML = text;
@@ -44,8 +50,9 @@
         button.appendChild(textButton);
 
 
-        notificationEl.appendChild(notifMessage);
-        notificationEl.appendChild(button);
+        notificationEl.appendChild(innernEl);
+        innernEl.appendChild(notifMessage);
+        innernEl.appendChild(button);
         document.body.appendChild(notificationEl);
 
         button.addEventListener('click', () => {
@@ -54,7 +61,7 @@
 
     }
 
-
+    notifications('123',);
 
 </script>
 
@@ -99,10 +106,6 @@ font-family: inherit;
   </div>
 </section>
 
-
-
-
-
 <!--Services-->
 <section class="p-y-l">
   <div class="grid">
@@ -135,3 +138,5 @@ font-family: inherit;
     </form>
   </div>
 </section>
+
+

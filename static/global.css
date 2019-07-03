@@ -2408,3 +2408,47 @@ ul {
 
 .twitter-hidden iframe {
   display: none !important; }
+
+/* Notification
+ *============================================================================*/
+.notification-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .notification-container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #1a2b33;
+    opacity: .3; }
+
+.notification-text {
+  margin-top: 50px;
+  color: black; }
+
+.notification-inner {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  width: 400px;
+  height: 200px;
+  z-index: 2; }
+
+.notification-success {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12); }
+
+.notification-error {
+  margin-top: 10px;
+  background: crimson;
+  color: white;
+  padding: 10px; }
