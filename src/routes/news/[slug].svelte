@@ -24,7 +24,7 @@
 <style>
 .gg-news-intro {
   padding: 200px 0 60px;
-  background-image: url("/assets/images/section-projects.jpg");
+  background-image: url("/assets/images/section-news.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -49,6 +49,9 @@
         <div class="gg-post-minor">
             <p class="fw-bold p-t-s m-b-s">{news.title}</p>
             <p class="fs-small c-d-secondary">{news.publicationDate}</p>
+            {#if news.image}
+            <img class="m-y-s" src="{news.image}" alt="News Image">
+            {/if}
         </div>
         <div class="gg-post-major p-t-s gg-read-format">
 	        {@html news.content}

@@ -40,7 +40,7 @@
 <style>
 .gg-news-intro {
   padding: 200px 0 60px;
-  background-image: url("/assets/images/section-projects.jpg");
+  background-image: url("/assets/images/section-news.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
