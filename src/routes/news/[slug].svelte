@@ -17,7 +17,6 @@
 <svelte:head>
   <title>{news.title}</title>
   <meta name="description" content="{news.content}" />
-  <meta name="author" content="Jaspero Ltd." />
 </svelte:head>
 
 

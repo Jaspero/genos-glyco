@@ -9,7 +9,6 @@
         event.preventDefault();
 
         if (formEl.checkValidity()) {
-
            fetch(`/contact-us`, {
              method: 'POST',
              headers: {
@@ -18,17 +17,13 @@
              body: JSON.stringify({name, email, message})
            })
            .then(() => {
-               console.log(123);
                notifications('success', 'Your message has been successfully sent. Thank you for reaching us');
                formEl.reset()
            })
            .catch(() => {
-               console.log('fail');
                notifications('error', 'There is something wrong, please try again.');
            })
         }
-
-
     }
 
     function notifications(type, text) {
@@ -49,7 +44,6 @@
 
         button.appendChild(textButton);
 
-
         notificationEl.appendChild(innernEl);
         innernEl.appendChild(notifMessage);
         innernEl.appendChild(button);
@@ -60,9 +54,6 @@
         })
 
     }
-
-    notifications('123',);
-
 </script>
 
 <style>

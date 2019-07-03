@@ -1,23 +1,64 @@
 <script>
-  /*  import {beforeUpdate, afterUpdate} from 'svelte'
-    import * as sapper from '@sapper/app';*/
+    import { stores } from '@sapper/app';
+
 	export let segment;
 
-	   function toggleMenu() {
-          const menu = document.querySelector('.gg-mobile-menu');
-          menu.classList.toggle('active')
-        }
-/*
-          beforeUpdate(() => {
-              console.log('destroy')
-            })
+    const { preloading } = stores();
 
-            afterUpdate(() => {
-                console.log(321)
-            })*/
+    function toggleMenu() {
+        const menu = document.querySelector('.gg-mobile-menu');
+        menu.classList.toggle('active')
+    }
 </script>
 
 <style>
+#load-bar {
+  animation: cssAnimation 0s 250ms forwards;
+  visibility: hidden;
+}
+
+@keyframes cssAnimation {
+  to   { visibility: visible; }
+}
+
+.slider {
+  position: fixed;
+  width: 100%;
+  height: 5px;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+}
+
+.line{
+  position: absolute;
+  opacity: 0.4;
+  background: #4a8df8;
+  width: 150%;
+  height: 5px;
+}
+
+.subline {
+  position: absolute;
+  background: #4a8df8;
+  height: 5px;
+}
+.inc {
+  animation: increase 2s infinite;
+}
+.dec {
+  animation: decrease 2s 0.5s infinite;
+}
+
+@keyframes increase {
+   from { left: -5%; width: 5%; }
+   to { left: 130%; width: 100%;}
+}
+@keyframes decrease {
+   from { left: -80%; width: 80%; }
+   to { left: 110%; width: 10%;}
+}
+
 .gg-header {
   position: absolute;
   top: 0;
@@ -121,6 +162,15 @@
 </header>
 
 <main>
+    {#if $preloading}
+    <div id="load-bar">
+        <div class="slider">
+          <div class="line"></div>
+          <div class="subline inc"></div>
+          <div class="subline dec"></div>
+        </div>
+    </div>
+    {/if}
 	<slot></slot>
 </main>
 

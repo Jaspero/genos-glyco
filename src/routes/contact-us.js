@@ -13,7 +13,7 @@ export function post(req, res) {
     },
     mail: {
       from: `"Genos Website" <info@jaspero.co>`,
-      to: 'glauc@genos.hr',
+      to: 'filip.lauc93@gmail.com',
       replyTo: req.body.email,
       subject: 'New Contact From Website',
       text: 'This is for clients that can read html',

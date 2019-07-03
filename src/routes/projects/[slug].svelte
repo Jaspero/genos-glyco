@@ -17,7 +17,6 @@
 <svelte:head>
   <title>{project.title}</title>
   <meta name="description" content="{project.fullDescription}" />
-  <meta name="author" content="Jaspero Ltd." />
 </svelte:head>
 
 
