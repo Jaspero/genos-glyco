@@ -13,8 +13,9 @@
 </style>
 
 <svelte:head>
-	<title>Services</title>
-	<meta name="description" content="This is the services page">
+  <title>Services</title>
+  <meta name="description" content="With over 10 years of experience in glycan analysis, experts in Genos can address even the most complex glycoprofiling tasks" />
+  <meta name="author" content="Jaspero Ltd." />
 </svelte:head>
 
 <!--Services intro-->

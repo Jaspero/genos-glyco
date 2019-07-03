@@ -14,6 +14,13 @@
 	export let project;
 </script>
 
+<svelte:head>
+  <title>{project.title}</title>
+  <meta name="description" content="{project.fullDescription}" />
+  <meta name="author" content="Jaspero Ltd." />
+</svelte:head>
+
+
 <style>
 .gg-projects-intro {
   padding: 200px 0 60px;

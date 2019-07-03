@@ -133,8 +133,9 @@ border-radius: 50%;
 
 
 <svelte:head>
-	<title>Our team</title>
-	<meta name="description" content="This is our team.">
+  <title>Our team</title>
+  <meta name="description" content="Experienced team of scientists in Genos have cumulatively over 150 years of experience in glycan analysis." />
+  <meta name="author" content="Jaspero Ltd." />
 </svelte:head>
 
 <!--Services intro-->
@@ -180,9 +181,11 @@ border-radius: 50%;
         {#if dialogOpen.title}
         <p class="fs-small c-d-secondary m-t-xs m-b-s">{dialogOpen.title}</p>
         {/if}
-        <div class="gg-read-format c-d-secondary">
-            <p>{@html dialogOpen.longBio}</p>
-        </div>
+        {#if dialogOpen.longBio}
+         <div class="gg-read-format c-d-secondary">
+           <p>{@html dialogOpen.longBio}</p>
+         </div>
+        {/if}
       </div>
       <button class="gg-single-member-close gg-icon-button" on:click={() => dialogOpen = null}>
         <img src="assets/images/icon-close.svg" alt="Close dialog">

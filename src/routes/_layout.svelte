@@ -1,13 +1,21 @@
 <script>
+  /*  import {beforeUpdate, afterUpdate} from 'svelte'
+    import * as sapper from '@sapper/app';*/
 	export let segment;
 
 	   function toggleMenu() {
           const menu = document.querySelector('.gg-mobile-menu');
           menu.classList.toggle('active')
         }
+/*
+          beforeUpdate(() => {
+              console.log('destroy')
+            })
+
+            afterUpdate(() => {
+                console.log(321)
+            })*/
 </script>
-
-
 
 <style>
 .gg-header {

@@ -14,6 +14,12 @@
 	export let news;
 </script>
 
+<svelte:head>
+  <title>{news.title}</title>
+  <meta name="description" content="{news.content}" />
+  <meta name="author" content="Jaspero Ltd." />
+</svelte:head>
+
 
 <style>
 .gg-news-intro {
@@ -43,6 +49,9 @@
         <div class="gg-post-minor">
             <p class="fw-bold p-t-s m-b-s">{news.title}</p>
             <p class="fs-small c-d-secondary">{news.publicationDate}</p>
+            {#if news.image}
+            <img class="m-y-s" src="{news.image}" alt="News Image">
+            {/if}
         </div>
         <div class="gg-post-major p-t-s gg-read-format">
 	        {@html news.content}

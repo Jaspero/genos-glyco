@@ -95,6 +95,7 @@ font-family: inherit;
 <svelte:head>
 	<title>Contact us</title>
 	<meta name="description" content="Contact us">
+	<meta name="author" content="Jaspero Ltd." />
 </svelte:head>
 
 <!--Services intro-->

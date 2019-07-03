@@ -51,7 +51,9 @@
 </style>
 
 <svelte:head>
-	<title>News</title>
+  <title>News</title>
+  <meta name="description" content="Latest news about our research projects and media coverage" />
+  <meta name="author" content="Jaspero Ltd." />
 </svelte:head>
 
 <!--News intro-->

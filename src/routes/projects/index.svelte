@@ -20,6 +20,12 @@
     }
 </script>
 
+<svelte:head>
+  <title>Projects</title>
+  <meta name="description" content="Genos is participating in numerous large international and bilateral industrial R&D projects. If you want to see the whole picture, include glycans in your study." />
+  <meta name="author" content="Jaspero Ltd." />
+</svelte:head>
+
 <style>
 .gg-projects-intro {
   padding: 200px 0 60px;
