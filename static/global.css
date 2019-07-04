@@ -1171,6 +1171,42 @@ ul {
     border-left: none;
     border-top: 1px solid rgba(0, 0, 0, 0.12); } }
 
+/**
+ * Loading spinner
+ *
+ * A lightweight style for loading class on buttons and links
+ *
+ *============================================================================*/
+a.loading,
+button.loading {
+  position: relative;
+  color: transparent !important;
+  background: white !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important; }
+  a.loading span,
+  button.loading span {
+    color: transparent !important; }
+  a.loading:after,
+  button.loading:after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 12px);
+    left: calc(50% - 12px);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid black;
+    border-bottom-color: transparent;
+    animation: loading .75s infinite; }
+
+@keyframes loading {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(360deg); } }
+
 /*Utilities*/
 /**
  * Variables
@@ -2414,7 +2450,7 @@ ul {
 .notification-container {
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   content: '';
   top: 0;
   left: 0;
@@ -2430,7 +2466,6 @@ ul {
     opacity: .3; }
 
 .notification-text {
-  margin-top: 50px;
   color: black; }
 
 .notification-inner {
@@ -2438,6 +2473,9 @@ ul {
   padding: 20px;
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 400px;
   height: 200px;
   z-index: 2; }

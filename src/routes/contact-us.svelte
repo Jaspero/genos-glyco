@@ -6,7 +6,10 @@
 
     function sendForm(event) {
         const formEl = document.querySelector('#form');
+        const button = document.querySelector('.gg-button');
         event.preventDefault();
+
+        button.classList.add('loading');
 
         if (formEl.checkValidity()) {
            fetch(`/contact-us`, {
@@ -17,11 +20,13 @@
              body: JSON.stringify({name, email, message})
            })
            .then(() => {
+               button.classList.remove('loading');
                notifications('success', 'Your message has been successfully sent. Thank you for reaching us');
                formEl.reset()
            })
            .catch(error => {
                console.error(error);
+               button.classList.remove('loading');
                notifications('error', 'There is something wrong, please try again.');
            })
         }
