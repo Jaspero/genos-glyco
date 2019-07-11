@@ -34,7 +34,7 @@
 <section class="gg-projects-intro">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title c-l-primary">Projects<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-project.svg" alt=""></span></h4>
+      <h4 class="gg-title c-l-primary">Projects<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-project.svg" alt="Projects icon"></span></h4>
     </div>
   </div>
 </section>
@@ -52,7 +52,9 @@
     <div class="col-12">
       <div class="gg-post">
         <div class="gg-post-minor">
-          <img class="m-b-s" src="{project.image}" alt="Project Image">
+          {#if project.image}
+            <img class="m-b-s" src="{project.image}" alt="Project Image">
+          {/if}
         </div>
         <div class="gg-post-major p-t-s gg-read-format">
 	        {@html project.fullDescription}
