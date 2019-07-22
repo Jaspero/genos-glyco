@@ -42,19 +42,19 @@ jobs:
             - functions/lib
             - public
             - .firebaserc
-          deploy:
-            docker:
-              - image: flauc/firebase
-            working_directory: ~/project
-            steps:
-              - run:
-                  name: Show current branch
-                  command: echo ${CIRCLE_BRANCH}
-              - restore_cache:
-                  key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
-              - run:
-                  name: Deploy Master to Firebase
-                  command: npm run deploy  -- -m $CIRCLE_SHA1 --token $FIREBASE_CI_TOKEN
+  deploy:
+    docker:
+      - image: flauc/firebase
+    working_directory: ~/project
+    steps:
+      - run:
+          name: Show current branch
+          command: echo ${CIRCLE_BRANCH}
+      - restore_cache:
+          key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+      - run:
+          name: Deploy Master to Firebase
+          command: npm run deploy  -- -m $CIRCLE_SHA1 --token $FIREBASE_CI_TOKEN
 workflows:
   version: 2
   -deploy:
