@@ -37,6 +37,7 @@ jobs:
             - package.json
             - package-lock.json
             - firebase.json
+            - __sapper__
             - functions
             - static
             - .firebaserc
