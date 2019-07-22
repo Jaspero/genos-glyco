@@ -1,0 +1,78 @@
+/**
+ * Variables
+ *
+ * @import this file to use its variables.
+ *
+ *============================================================================*/
+
+
+
+
+
+/* Main colors
+ *============================================================================*/
+
+$primary : #006cd9;
+$accent  : #f7e704;
+$gradient: linear-gradient(to right, #00407f, #21d2dc);
+
+
+
+
+
+/* Background colors
+ *============================================================================*/
+
+// Light:
+$bg-l-primary  : #ffffff;
+$bg-l-secondary: #f0f2f5;
+
+// Dark:
+$bg-d-primary  : #1a2b33;
+
+
+
+
+
+/* Foreground colors
+ *============================================================================*/
+
+// Dark:
+$fg-d-primary  : rgba(0,0,0,0.9);
+$fg-d-secondary: rgba(0,0,0,0.7);
+$fg-d-tertiary : rgba(0,0,0,0.5);
+
+// Light:
+$fg-l-primary  : rgba(255,255,255,1.0);
+$fg-l-secondary: rgba(255,255,255,0.8);
+
+
+
+
+
+/* Fonts
+ *============================================================================*/
+
+$font-primary  : 'Open Sans', sans-serif;
+
+
+
+
+
+/* @media breakpoints
+ *============================================================================*/
+/**
+ * Phone           :    0px - 600px
+ * Tablet portrait :  600px - 900px
+ * Tablet landscape:  900px - 1200px
+ * Desktop         : 1200px - 1800px
+ * Large desktop   : 1800px +
+ *
+ * Source:
+ * medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+ */
+
+$screen-xs: 600px;
+$screen-s : 900px;
+$screen-m : 1200px;
+$screen-l : 1800px;
