@@ -13,7 +13,7 @@ jobs:
           command: echo export const ENV_CONFIG=$PUBLIC_CONFIG > env-config.js
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package-lock.json" }}-{{ checksum "package-lock.json" }}-{{ checksum "functions/package-lock.json" }}
+            - v1-dependencies-{{ checksum "package-lock.json" }}-{{ checksum "functions/package-lock.json" }}
       - run:
           name: Install Shared dependencies
           command: yes | npm ci || true
@@ -21,10 +21,13 @@ jobs:
           name: Install Function dependencies
           command: yes | npm --prefix functions ci || true
       - save_cache:
-          key: v1-dependencies-{{ checksum "package-lock.json" }}-{{ checksum "package-lock.json" }}-{{ checksum "functions/package-lock.json" }}
+          key: v1-dependencies-{{ checksum "package-lock.json" }}-{{ checksum "functions/package-lock.json" }}
           paths:
             - node_modules
             - functions/node_modules
+      - run:
+          name: Set Firebase Environment
+          command: npm run target-setup -- --token $FIREBASE_CI_TOKEN
       - run:
           name: Building
           command: npm run build
@@ -32,26 +35,24 @@ jobs:
           key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
             - package.json
-            - functions/package.json
             - package-lock.json
             - firebase.json
+            - functions/package.json
+            - functions/package-lock.json
             - functions/node_modules
             - functions/__sapper__
-            - public
+            - static
             - .firebaserc
   deploy:
     docker:
       - image: flauc/firebase
     working_directory: ~/project
     steps:
-      - run:
-          name: Show current branch
-          command: echo ${CIRCLE_BRANCH}
       - restore_cache:
           key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
       - run:
           name: Deploy Master to Firebase
-          command: npm run deploy  -- -m $CIRCLE_SHA1 --token $FIREBASE_CI_TOKEN --project genos-glyco
+          command: npm run deploy  -- -m $CIRCLE_SHA1 --token $FIREBASE_CI_TOKEN
 workflows:
   version: 2
   -deploy:
