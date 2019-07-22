@@ -37,10 +37,7 @@ jobs:
             - package.json
             - package-lock.json
             - firebase.json
-            - functions/package.json
-            - functions/package-lock.json
-            - functions/node_modules
-            - functions/__sapper__
+            - functions
             - static
             - .firebaserc
   deploy:
