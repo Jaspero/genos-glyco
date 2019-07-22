@@ -27,10 +27,7 @@ jobs:
             - functions/node_modules
       - run:
           name: Building
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                npm run build
-            fi
+          command: npm run build
       - save_cache:
           key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
@@ -39,7 +36,7 @@ jobs:
             - package-lock.json
             - firebase.json
             - functions/node_modules
-            - functions/lib
+            - functions/__sapper__
             - public
             - .firebaserc
   deploy:
