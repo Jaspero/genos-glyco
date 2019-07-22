@@ -27,7 +27,7 @@ jobs:
             - functions/node_modules
       - run:
           name: Set Firebase Environment
-          command: npm run target-setup -- --token $FIREBASE_CI_TOKEN
+          command: npm run target-setup -- --token $FIREBASE_CI_TOKEN --project genos-glyco
       - run:
           name: Building
           command: npm run build
