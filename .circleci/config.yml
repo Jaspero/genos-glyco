@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run:
           name: Set Public Environment
-          command: echo export const ENV_CONFIG=$PUBLIC_CONFIG > env-config.js
+          command: echo export const ENV_CONFIG=$PUBLIC_CONFIG > /env-config.js
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package-lock.json" }}-{{ checksum "package-lock.json" }}-{{ checksum "functions/package-lock.json" }}
