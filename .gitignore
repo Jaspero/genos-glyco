@@ -6,3 +6,4 @@ yarn-error.log
 static/google8a0172666a5d201d.html
 .firebase/
 .firebaserc
+env-config.js
