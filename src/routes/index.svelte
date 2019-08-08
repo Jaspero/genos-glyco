@@ -383,14 +383,14 @@ border-radius: 50%;
     <div class="col-12 flex jc-between ai-center">
       <h4 class="gg-title">Our team<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-team.svg" alt=""></span></h4>
       <div class="arrows flex">
-      <button class="arrow flex ai-center bg-l-primary m-r-s" on:click="{prevSlide}">
+      <button aria-label="Previous slide" class="arrow flex ai-center bg-l-primary m-r-s" on:click="{prevSlide}">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#00407F">
           <g data-name="Layer 2">
             <path d="M13.36 17a1 1 0 0 1-.72-.31l-3.86-4a1 1 0 0 1 0-1.4l4-4a1 1 0 1 1 1.42 1.42L10.9 12l3.18 3.3a1 1 0 0 1 0 1.41 1 1 0 0 1-.72.29z" data-name="chevron-left"/>
           </g>
         </svg>
        </button>
-      <button class="arrow flex ai-center bg-l-primary" on:click="{nextSlide}">
+      <button aria-label="Next slide" class="arrow flex ai-center bg-l-primary" on:click="{nextSlide}">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#00407F">
           <g data-name="Layer 2">
             <path d="M10.5 17a1 1 0 0 1-.71-.29 1 1 0 0 1 0-1.42L13.1 12 9.92 8.69a1 1 0 0 1 0-1.41 1 1 0 0 1 1.42 0l3.86 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 0 1-.7.32z" data-name="chevron-right"/>
@@ -441,7 +441,7 @@ border-radius: 50%;
             {/if}
         </div>
       </div>
-      <button class="gg-single-member-close gg-icon-button" on:click={() => dialogOpen = null}>
+      <button aria-label="Close dialog" class="gg-single-member-close gg-icon-button" on:click={() => dialogOpen = null}>
         <img src="assets/images/icon-close.svg" alt="Close dialog">
     </button>
     </article>
