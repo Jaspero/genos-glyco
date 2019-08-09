@@ -49,7 +49,7 @@
             <p class="fw-bold p-t-s m-b-s">{news.title}</p>
             <p class="fs-small c-d-secondary">{news.publicationDate}</p>
             {#if news.image}
-            <img class="m-y-s" src="{news.image}" alt="News Image">
+            <img loading="lazy" class="m-y-s" src="{news.image}" alt="News Image">
             {/if}
         </div>
         <div class="gg-post-major p-t-s gg-read-format">

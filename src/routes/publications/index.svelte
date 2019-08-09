@@ -41,7 +41,7 @@
       <h4 class="gg-title c-l-primary">
         Publications
         <span class="gg-icon" aria-hidden="true">
-            <img src="assets/images/icon-publication.svg" alt="">
+            <img loading="lazy" src="assets/images/icon-publication.svg" alt="">
         </span>
       </h4>
     </div>

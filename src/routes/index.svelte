@@ -7,7 +7,6 @@
 
 <script>
     import { fade, fly } from 'svelte/transition';
-    import {lazyLoad} from '../lazyLoad'
 
     export let members;
     export let news;
@@ -223,17 +222,13 @@
     <div class="grid">
         <div class="col-12">
             <div class="gg-intro-content">
-                <img src="assets/images/logo-light.svg" alt="Genos Glyco" width="220">
+                <img src="assets/images/logo-light.svg" loading="lazy" alt="Genos Glyco" width="220">
                 <h1 class="gg-intro-title">SEE THE<br>COMPLETE<br>PICTURE.</h1>
             </div>
         </div>
     </div>
 </section>
 
-<img
-        alt="random photo"
-        use:lazyLoad="{{src: 'https://picsum.photos/400/200'}}"
->
 
 <!--About-->
 <section class="bg-l-gradient p-y-l">
@@ -247,7 +242,7 @@
         </div>
         <div class="col-6 col-s-12">
             <div class="flex ai-start m-b-m">
-                <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-team.svg" alt=""></span>
+                <span class="gg-icon" aria-hidden="true"><img loading="lazy" src="assets/images/icon-team.svg" alt=""></span>
                 <div class="p-l-s">
                     <h6 class="m-b-xs">Global leader in glycomics</h6>
                     <p>
@@ -256,7 +251,7 @@
                 </div>
             </div>
             <div class="flex ai-start m-b-m">
-                <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-publication.svg" alt=""></span>
+                <span class="gg-icon" aria-hidden="true"><img loading="lazy" src="assets/images/icon-publication.svg" alt=""></span>
                 <div class="p-l-s">
                     <h6 class="m-b-xs">Research</h6>
                     <p>
@@ -265,7 +260,7 @@
                 </div>
             </div>
             <div class="flex ai-start m-b-m">
-                <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-service.svg" alt=""></span>
+                <span class="gg-icon" aria-hidden="true"><img loading="lazy" src="assets/images/icon-service.svg" alt=""></span>
                 <div class="p-l-s">
                     <h6 class="m-b-xs">Commercial services</h6>
                     <p>Our knowledge and expertise is available to any interested party in academia or industry through high-throughput glycan analysis and other commercial services that we offer, ranging from analytical chemistry to study design and statistical data analysis.</p>
@@ -283,7 +278,7 @@
 <section class="bg-l-secondary p-y-l">
     <div class="grid">
         <div class="col-12">
-            <h4 class="gg-title">Featured publications<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-publication.svg" alt=""></span></h4>
+            <h4 class="gg-title">Featured publications<span class="gg-icon" aria-hidden="true"><img loading="lazy" src="assets/images/icon-publication.svg" alt=""></span></h4>
         </div>
         <div class="col-12">
             <table class="gg-publications-table">
@@ -329,7 +324,7 @@
 <section class="gg-section-services bg-d-primary c-l-secondary p-y-l">
     <div class="grid">
         <div class="col-12">
-            <h4 class="gg-title c-l-primary">Services<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-service.svg" alt=""></span></h4>
+            <h4 class="gg-title c-l-primary">Services<span class="gg-icon" aria-hidden="true"><img loading="lazy" src="assets/images/icon-service.svg" alt=""></span></h4>
         </div>
         <div class="col-12">
             <ul>
@@ -356,7 +351,7 @@
 <section class="bg-l-gradient p-y-l">
     <div class="grid">
         <div class="col-12">
-            <h4 class="gg-title">Recent projects<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-project.svg" alt=""></span></h4>
+            <h4 class="gg-title">Recent projects<span class="gg-icon" aria-hidden="true"><img loading="lazy" src="assets/images/icon-project.svg" alt=""></span></h4>
         </div>
         {#each projects as project}
             <div class="col-6 col-s-12">
@@ -382,7 +377,7 @@
 <section class="bg-l-secondary team p-y-l">
     <div class="grid p-b-m">
         <div class="col-12 flex jc-between ai-center">
-            <h4 class="gg-title">Our team<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-team.svg" alt=""></span></h4>
+            <h4 class="gg-title">Our team<span class="gg-icon" aria-hidden="true"><img loading="lazy" src="assets/images/icon-team.svg" alt=""></span></h4>
             <div class="arrows flex">
                 <button aria-label="Previous slide" class="arrow flex ai-center bg-l-primary m-r-s" on:click="{prevSlide}">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#00407F">
@@ -402,10 +397,10 @@
         </div>
     <div class="col-12 of-hidden relative flex">
         {#each members as member, i}
-            <div class="col-3 col-m-4 col-s-6 col-xs-12 p-a-s ta-center item" class:active="{slidePage === member.page}" on:click={() => dialogOpen = member}>
+            <div class="col-3 col-m-4 col-s-6 col-xs-12 p-a-s ta-center item" class:active="{slidePage === member.page}" on:click="{() => dialogOpen = member}">
             <div class="gg-member-card">
                 <div class="gg-member-avatar">
-                    <img draggable="false" src="{member.profileImage}" width="150" alt="">
+                    <img loading="lazy" draggable="false" src="{member.profileImage}" width="150" alt="">
                 </div>
                 <p class="fw-bold m-t-s m-b-xs">{member.fullName}</p>
                 {#if member.title}
@@ -442,8 +437,8 @@
                     {/if}
                 </div>
             </div>
-            <button aria-label="Close dialog" class="gg-single-member-close gg-icon-button" on:click={() => dialogOpen = null}>
-            <img src="assets/images/icon-close.svg" alt="Close dialog">
+            <button aria-label="Close dialog" class="gg-single-member-close gg-icon-button" on:click="{() => dialogOpen = null}">
+                <img src="assets/images/icon-close.svg" alt="Close dialog">
             </button>
         </article>
     </section>
@@ -457,7 +452,7 @@
 <section class="bg-l-gradient p-y-l">
     <div class="grid">
         <div class="col-12">
-            <h4 class="gg-title">Recent news<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-news.svg" alt=""></span></h4>
+            <h4 class="gg-title">Recent news<span class="gg-icon" aria-hidden="true"><img loading="lazy" src="assets/images/icon-news.svg" alt=""></span></h4>
         </div>
         {#each news as item}
             <div class="col-6 col-s-12">
