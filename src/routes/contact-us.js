@@ -1,4 +1,5 @@
 import {createTransport} from 'nodemailer';
+import {ENV_CONFIG} from '../../env-config';
 
 export function post(req, res) {
   const config = {
@@ -7,8 +8,8 @@ export function post(req, res) {
       port: 465,
       secure: true,
       auth: {
-        user: 'filip.lauc93@gmail.com',
-        pass: 'cbwonlfyqlihtdwf'
+        user: ENV_CONFIG.email.sender,
+        pass: ENV_CONFIG.email.appPassword
       }
     },
     mail: {
