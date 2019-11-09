@@ -141,7 +141,7 @@ border-radius: 50%;
 <section class="gg-services-intro">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title c-l-primary">Our team<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-team.svg" alt=""></span></h4>
+      <h4 class="gg-title c-l-primary">Our team<span class="gg-icon" aria-hidden="true"><img loading="lazy" src="assets/images/icon-team.svg" alt=""></span></h4>
     </div>
   </div>
 </section>
@@ -152,10 +152,10 @@ border-radius: 50%;
       <h4 class="gg-title">Genos team</h4>
     </div>
      {#each members as member, i}
-     <div class="col-3 col-m-4 col-s-6 col-xs-12 p-a-s ta-center" on:click={() => dialogOpen = member}>
+     <div class="col-3 col-m-4 col-s-6 col-xs-12 p-a-s ta-center" on:click="{() => dialogOpen = member}">
          <div class="gg-member-card">
            <div class="gg-member-avatar">
-             <img draggable="false" src="{member.profileImage}" width="150" alt="">
+             <img loading="lazy" draggable="false" src="{member.profileImage}" width="150" alt="">
            </div>
            <p class="fw-bold m-t-s m-b-xs">{member.fullName}</p>
            {#if member.title}
@@ -172,7 +172,7 @@ border-radius: 50%;
     <article class="gg-single-member"  in:fly="{{y: 200, duration: 600}}">
       <div class="bg-l-secondary p-x-m p-t-l">
         <div class="gg-single-member-avatar m-b-s">
-          <img width="150" src={dialogOpen.profileImage} alt="">
+          <img loading="lazy" width="150" src={dialogOpen.profileImage} alt="">
         </div>
       </div>
       <div class="p-y-l p-x-m">
@@ -186,9 +186,9 @@ border-radius: 50%;
          </div>
         {/if}
       </div>
-      <button class="gg-single-member-close gg-icon-button" on:click={() => dialogOpen = null}>
-        <img src="assets/images/icon-close.svg" alt="Close dialog">
-    </button>
+        <button aria-label="Close dialog" class="gg-single-member-close gg-icon-button" on:click="{() => dialogOpen = null}">
+            <img src="assets/images/icon-close.svg" alt="Close dialog">
+        </button>
     </article>
 </section>
 {/if}

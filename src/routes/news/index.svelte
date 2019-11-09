@@ -59,7 +59,7 @@
 <section class="gg-news-intro">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title c-l-primary">News<span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-news.svg" alt=""></span></h4>
+      <h4 class="gg-title c-l-primary">News<span class="gg-icon" aria-hidden="true"><img loading="lazy" src="assets/images/icon-news.svg" alt=""></span></h4>
     </div>
   </div>
 </section>

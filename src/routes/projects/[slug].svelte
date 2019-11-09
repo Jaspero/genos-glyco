@@ -53,7 +53,7 @@
       <div class="gg-post">
         <div class="gg-post-minor">
           {#if project.image}
-            <img class="m-b-s" src="{project.image}" alt="Project Image">
+            <img loading="lazy" class="m-b-s" src="{project.image}" alt="Project Image">
           {/if}
         </div>
         <div class="gg-post-major p-t-s gg-read-format">
