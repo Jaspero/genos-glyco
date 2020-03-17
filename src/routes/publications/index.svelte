@@ -30,7 +30,7 @@
 </style>
 
 <svelte:head>
-  <title>Publications</title>
+  <title>Publications | Genos Glyco</title>
   <meta name="description" content="Researchers in Genos participated in numerous clinical and epidemiological studies and published over 100 papers in leading journals" />
 </svelte:head>
 
