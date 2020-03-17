@@ -133,7 +133,7 @@ border-radius: 50%;
 
 
 <svelte:head>
-  <title>Our team</title>
+  <title>Our team | Genos Glyco</title>
   <meta name="description" content="Experienced team of scientists in Genos have cumulatively over 150 years of experience in glycan analysis." />
 </svelte:head>
 

@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-  <title>{news.title}</title>
+  <title>{news.title} | Genos Glyco</title>
   <meta name="description" content="{news.content}" />
 </svelte:head>
 

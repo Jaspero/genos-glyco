@@ -51,7 +51,7 @@
 </style>
 
 <svelte:head>
-  <title>News</title>
+  <title>News | Genos Glyco</title>
   <meta name="description" content="Latest news about our research projects and media coverage" />
 </svelte:head>
 

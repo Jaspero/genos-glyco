@@ -90,7 +90,7 @@ font-family: inherit;
 </style>
 
 <svelte:head>
-	<title>Contact us</title>
+	<title>Contact us | Genos Glyco</title>
 	<meta name="description" content="Contact us">
 	<meta name="author" content="Jaspero Ltd." />
 </svelte:head>

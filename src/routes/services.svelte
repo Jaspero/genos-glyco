@@ -13,7 +13,7 @@
 </style>
 
 <svelte:head>
-  <title>Services</title>
+  <title>Services | Genos Glyco</title>
   <meta name="description" content="With over 10 years of experience in glycan analysis, experts in Genos can address even the most complex glycoprofiling tasks" />
 </svelte:head>
 

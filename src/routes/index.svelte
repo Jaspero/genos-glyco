@@ -214,7 +214,7 @@ border-radius: 50%;
 </style>
 
 <svelte:head>
-  <title>Home</title>
+  <title>Home | Genos Glyco</title>
   <meta name="description" content="Genos is a leading provider of high-throughput glycomics and core facility of the Human Glycome project" />
 </svelte:head>
 

@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-  <title>{project.title}</title>
+  <title>{project.title} | Genos Glyco</title>
   <meta name="description" content="{project.fullDescription}" />
 </svelte:head>
 
