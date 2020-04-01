@@ -137,15 +137,16 @@
         <a class="m-y-s" href="/">
           <img src="assets/images/logo-light.svg" alt="Genos Glyco" width="160">
         </a>
-        <div class="p-y-s hide-s">
+        <div class="p-y-s hide-m">
           <a href="publications" rel="prefetch" class="gg-header-link m-x-s {segment === 'publications' ? 'active' : ''}">Publications</a>
           <a href="services" class="gg-header-link m-x-s {segment === 'services' ? 'active' : ''}">Services</a>
           <a href="projects" rel="prefetch" class="gg-header-link m-x-s {segment === 'projects' ? 'active' : ''}">Projects</a>
           <a href="news" rel="prefetch" class="gg-header-link m-x-s {segment === 'news' ? 'active' : ''}">News</a>
           <a href="our-team" rel="prefetch" class="gg-header-link m-x-s {segment === 'our-team' ? 'active' : ''}">Our team</a>
-          <a href="contact-us" rel="prefetch" class="gg-header-link m-x-s {segment === 'contact-us' ? 'active' : ''}">Contact us</a>
+	  <a href="contact-us" rel="prefetch" class="gg-header-link m-x-s {segment === 'contact-us' ? 'active' : ''}">Contact us</a>
+          <a href="https://my.glycanage.com/knowledge-hub" rel="noopener" target="_blank" class="gg-header-link m-x-s">KnowledgeHub</a>
         </div>
-        <div class="show-s relative">
+        <div class="show-m relative">
             <span class="c-l-primary" style="cursor: pointer;" on:click={toggleMenu}>Menu</span>
             <div class="gg-mobile-menu">
               <a href="publications" rel="prefetch">Publications</a>
@@ -154,6 +155,7 @@
               <a href="news" rel="prefetch">News</a>
               <a href="our-team" rel="prefetch">Our team</a>
               <a href="contact-us" rel="prefetch">Contact us</a>
+	      <a href="https://my.glycanage.com/knowledge-hub" rel="noopener" target="_blank">KnowledgeHub</a>
             </div>
         </div>
       </nav>
