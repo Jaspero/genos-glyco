@@ -1,5 +1,10 @@
 <script context="module">
 	export async function preload({ params, query }) {
+
+	    if (params.slug.endsWith('.html')) {
+	        this.redirect(301, `projects/${params.slug.split('.')[0]}`)
+        }
+
 		const res = await this.fetch(`projects/${params.slug}.json`);
 		const data = await res.json();
 		if (res.status === 200) {
