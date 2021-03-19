@@ -144,7 +144,7 @@
           <a href="news" rel="prefetch" class="gg-header-link m-x-s {segment === 'news' ? 'active' : ''}">News</a>
           <a href="our-team" rel="prefetch" class="gg-header-link m-x-s {segment === 'our-team' ? 'active' : ''}">Our team</a>
 	  <a href="contact-us" rel="prefetch" class="gg-header-link m-x-s {segment === 'contact-us' ? 'active' : ''}">Contact us</a>
-          <a href="https://my.glycanage.com/knowledge-hub" rel="noopener" target="_blank" class="gg-header-link m-x-s">KnowledgeHub</a>
+          <a href="https://glycanage.com/science-magazine/" rel="noopener" target="_blank" class="gg-header-link m-x-s">Science Magazine</a>
         </div>
         <div class="show-m relative">
             <span class="c-l-primary" style="cursor: pointer;" on:click={toggleMenu}>Menu</span>
@@ -155,7 +155,7 @@
               <a href="news" rel="prefetch">News</a>
               <a href="our-team" rel="prefetch">Our team</a>
               <a href="contact-us" rel="prefetch">Contact us</a>
-	      <a href="https://my.glycanage.com/knowledge-hub" rel="noopener" target="_blank">KnowledgeHub</a>
+	      <a href="https://glycanage.com/science-magazine/" rel="noopener" target="_blank">Science Magazine</a>
             </div>
         </div>
       </nav>
