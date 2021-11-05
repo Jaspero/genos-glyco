@@ -127,83 +127,173 @@
     padding: 10px;
     display: block;
 }
+.banner {
+    font-size: 16px;
+    display: flex;
+    color: white;
+    background: linear-gradient(to right, #00407F,#21D2DC);
+    margin: 1em;
+    padding: 3em;
+    border-radius: .5em;;
+    overflow: hidden;
+  }
+  .banner-text-title {
+    color: inherit;
+    font-weight: normal;
+    font-size: 2em;
+    max-width: 32ch;
+    margin: 0;
+  }
+  .banner-text-description {
+    color: inherit;
+    font-size: 1.25em;
+    max-width: 37ch;
+    margin: 1em 0 0;
+  }
+  .banner-action {
+    flex: 1 0 auto;
+    position: relative;
+    padding: 2em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .banner-action-button {
+    position: relative;
+    z-index: 1;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    color: #002A4B;
+    background: #ffee00;
+    border-radius: .25em;
+    box-shadow: 0 .25em 3em rgba(0,0,0,.35);
+    border: 1px solid rgba(0,0,0,.48);
+    cursor: pointer;
+  }
+  .banner-action-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+  @media (max-width: 1200px) {
+    .banner {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 900px) {
+    .banner {
+      font-size: 12px;
+      flex-direction: column;
+    }
+    .banner-action {
+      justify-content: flex-start;
+    }
+    .banner-action-image {
+      margin: auto 0 0 auto;
+      transform: translate(50%,50%);
+    }
+  }
 
 </style>
 
-<header class="gg-header p-y-xs">
-  <div class="grid">
-    <div class="col-12">
-      <nav class="flex fw-wrap jc-between ai-center">
-        <a class="m-y-s" href="/">
-          <img src="assets/images/logo-light.svg" alt="Genos Glyco" width="160">
-        </a>
-        <div class="p-y-s hide-m">
-          <a href="publications" rel="prefetch" class="gg-header-link m-x-s {segment === 'publications' ? 'active' : ''}">Publications</a>
-          <a href="services" class="gg-header-link m-x-s {segment === 'services' ? 'active' : ''}">Services</a>
-          <a href="projects" rel="prefetch" class="gg-header-link m-x-s {segment === 'projects' ? 'active' : ''}">Projects</a>
-          <a href="news" rel="prefetch" class="gg-header-link m-x-s {segment === 'news' ? 'active' : ''}">News</a>
-          <a href="our-team" rel="prefetch" class="gg-header-link m-x-s {segment === 'our-team' ? 'active' : ''}">Our team</a>
-	  <a href="contact-us" rel="prefetch" class="gg-header-link m-x-s {segment === 'contact-us' ? 'active' : ''}">Contact us</a>
-          <a href="https://glycanage.com/science-magazine/" rel="noopener" target="_blank" class="gg-header-link m-x-s">Science Magazine</a>
-        </div>
-        <div class="show-m relative">
-            <span class="c-l-primary" style="cursor: pointer;" on:click={toggleMenu}>Menu</span>
-            <div class="gg-mobile-menu">
-              <a href="publications" rel="prefetch">Publications</a>
-              <a href="services">Services</a>
-              <a href="projects" rel="prefetch">Projects</a>
-              <a href="news" rel="prefetch">News</a>
-              <a href="our-team" rel="prefetch">Our team</a>
-              <a href="contact-us" rel="prefetch">Contact us</a>
-	      <a href="https://glycanage.com/science-magazine/" rel="noopener" target="_blank">Science Magazine</a>
-            </div>
-        </div>
-      </nav>
-    </div>
+<article class="banner">
+  <div class="banner-text">
+    <h1 class="banner-text-title">Attending a Society for Glycobiology Annual meeting in San Diego?</h1>
+    <p class="banner-text-description">Make sure to visit us on <b>table number 20</b>! For specific project ideas, you can get in touch with us to further discuss it.</p>
   </div>
-</header>
+  <div class="banner-action">
+    <svg class="banner-action-image" viewBox="0 0 830 830" fill="none">
+      <rect width="830" height="830" rx="415" fill="#fff" fill-opacity=".09"/>
+      <rect x="83" y="83" width="664" height="664" rx="332" fill="#fff" fill-opacity=".09"/>
+      <rect x="166" y="166" width="498" height="498" rx="249" fill="#fff" fill-opacity=".09"/>
+      <rect x="249" y="249" width="332" height="332" rx="166" fill="#fff" fill-opacity=".09"/>
+      <rect x="332" y="332" width="166" height="166" rx="83" fill="#fff" fill-opacity=".09"/>
+    </svg>
+    <button class="banner-action-button">Get in touch</button>
+  </div>
+</article>
 
-<main>
-    {#if $preloading}
-    <div id="load-bar">
-        <div class="slider">
-          <div class="line"></div>
-          <div class="subline inc"></div>
-          <div class="subline dec"></div>
-        </div>
-    </div>
-    {/if}
-	<slot></slot>
-</main>
-
-<footer class="gg-footer p-t-m bg-d-primary c-l-secondary">
-  <div class="grid">
-    <div class="col-6 col-xs-12">
-      <a href="/"><img src="assets/images/logo-light.svg" alt="Genos Glyco" width="160"></a>
-    </div>
-    <div class="col-6 col-xs-12">
-      <div class="flex fd-col ai-end p-b-s">
-        <a class="link" href="https://www.google.com/maps/place/Genos+DNA+laboratorij+d.o.o./@45.819438,16.020512,15z/data=!4m2!3m1!1s0x0:0xe1b9f7b230482795?ved=2ahUKEwiAydKcq87eAhWkK8AKHXWvCWsQ_BIwCnoECAYQCA" target="_blank" rel="noopener">Borongajska cesta 83h, 10000 Zagreb</a>
-        <div class="p-y-xs ta-right">
-          <a class="link" href="tel:+38516471181">+385 1 647 1181</a><br>
-          <a class="link" href="tel:+38516471182">+385 1 647 1182</a><br>
-          <a class="link" href="tel:+38516471169">Fax: +385 1 647 1169</a>
-        </div>
-        <a class="link" href="mailto:info@genos-glyco.com">info@genos-glyco.com</a>
+<div style="position:relative">
+  <header class="gg-header p-y-xs">
+    <div class="grid">
+      <div class="col-12">
+        <nav class="flex fw-wrap jc-between ai-center">
+          <a class="m-y-s" href="/">
+            <img src="assets/images/logo-light.svg" alt="Genos Glyco" width="160">
+          </a>
+          <div class="p-y-s hide-m">
+            <a href="publications" rel="prefetch" class="gg-header-link m-x-s {segment === 'publications' ? 'active' : ''}">Publications</a>
+            <a href="services" class="gg-header-link m-x-s {segment === 'services' ? 'active' : ''}">Services</a>
+            <a href="projects" rel="prefetch" class="gg-header-link m-x-s {segment === 'projects' ? 'active' : ''}">Projects</a>
+            <a href="news" rel="prefetch" class="gg-header-link m-x-s {segment === 'news' ? 'active' : ''}">News</a>
+            <a href="our-team" rel="prefetch" class="gg-header-link m-x-s {segment === 'our-team' ? 'active' : ''}">Our team</a>
+      <a href="contact-us" rel="prefetch" class="gg-header-link m-x-s {segment === 'contact-us' ? 'active' : ''}">Contact us</a>
+            <a href="https://glycanage.com/science-magazine/" rel="noopener" target="_blank" class="gg-header-link m-x-s">Science Magazine</a>
+          </div>
+          <div class="show-m relative">
+              <span class="c-l-primary" style="cursor: pointer;" on:click={toggleMenu}>Menu</span>
+              <div class="gg-mobile-menu">
+                <a href="publications" rel="prefetch">Publications</a>
+                <a href="services">Services</a>
+                <a href="projects" rel="prefetch">Projects</a>
+                <a href="news" rel="prefetch">News</a>
+                <a href="our-team" rel="prefetch">Our team</a>
+                <a href="contact-us" rel="prefetch">Contact us</a>
+          <a href="https://glycanage.com/science-magazine/" rel="noopener" target="_blank">Science Magazine</a>
+              </div>
+          </div>
+        </nav>
       </div>
     </div>
-    <div class="col-12">
-      <hr>
-    </div>
-    <div class="col-12">
-      <div class="flex ai-center p-b-xs">
-        <a href="https://twitter.com/GGlycoscience" target="_blank" rel="noopener">
-          <img src="assets/images/twitter.svg" alt="Twitter">
-        </a>
-        <div class="f1"></div>
-        <span class="m-x-s">© 2019 Genos Glyco</span>
-        <a class="c-l-primary" href="https://jaspero.co/" target="_blank" rel="noopener">By Jaspero</a>
+  </header>
+  
+  <main>
+      {#if $preloading}
+      <div id="load-bar">
+          <div class="slider">
+            <div class="line"></div>
+            <div class="subline inc"></div>
+            <div class="subline dec"></div>
+          </div>
+      </div>
+      {/if}
+    <slot></slot>
+  </main>
+  
+  <footer class="gg-footer p-t-m bg-d-primary c-l-secondary">
+    <div class="grid">
+      <div class="col-6 col-xs-12">
+        <a href="/"><img src="assets/images/logo-light.svg" alt="Genos Glyco" width="160"></a>
+      </div>
+      <div class="col-6 col-xs-12">
+        <div class="flex fd-col ai-end p-b-s">
+          <a class="link" href="https://www.google.com/maps/place/Genos+DNA+laboratorij+d.o.o./@45.819438,16.020512,15z/data=!4m2!3m1!1s0x0:0xe1b9f7b230482795?ved=2ahUKEwiAydKcq87eAhWkK8AKHXWvCWsQ_BIwCnoECAYQCA" target="_blank" rel="noopener">Borongajska cesta 83h, 10000 Zagreb</a>
+          <div class="p-y-xs ta-right">
+            <a class="link" href="tel:+38516471181">+385 1 647 1181</a><br>
+            <a class="link" href="tel:+38516471182">+385 1 647 1182</a><br>
+            <a class="link" href="tel:+38516471169">Fax: +385 1 647 1169</a>
+          </div>
+          <a class="link" href="mailto:info@genos-glyco.com">info@genos-glyco.com</a>
+        </div>
+      </div>
+      <div class="col-12">
+        <hr>
+      </div>
+      <div class="col-12">
+        <div class="flex ai-center p-b-xs">
+          <a href="https://twitter.com/GGlycoscience" target="_blank" rel="noopener">
+            <img src="assets/images/twitter.svg" alt="Twitter">
+          </a>
+          <div class="f1"></div>
+          <span class="m-x-s">© 2019 Genos Glyco</span>
+          <a class="c-l-primary" href="https://jaspero.co/" target="_blank" rel="noopener">By Jaspero</a>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
+</div>
