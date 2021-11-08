@@ -171,6 +171,7 @@
     box-shadow: 0 .25em 3em rgba(0,0,0,.35);
     border: 1px solid rgba(0,0,0,.48);
     cursor: pointer;
+    text-decoration: none;
   }
   .banner-action-image {
     position: absolute;
@@ -214,7 +215,7 @@
       <rect x="249" y="249" width="332" height="332" rx="166" fill="#fff" fill-opacity=".09"/>
       <rect x="332" y="332" width="166" height="166" rx="83" fill="#fff" fill-opacity=".09"/>
     </svg>
-    <button class="banner-action-button">Get in touch</button>
+    <a href="https://calendly.com/dom-glycanage/genos-let-s-partner-up" class="banner-action-button">Get in touch</a>
   </div>
 </article>
 
