@@ -279,8 +279,8 @@ border-radius: 50%;
         <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-service.svg" alt=""></span>
         <div class="p-l-s">
           <h6 class="m-b-xs">GENOS - world’s largest glycan analysis facility in the world</h6>
-          <p>Our knowledge and expertise is available to any interested party in academia or industry through high-throughput glycan analysis and other commercial services that we offer, ranging from analytical chemistry to study design and statistical data analysis.</p>
-	  <p>View our <a href="/services"><u>services page</u></a> or <a href="https://calendly.com/dom-glycanage/genos-let-s-partner-up"><u>get in touch</u></a> with us to learn more.</p>
+          <p class="m-b-xs">Our knowledge and expertise is available to any interested party in academia or industry through high-throughput glycan analysis and other commercial services that we offer, ranging from analytical chemistry to study design and statistical data analysis.</p>
+	  <p class="m-b-xs">View our <a href="/services"><u>services page</u></a> or <a href="https://calendly.com/dom-glycanage/genos-let-s-partner-up"><u>get in touch</u></a> with us to learn more.</p>
         </div>
       </div>
     </div>
