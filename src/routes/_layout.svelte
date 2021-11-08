@@ -147,7 +147,7 @@
   .banner-text-description {
     color: inherit;
     font-size: 1.25em;
-    max-width: 37ch;
+    max-width: 35ch;
     margin: 1em 0 0;
   }
   .banner-action {
@@ -205,7 +205,7 @@
 <article class="banner">
   <div class="banner-text">
     <h1 class="banner-text-title">Attending a Society for Glycobiology Annual meeting in San Diego?</h1>
-    <p class="banner-text-description">Make sure to visit us on <b>table number 20</b>! For specific project ideas, you can get in touch with us to further discuss it.</p>
+    <p class="banner-text-description">Make sure to visit us on <b>table number 20</b>! If you want to include glycan analysis in your pipeline contact us to learn how.</p>
   </div>
   <div class="banner-action">
     <svg class="banner-action-image" viewBox="0 0 830 830" fill="none">
