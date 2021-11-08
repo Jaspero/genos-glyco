@@ -238,36 +238,49 @@ border-radius: 50%;
 <section class="bg-l-gradient p-y-l">
   <div class="grid">
     <div class="col-12">
-      <h4 class="gg-title">About us</h4>
+      <h4 class="gg-title">GENOS - the leading laboratory for high-throughput glycomics in the world</h4>
     </div>
     <div class="col-12"></div>
     <div class="col-6 col-s-12">
-      <p class="p-r-m m-b-m">Glycans are complex oligosaccharides covalently attached to the backbone of proteins. They significantly contribute to the structure and function of the majority of proteins. Changes in glycans have been reported in many inflammatory diseases, autoimmune diseases and in cancer where they reflect disease activity, or in some cases even precede the development of disease.</p>
+      <p class="p-r-m m-b-xs"><b>Why glycans?</b></p>
+      <p class="p-r-m m-b-xs">Glycosylation is one of the most important posttranslational modifications found in organisms from bacteria to humans.</p>
+      <p class="p-r-m m-b-xs">The addition of glycans, branched oligosaccharides, determines the structure and function of proteins and other macromolecules.</p>
+      <p class="p-r-m m-b-xs">However, unlike the other three types of macromolecules (nucleic acids, lipids, and proteins), glycans are still on the margins of contemporary science. </p>
+      <p class="p-r-m m-b-xs">If proteins are the main workforce in living organisms, secondary modifications are the tools that give each one its functional purpose. And glycans are the pinnacle of life's toolkit.</p>
+      <p class="p-r-m m-b-xs">The level of molecular complexity achieved by glycosylation increases the proteome diversity to orders of magnitude greater than any other secondary modification.</p>
+      <p class="p-r-m m-b-xs">Over half of all existing proteins are glycosylated, as well as virtually all secreted proteins. Many of them take on the role of biomarkers or therapeutics in modern biomedicine - a role for which glycosylation is essential.</p>
+      <p class="p-r-m m-b-xs">Determining exact glycosylation patterns is not only important in research and development but also in clinical settings where they can serve prognostic as well as diagnostic purposes.</p>
+      <p class="p-r-m m-b-xs">Personalized and targeted medicine can hardly exist without taking glycans into account.</p>
+      <p class="p-r-m m-b-xs">Additionally, glycosylation of biopharmaceuticals can have a significant impact on their effectiveness and safety. Failure to characterize it can result in increased heterogeneity, unsatisfactory clinical outcomes, or even legal consequences.</p>
+      <p class="p-r-m m-b-m">GENOS specializes in high-throughput glycan analysis using methods developed over 15 years of experience in academia and partnerships with clients in the clinical, pharmaceutical, and biotech industries.</p>
     </div>
     <div class="col-6 col-s-12">
       <div class="flex ai-start m-b-m">
         <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-team.svg" alt=""></span>
         <div class="p-l-s">
           <h6 class="m-b-xs">Global leader in glycomics</h6>
-          <p>
-            The field of high-throughput glycomics was opened with our 2008 study of total plasma glycome on over 1,000 individuals from the Croatian island Vis. Today we have over 10 years of experience in glycomics, over 100 research publications and more than 30 scientists completely devoted to answering opened questions about glycans and their functional roles in biology.
-          </p>
+          <p class="m-b-xs">Our journey started in 2008 when we analyzed over 1000 individuals from the Croatian island Vis. More than 10 years later, we have published over 150 research publications and completed more than 20 collaborative projects with research and commercial facilities worldwide.</p>
+          <p class="m-b-xs">Today the laboratory has the capacity for more than 150 000 glycan analyses yearly and represents the majority of the high-throughput glycan analysis in the world. </p>
+          <p class="m-b-xs">But we offer more than just facility services. Our team is highly skilled in developing new methods for glycan analysis from a variety of samples; making sure protocols are robust enough to be scaled to large sample sets.</p>
         </div>
       </div>
       <div class="flex ai-start m-b-m">
         <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-publication.svg" alt=""></span>
         <div class="p-l-s">
           <h6 class="m-b-xs">Research</h6>
-          <p>
-            The knowledge about glycans is lagging significantly behind the knowledge about DNA and proteins and through multiple bilateral and multilateral research projects, including the Human Glycome Project, we are trying to narrow this gap. We are proud to be able to collaborate with leading scientists and contribute glycan data to some of the best clinical and epidemiological cohorts in the World (including TwinsUK, 10001 Dalmatians, ORCADES, EPIC, KORA, Finrisk, SABRE, etc)
-          </p>
+          <p class="m-b-xs">As of today, GENOS currently has published over a hundred and fifty publications in the field of glycobiology and has experience in 21 successful collaborative projects (including 7 FP7 and 7 Horizon2020 projects)</p>
+          <p class="m-b-xs">We aim to further the understanding of glycans and their role in various diseases and states. Our star method is IgG and plasma glycan analysis which we developed routine procedures.</p>
+          <p class="m-b-xs">It is well known that IgG glycans are functional effectors in various conditions as well as autoimmune and chronic diseases and states. They are the biomarkers of inflammation and longevity.</p>
+          <p class="m-b-xs">But the quest for understanding glycans and their role in human biology is far from over, and GENOS is constantly pushing the frontiers of high-throughput glycomics.</p>
+          <p class="m-b-xs">Do you have a project proposal that requires know-how in the field of glycomics? Book a call with us to discuss a <a href="/projects"><u>joint grant application</u></a> or to recruit us as <a href="https://calendly.com/marina-m-kavur/consultation"><u>partners</u></a>.</p>
         </div>
       </div>
       <div class="flex ai-start m-b-m">
         <span class="gg-icon" aria-hidden="true"><img src="assets/images/icon-service.svg" alt=""></span>
         <div class="p-l-s">
-          <h6 class="m-b-xs">Commercial services</h6>
+          <h6 class="m-b-xs">GENOS - world’s largest glycan analysis facility in the world</h6>
           <p>Our knowledge and expertise is available to any interested party in academia or industry through high-throughput glycan analysis and other commercial services that we offer, ranging from analytical chemistry to study design and statistical data analysis.</p>
+	  <p>View our <a href="/services"><u>services page</u></a> or <a href="https://calendly.com/dom-glycanage/genos-let-s-partner-up"><u>get in touch</u></a> with us to learn more.</p>
         </div>
       </div>
     </div>
