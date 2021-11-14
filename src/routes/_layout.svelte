@@ -202,6 +202,7 @@
 
 </style>
 
+<!--
 <article class="banner">
   <div class="banner-text">
     <h1 class="banner-text-title">Attending a Society for Glycobiology Annual meeting in San Diego?</h1>
@@ -218,6 +219,7 @@
     <a href="https://calendly.com/marina-m-kavur/consultation" class="banner-action-button">Get in touch</a>
   </div>
 </article>
+-->
 
 <div style="position:relative">
   <header class="gg-header p-y-xs">
