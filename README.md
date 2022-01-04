@@ -1,15 +1,38 @@
-# Genos Glyco
-This is the full source code for the [Genos Glyco webapp](https://genos-glyco.com/).
-The app is built in [Sapper](https://github.com/sveltejs/sapper) and the database and hosting is on [Firebase](https://firebase.google.com/). 
+# create-svelte
 
-Content management is done through [JMS](https://github.com/Jaspero/jms) our open source content management system. 
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
 
-## Why is this open source 
+## Creating a project
 
-Jaspero benefits greatly from the open source community. This app in its entirety is made possible because of open source software. Because of this we try to open source as many of our projects as we can. 
+If you're seeing this, you've probably already done this step. Congrats!
 
-We don't have the required manpower and experties to build frameworks and tools the community could directly use in building awesome software, by open sourcing our projects we hope people can find inspiration or code snippets to speed up development. 
+```bash
+# create a new project in the current directory
+npm init svelte@next
 
-## License 
+# create a new project in my-app
+npm init svelte@next my-app
+```
 
-The source code is publised under MIT © [Jaspero Ltd](mailto:info@jaspero.co) and all media assets are property of [Genos Ltd](glauc@genos.hr)
+> Note: the `@next` is temporary
+
+## Developing
+
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+## Building
+
+Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
+
+```bash
+npm run build
+```
+
+> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.

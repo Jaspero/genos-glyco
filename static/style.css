@@ -1,0 +1,54 @@
+
+/* Variables */
+/* ========================================================================== */
+
+:root {
+  /**/
+}
+
+
+
+/* Fonts */
+/* ========================================================================== */
+
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/Gotham-Book.otf") format("opentype");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/Gotham-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-display: swap;
+}
+
+
+
+/* Document */
+/* ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font: 16px / 1.5 "Gotham", sans-serif;
+  background: url("/images/texture.svg") fixed, #fff;
+  color: #032130;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+body.scroll-disabled {
+  overflow: hidden;
+}
