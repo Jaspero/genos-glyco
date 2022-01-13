@@ -78,7 +78,15 @@
   </ol>
 </section>
 
-<div style="height: 100vh"></div>
+<section class="collaboration">
+  <h1 class="collaboration-title">
+    Success through <br>
+    <span class="collaboration-title-colored">collaboration</span>
+  </h1>
+  <p class="collaboration-text">
+    With over 20 large collaborative projects conducted with scientific teams from different research centers from <b>around the world</b>, we have the expertise to design studies and bring them to a successful conclusion.
+  </p>
+</section>
 
 <IntersectionObserver let:intersecting top={-100} bottom={-100}>
   <div class="{intersecting ? 'yes' : 'no'}">Intersection</div>
@@ -266,6 +274,7 @@
     white-space: nowrap;
   }
 
+  /* solutions list number */
   .solutions-list-item-text::before {
     position: absolute;
     content: counter(li, decimal-leading-zero);
@@ -276,6 +285,7 @@
     font-size: 2rem;
   }
 
+  /* solutions list border */
   .solutions-list-item-text::after {
     z-index: -1;
     position: absolute;
@@ -285,8 +295,31 @@
     border-bottom: 4px solid #D9F2F2;
   }
 
+  /* solutions list image */
   .solutions-list-item-image {
 
+  }
+
+  /* collaboration section */
+  .collaboration {
+    background-image: url("/images/collab.png");
+    background-size: cover;
+  }
+
+  /* collaboration title */
+  .collaboration-title {
+    padding: 5rem 12rem;
+    font-size: 6rem;
+  }
+
+  /* collaboration colored title */
+  .collaboration-title-colored {
+    color: #80BF40;
+  }
+
+  .collaboration-text {
+    font-size: 1.5rem;
+    padding: 0 24rem;
   }
 
   /* neke gluposti kekw */
