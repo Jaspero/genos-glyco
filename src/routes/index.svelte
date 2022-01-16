@@ -42,7 +42,7 @@
 </section>
 
 <section class="lab">
-
+  We are the world’s leading glycomic lab, with over 20 years of experience in glycomics. Our team of highly qualified experts can help bring your ideas to life.
 </section>
 
 <section class="solutions">
@@ -57,35 +57,25 @@
     </li>
     <li class="solutions-list-item">
       <div class="solutions-list-item-text">Biomarker discovery</div>
-      <img src="/images/sample-prep.png" alt="Sample preparation" height="200" class="solutions-list-item-image">
+      <img src="/images/biomarker.png" alt="Biomarker discovery" height="200" class="solutions-list-item-image">
     </li>
     <li class="solutions-list-item">
       <div class="solutions-list-item-text">In-depth glycoprofiling</div>
-      <img src="/images/sample-prep.png" alt="Sample preparation" height="200" class="solutions-list-item-image">
+      <img src="/images/glycoprofiling.png" alt="In-depth glyoprofiling" height="200" class="solutions-list-item-image">
     </li>
     <li class="solutions-list-item">
       <div class="solutions-list-item-text">High-throughput analysis</div>
-      <img src="/images/sample-prep.png" alt="Sample preparation" height="200" class="solutions-list-item-image">
+      <img src="/images/analysis.png" alt="High-throughput analysis" height="200" class="solutions-list-item-image">
     </li>
     <li class="solutions-list-item">
       <div class="solutions-list-item-text">Data analysis</div>
-      <img src="/images/sample-prep.png" alt="Sample preparation" height="200" class="solutions-list-item-image">
+      <img src="/images/data.png" alt="Data analysis" height="200" class="solutions-list-item-image">
     </li>
     <li class="solutions-list-item">
       <div class="solutions-list-item-text">Joint project development</div>
-      <img src="/images/sample-prep.png" alt="Sample preparation" height="200" class="solutions-list-item-image">
+      <img src="/images/development.png" alt="Joint project development" height="200" class="solutions-list-item-image">
     </li>
   </ol>
-</section>
-
-<section class="collaboration">
-  <h1 class="collaboration-title">
-    Success through <br>
-    <span class="collaboration-title-colored">collaboration</span>
-  </h1>
-  <p class="collaboration-text">
-    With over 20 large collaborative projects conducted with scientific teams from different research centers from <b>around the world</b>, we have the expertise to design studies and bring them to a successful conclusion.
-  </p>
 </section>
 
 <IntersectionObserver let:intersecting top={-100} bottom={-100}>
@@ -300,27 +290,6 @@
 
   }
 
-  /* collaboration section */
-  .collaboration {
-    background-image: url("/images/collab.png");
-    background-size: cover;
-  }
-
-  /* collaboration title */
-  .collaboration-title {
-    padding: 5rem 12rem;
-    font-size: 6rem;
-  }
-
-  /* collaboration colored title */
-  .collaboration-title-colored {
-    color: #80BF40;
-  }
-
-  .collaboration-text {
-    font-size: 1.5rem;
-    padding: 0 24rem;
-  }
 
   /* neke gluposti kekw */
   .yes {
