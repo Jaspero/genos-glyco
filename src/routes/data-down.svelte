@@ -15,8 +15,10 @@
 
 <section class="bg-l-secondary team p-y-l">
   <div class="grid p-b-m">
-    <div class="col-12 flex jc-between ai-center">
+    <div class="col-12">
       <p>Raw data for the manuscript " Biological age in people with Down syndrome is on average 19 years older, not due to co-morbidities, but implicating a 31-gene region ” is available here:</p>
+    </div>
+    <div class="col-12">
       <p><a href="/assets/data.xlsx">Data</a></p>
     </div>
   </div>
