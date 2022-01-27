@@ -7,9 +7,17 @@
   <div class="grid">
     <div class="col-12">
       <h4 class="gg-title c-l-primary">
-        <p>Biological age in people with Down syndrome is on average 19 years older, not due to co-morbidities, but implicating a 31-gene region</p>
+        Biological age in people with Down syndrome
       </h4>
-      <a href="/assets/data.xls">Data</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-l-secondary team p-y-l">
+  <div class="grid p-b-m">
+    <div class="col-12 flex jc-between ai-center">
+      <p>Raw data for the manuscript " Biological age in people with Down syndrome is on average 19 years older, not due to co-morbidities, but implicating a 31-gene region ” is available here:</p>
+      <p><a href="/assets/data.xlsx">Data</a></p>
     </div>
   </div>
 </section>
