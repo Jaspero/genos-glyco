@@ -53,27 +53,27 @@
   <ol class="solutions-list">
     <li class="solutions-list-item">
       <div class="solutions-list-item-text">Sample preparation</div>
-      <img src="/images/sample-prep.png" alt="Sample preparation" height="200" class="solutions-list-item-image">
+      <img src="/images/sample-prep.png" alt="Sample preparation" class="solutions-list-item-image">
     </li>
     <li class="solutions-list-item">
       <div class="solutions-list-item-text">Biomarker discovery</div>
-      <img src="/images/biomarker.png" alt="Biomarker discovery" height="200" class="solutions-list-item-image">
+      <img src="/images/biomarker.png" alt="Biomarker discovery" class="solutions-list-item-image">
     </li>
     <li class="solutions-list-item">
       <div class="solutions-list-item-text">In-depth glycoprofiling</div>
-      <img src="/images/glycoprofiling.png" alt="In-depth glyoprofiling" height="200" class="solutions-list-item-image">
+      <img src="/images/glycoprofiling.png" alt="In-depth glyoprofiling" class="solutions-list-item-image">
     </li>
     <li class="solutions-list-item">
       <div class="solutions-list-item-text">High-throughput analysis</div>
-      <img src="/images/analysis.png" alt="High-throughput analysis" height="200" class="solutions-list-item-image">
+      <img src="/images/analysis.png" alt="High-throughput analysis" class="solutions-list-item-image">
     </li>
     <li class="solutions-list-item">
       <div class="solutions-list-item-text">Data analysis</div>
-      <img src="/images/data.png" alt="Data analysis" height="200" class="solutions-list-item-image">
+      <img src="/images/data.png" alt="Data analysis" class="solutions-list-item-image">
     </li>
     <li class="solutions-list-item">
       <div class="solutions-list-item-text">Joint project development</div>
-      <img src="/images/development.png" alt="Joint project development" height="200" class="solutions-list-item-image">
+      <img src="/images/development.png" alt="Joint project development" class="solutions-list-item-image">
     </li>
   </ol>
 </section>
@@ -287,7 +287,7 @@
 
   /* solutions list image */
   .solutions-list-item-image {
-
+    height: 13rem;
   }
 
 
@@ -301,6 +301,7 @@
 
   /* responsiveness */
   @media(max-width: 1200px) {
+    /* hero */
     .hero-text {
       font-size: 2.5rem;
     }
@@ -314,9 +315,30 @@
     .hero-grid-scroll {
       grid-column: span 2;
     }
+
+    /* solutions */
+    .solutions-title {
+      font-size: 4rem;
+    }
+    .solutions-list-item-text {
+      font-size: 2rem;
+    }
+    .solutions-list-item-text::before {
+      font-size: 1.5rem;
+    }
+    .solutions-list-item-image {
+      height: 9rem;
+    }
+    .solutions-list-item:nth-child(2n - 1) .solutions-list-item-image {
+      margin-left: 7rem;
+    }
+    .solutions-list-item:nth-child(2n) .solutions-list-item-image {
+      margin-right: 7rem;
+    }
   }
 
   @media(max-width: 900px) {
+    /* hero */
     .hero {
       padding: 0 2rem;
     }
@@ -329,9 +351,35 @@
     .hero-grid-item-text {
       font-size: 1rem;
     }
+
+    /* solutions */
+    .solutions-title {
+      font-size: 2.5rem;
+    }
+    .solutions-list-item {
+      display: flex;
+      flex-direction: column !important;
+  }
+    .solutions-list-item-text::after { display: none }
+    .solutions-list-item-image {
+      height: 9rem;
+    }
+    .solutions-list-item:nth-child(2n - 1) .solutions-list-item-image {
+      margin-left: 7rem;
+    }
+    .solutions-list-item:nth-child(2n) .solutions-list-item-image {
+      margin-right: 7rem;
+    }
+    .solutions-list-item:nth-child(2n - 1) .solutions-list-item-text {
+      margin-left: 7rem;
+    }
+    .solutions-list-item:nth-child(2n) .solutions-list-item-text {
+      margin-right: 7rem;
+    }
   }
 
   @media(max-width: 600px) {
+    /* hero */
     .hero-grid {
       grid-template-columns: repeat(1, 1fr);
       grid-gap: 1em;
@@ -348,6 +396,35 @@
     }
     .hero-grid-scroll {
       grid-column: span 1;
+    }
+
+    /* solutions */
+    .solutions {
+      padding: 0 2rem;
+    }
+    .solutions-title {
+      font-size: 2rem;
+    }
+    .solutions-list-item-text {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .solutions-list-item-text::before {
+      font-size: .85rem;
+    }
+    .solutions-list-item:nth-child(2n - 1) .solutions-list-item-text::before  { right: -1.75rem; }
+    .solutions-list-item:nth-child(2n) .solutions-list-item-text::before  { left: -1.75rem; }
+    .solutions-list-item:nth-child(2n - 1) .solutions-list-item-image {
+      margin-left: 0;
+    }
+    .solutions-list-item:nth-child(2n) .solutions-list-item-image {
+      margin-right: 0;
+    }
+    .solutions-list-item:nth-child(2n - 1) .solutions-list-item-text {
+      margin-left: 0;
+    }
+    .solutions-list-item:nth-child(2n) .solutions-list-item-text {
+      margin-right: 0;
     }
   }
 </style>
