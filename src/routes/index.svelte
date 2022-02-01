@@ -83,6 +83,13 @@
   </div>
 </section>
 
+<section class="collaboration">
+  <h1 class="collaboration-title">Success through <br></h1>
+  <p class="collaboration-text">
+    With over 20 large collaborative projects conducted with scientific teams from different research centers from <strong>around the world</strong>, we have the expertise to design studies and bring them to a successful conclusion.
+  </p>
+</section>
+
 <IntersectionObserver let:intersecting top={-100} bottom={-100}>
   <div class="{intersecting ? 'yes' : 'no'}">Intersection</div>
 </IntersectionObserver>
@@ -183,6 +190,7 @@
     justify-content: center;
     align-items: center;
     grid-column: span 4;
+    white-space: nowrap;
     font-size: 2rem;
   }
 
@@ -193,7 +201,7 @@
 
   /* scroll text */
   .hero-grid-scroll-text {
-    margin: 0 15px;
+    margin: 0 1rem;
   }
 
   /* lab */
@@ -310,10 +318,53 @@
 
   /* solutions cta link */
   .solutions-cta-link {
+    position: relative;
     font-size: 3rem;
     text-decoration: none;
     margin: 0 1.5rem;
+    white-space: nowrap;
     color: #178282;
+  }
+  .solutions-cta-link::before, .solutions-cta-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 0;
+    height: 6px;
+    background-color: #178282;
+    transition: .35s;
+  }
+  .solutions-cta-link::before {
+    right: 50%;
+  }
+  .solutions-cta-link::after {
+    left: 50%;
+  }
+  .solutions-cta-link:hover::before, .solutions-cta-link:hover::after {
+    width: 50%;
+  }
+
+  /* collaboration */
+  .collaboration {
+    margin-top: 10rem;
+    background-image: url("/images/collab.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .collaboration-title {
+    color: #193003;
+    font-size: 6rem;
+    padding: 6rem;
+    margin-bottom: 6rem;
+  }
+  .collaboration-title::after {
+    content: 'collaboration';
+    color: #80BF40;
+  }
+  .collaboration-text {
+    font-size: 1.5rem;
+    max-width: 33ch;
+    margin: 0 auto 0 auto;
   }
 
   /* neke gluposti kekw */
@@ -360,6 +411,19 @@
     .solutions-list-item:nth-child(2n) .solutions-list-item-image {
       margin-right: 7rem;
     }
+
+    /* collaboration */
+    .collaboration {
+
+    }
+    .collaboration-title {
+      font-size: 5rem;
+      padding: 4rem;
+      margin-bottom: 1rem;
+    }
+    .collaboration-text {
+
+    }
   }
 
   @media(max-width: 900px) {
@@ -401,6 +465,24 @@
     .solutions-list-item:nth-child(2n) .solutions-list-item-text {
       margin-right: 7rem;
     }
+    .solutions-cta-link {
+      font-size: 2rem;
+    }
+    .solutions-cta-arrows {
+      height: 1.75rem;
+    }
+
+    /* collaboration */
+    .collaboration {
+
+    }
+    .collaboration-title {
+      font-size: 4rem;
+      padding: 3rem;
+    }
+    .collaboration-text {
+      font-size: 1.25rem;
+    }
   }
 
   @media(max-width: 600px) {
@@ -421,6 +503,10 @@
     }
     .hero-grid-scroll {
       grid-column: span 1;
+      font-size: 1.25rem;
+    }
+    .hero-grid-scroll-arrow {
+      display: none;
     }
 
     /* solutions */
@@ -450,6 +536,26 @@
     }
     .solutions-list-item:nth-child(2n) .solutions-list-item-text {
       margin-right: 0;
+    }
+    .solutions-cta-link {
+      font-size: 1.25rem;
+    }
+    .solutions-cta-arrows {
+      height: 1rem;
+    }
+
+    /* collaboration */
+    .collaboration {
+      margin-top: 5rem;
+    }
+    .collaboration-title {
+      font-size: 2rem;
+      padding: 2rem;
+      margin-bottom: .5rem;
+    }
+    .collaboration-text {
+      font-size: 1rem;
+      padding: 2rem;
     }
   }
 </style>
