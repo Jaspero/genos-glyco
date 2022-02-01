@@ -76,6 +76,11 @@
       <img src="/images/development.png" alt="Joint project development" class="solutions-list-item-image">
     </li>
   </ol>
+  <div class="solutions-cta">
+    <img class="solutions-cta-arrows" src="/images/arrows-blue.svg" alt="">
+    <a href="/services" class="solutions-cta-link">Our services in details</a>
+    <img class="solutions-cta-arrows" src="/images/arrows-blue.svg" alt="">
+  </div>
 </section>
 
 <IntersectionObserver let:intersecting top={-100} bottom={-100}>
@@ -290,6 +295,26 @@
     height: 13rem;
   }
 
+  /* solutions cta */
+  .solutions-cta {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* solutions cta arrows */
+  .solutions-cta-arrows { height: 2.5rem; }
+  .solutions-cta-arrows:first-of-type { transform: scaleX(-1); }
+
+
+  /* solutions cta link */
+  .solutions-cta-link {
+    font-size: 3rem;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    color: #178282;
+  }
 
   /* neke gluposti kekw */
   .yes {
