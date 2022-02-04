@@ -39,6 +39,8 @@ html {
   font: 16px / 1.5 "Gotham", sans-serif;
   background: url("/images/texture.svg") fixed, #fff;
   color: #032130;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

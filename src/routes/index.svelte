@@ -1,5 +1,7 @@
 <script>
 	import IntersectionObserver from '$lib/IntersectionObserver.svelte';
+    import CtaSection from "$lib/CtaSection.svelte";
+    import ScrollCta from "$lib/ScrollCta.svelte";
 </script>
 
 <section class="hero">
@@ -30,18 +32,12 @@
       <a class="hero-grid-cta-inner" href="/request">Submit free request</a>
     </div>
     <div class="hero-grid-scroll">
-      <img class="hero-grid-scroll-arrow" height="24" src="/images/arrow-down.svg" alt="Arrow down">
-      <img class="hero-grid-scroll-arrow" height="24" src="/images/arrow-down.svg" alt="Arrow down">
-      <img class="hero-grid-scroll-arrow" height="24" src="/images/arrow-down.svg" alt="Arrow down">
-      <p class="hero-grid-scroll-text">Scroll to learn more</p>
-      <img class="hero-grid-scroll-arrow" height="24" src="/images/arrow-down.svg" alt="Arrow down">
-      <img class="hero-grid-scroll-arrow" height="24" src="/images/arrow-down.svg" alt="Arrow down">
-      <img class="hero-grid-scroll-arrow" height="24" src="/images/arrow-down.svg" alt="Arrow down">
+      <ScrollCta href="#lab" />
     </div>
   </div>
 </section>
 
-<section class="lab">
+<section class="lab" id="lab">
   We are the world’s leading glycomic lab, with over 20 years of experience in glycomics. Our team of highly qualified experts can help bring your ideas to life.
 </section>
 
@@ -89,6 +85,8 @@
     With over 20 large collaborative projects conducted with scientific teams from different research centers from <strong>around the world</strong>, we have the expertise to design studies and bring them to a successful conclusion.
   </p>
 </section>
+
+<CtaSection />
 
 <IntersectionObserver let:intersecting top={-100} bottom={-100}>
   <div class="{intersecting ? 'yes' : 'no'}">Intersection</div>
@@ -192,16 +190,6 @@
     grid-column: span 4;
     white-space: nowrap;
     font-size: 2rem;
-  }
-
-  /* scroll arrow */
-  .hero-grid-scroll-arrow {
-    margin: 0 4px;
-  }
-
-  /* scroll text */
-  .hero-grid-scroll-text {
-    margin: 0 1rem;
   }
 
   /* lab */
@@ -355,7 +343,7 @@
     color: #193003;
     font-size: 6rem;
     padding: 6rem;
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
   }
   .collaboration-title::after {
     content: 'collaboration';
