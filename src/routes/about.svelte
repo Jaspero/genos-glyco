@@ -134,7 +134,7 @@
     <Cta color="green" href="https://glycanage.com/">glycanage.com</Cta>
 </section>
 
-<CtaSection></CtaSection>
+<CtaSection />
 
 <style>
     /* genos */
