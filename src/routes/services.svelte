@@ -51,12 +51,26 @@
             <div class="grid">
                 <div class="col-12 gg-read-format">
                     {#if tab === 0}
-                        <p>Immunoglobulin G (IgG) N-glycosylation analysis (analysis of total released N-glycans by UPLC-FLR and subclass-specific Fc N-glycopeptide analysis by LC-MS)</p>
-                        <p>Plasma N-glycosylation analysis (analysis of total released N-glycans by UPLC-FLR)</p>
+                        <p>Genos offers high-throughput analyses with relative quantification of N-glycans and N-glycopeptides developed and optimized for various human and rodent sample types.
+                            N-glycans are released from glycoproteins by digestion with PNGaseF, fluorescently labelled with 2-AB, procainamide or APTS, purified and analysed by
+                            either hydrophilic interaction ultra-high-performance liquid chromatography with fluorescence detection (HILIC-UHPLC-FLD) or capillary gel
+                            electrophoresis with laser-induced fluorescence (CGE-LIF). N-glycopeptides are obtained from glycoproteins by trypsin digestion, purified and analysed by
+                            C18 liquid chromatography coupled to mass spectrometry via electrospray ionization (C18-LC-ESI-MS).</p>
+                        <li>Analysis of total released human serum/plasma N-glycans by HILIC-UHPLC-FLD</li>
+                        <li>Analysis of total released human IgG N-glycans by HILIC-UHPLC-FLD</li>
+                        <li>Analysis of subclass-specific human IgG Fc N-glycopeptides by C18-LC-ESI-MS</li>
+                        <li>Analysis of total released human IgA N-glycans by HILIC-UHPLC-FLD</li>
+                        <li>Analysis of subclass-specific human IgA Fc N-glycopeptides by C18-LC-ESI-MS</li>
+                        <li>Analysis of human AGP N-glycopeptides by C18-LC-ESI-MS</li>
+                        <li>Analysis of human C3 N-glycopeptides by C18-LC-ESI-MS</li>
+                        <li>Analysis of total released mouse IgG N-glycans by HILIC-UHPLC-FLD or CGE-LIF</li>
+                        <li>Analysis of subclass-specific mouse IgG N-glycopeptides by C18-LC-ESI-MS</li>
+                        <li>Analysis of subclass-specific rat IgG N-glycopeptides by C18-LC-ESI-MS</li>
                     {:else if tab === 1}
-                        <p>Analysis of released N-glycans</p>
-                        <p>Site-specific N-glycosylation analysis</p>
-                        <p>N-glycosylation site occupancy analysis</p>
+                        <p>Genos offers in-depth glycoprofiling for various sample types such as biopharmaceuticals and glycoproteins purified from complex samples. Sample preparation conditions and analysis parameters are optimised for a specific sample.</p>
+                        <li>Analysis of released N-glycans</li><p>N-glycans are released from glycoproteins by digestion with PNGaseF, fluorescently labelled, purified and analysed by hydrophilic interaction ultra-high-performance liquid chromatography with fluorescence detection (HILIC-UHPLC-FLD) which allows relative quantification of different glycan species. Assignment of N-glycan structures is based on HILIC retention time, accurate mass and fragmentation spectra obtained by coupling HILIC-UHPLC-FLD to mass spectrometry via electrospray ionization (ESI-MS/MS).</p>
+                        <li>Site-specific N-glycosylation analysis</li> <p>N-glycopeptides are obtained from glycoproteins by protease digestion, purified and analysed by C18 liquid chromatography coupled to mass spectrometry via electrospray ionization (C18-LC-ESI-MS/MS). Relative quantification of N-glycopeptides in obtained in a site-specific manner determined by the amino acid sequence of the glycoprotein. Assignment of N-glycopeptide structures is based on accurate mass and fragmentation spectra.</p>
+                        <li>N-glycosylation site occupancy analysis</li><p>Site occupancy analysis is used to calculate the occupancy of potential N-glycosylation sites by measuring the proportion of N-glycosylated peptides in total peptides. The analysis is performed by releasing N-glycans with PNGaseF in the presence of 18O water followed by protease digestion, purification and C18-LC-ESI-MS/MS.  </p>
                     {:else if tab === 2}
                         <p>Genos offers consultancies in study design, under the full or partial control of the experiment, for different fields of biomedicine. The mixture of expertise from Genos employees (biologists, pharmacist, chemists, statisticians and mathematicians) ensures the quality of the study design.</p>
                     {:else if tab === 3}
