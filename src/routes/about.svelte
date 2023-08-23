@@ -45,7 +45,7 @@
 
 <section class="quote">
     <p class="quote-text">
-        Since glycans are sugars, that makes me
+        Glycosylation is the ultimate layer of molecular complexity, but exactly because of this complexity many researchers are still avoiding including glycans in their studies.
     </p>
     <img src="/images/about/quotemark.svg" alt="" class="quote-mark">
 </section>
@@ -212,7 +212,7 @@
     .quote {
         position: relative;
         background-color: #FFD400;
-        padding: 5rem;
+        padding: 4rem;
         max-width: 45ch;
         border-radius: 2rem;
         font-weight: bold;
@@ -222,10 +222,6 @@
     }
     .quote-text {
         font-size: 1.5rem;
-    }
-    .quote-text::after {
-        content: ' The Sugar Daddy.';
-        color: #CC5733;
     }
     .quote-mark {
         position: absolute;
