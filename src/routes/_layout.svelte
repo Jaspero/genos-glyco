@@ -289,11 +289,12 @@
       </div>
       <div class="col-12">
         <div class="flex ai-center p-b-xs">
-          <a href="https://twitter.com/GGlycoscience" target="_blank" rel="noopener">
+          <a class="m-r-s" href="https://twitter.com/GGlycoscience" target="_blank" rel="noopener">
             <img src="assets/images/twitter.svg" alt="Twitter">
           </a>
+          <a class="c-l-primary" href="assets/gep-genos.pdf" target="_blank">Gender Equality Plan</a>
           <div class="f1"></div>
-          <span class="m-x-s">© 2019 Genos Glyco</span>
+          <span class="m-x-s">© {new Date().getFullYear()} Genos Glyco</span>
           <a class="c-l-primary" href="https://jaspero.co/" target="_blank" rel="noopener">By Jaspero</a>
         </div>
       </div>
