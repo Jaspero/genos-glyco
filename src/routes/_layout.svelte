@@ -293,6 +293,7 @@
             <img src="assets/images/twitter.svg" alt="Twitter">
           </a>
           <a class="c-l-primary" href="assets/privacy-policy.pdf" target="_blank">Privacy Policy</a>
+          &nbsp;
           <a class="c-l-primary" href="assets/gep-genos.pdf" target="_blank">Gender Equality Plan</a>
           <div class="f1"></div>
           <span class="m-x-s">© {new Date().getFullYear()} Genos Glyco</span>
