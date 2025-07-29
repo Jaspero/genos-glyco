@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "genos-glyco"
+  },
+  "targets": {
+    "genos-glyco": {
+      "hosting": {
+        "website": [
+          "genos-glyco"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
