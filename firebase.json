@@ -7,9 +7,47 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [{
-      "source": "**",
-      "function": "ssr"
-    }]
+    "rewrites": [
+      {
+        "source": "/",
+        "destination": "https://genos.hr"
+      },
+      {
+        "source": "/publications",
+        "destination": "https://genos.hr/publications"
+      },
+      {
+        "source": "/services",
+        "destination": "https://genos.hr/services"
+      },
+      {
+        "source": "/projects",
+        "destination": "https://genos.hr/projects"
+      },
+      {
+        "source": "/projects/**",
+        "destination": "https://genos.hr/projects"
+      },
+      {
+        "source": "/news",
+        "destination": "https://genos.hr/news"
+      },
+      {
+        "source": "/news/**",
+        "destination": "https://genos.hr/news"
+      },
+      {
+        "source": "/our-team",
+        "destination": "https://genos.hr/team"
+      },
+      {
+        "source": "/contact-us",
+        "destination": "https://genos.hr/contact"
+      },
+      {
+        "source": "**",
+        "function": "ssr"
+      }
+    ]
   }]
 }
